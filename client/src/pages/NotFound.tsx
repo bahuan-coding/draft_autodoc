@@ -31,9 +31,9 @@ export default function NotFound() {
               Volte para o início e explore nossas soluções.
             </p>
 
-            <Link href="/">
+            <Link href="/" className="inline-block focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-xl">
               <span className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]">
-                <ArrowLeft size={18} />
+                <ArrowLeft size={18} aria-hidden="true" />
                 Voltar para Home
               </span>
             </Link>

@@ -7,6 +7,7 @@ import { testimonials } from "@/data/home";
 export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [paused, setPaused] = useState(false);
   const total = testimonials.length;
 
   const paginate = (dir: number) => {
@@ -15,16 +16,27 @@ export default function TestimonialsSection() {
   };
 
   useEffect(() => {
+    if (paused) return;
     const timer = setInterval(() => paginate(1), 6000);
     return () => clearInterval(timer);
-  }, [current]);
+  }, [current, paused]);
 
   const t = testimonials[current];
   const prev = testimonials[(current - 1 + total) % total];
   const next = testimonials[(current + 1) % total];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30 overflow-hidden">
+    <section
+      className="py-16 sm:py-20 lg:py-32 bg-navy-900/30 overflow-hidden"
+      aria-roledescription="carousel"
+      aria-label="Depoimentos de clientes"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) setPaused(false);
+      }}
+    >
       <div className="container">
         <SectionReveal>
           <div className="text-center mb-6">
@@ -49,7 +61,7 @@ export default function TestimonialsSection() {
               <ChevronLeft size={18} aria-hidden="true" />
             </button>
 
-            <div className="flex-1 relative min-h-[240px] sm:min-h-[280px]">
+            <div className="flex-1 relative min-h-[240px] sm:min-h-[280px]" aria-live="polite" aria-atomic="true">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={current}
@@ -59,6 +71,9 @@ export default function TestimonialsSection() {
                   exit={{ opacity: 0, x: direction * -60 }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   className="glass-card gradient-border p-8 sm:p-10"
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label={`Depoimento ${current + 1} de ${total}`}
                 >
                   <div className="flex flex-col sm:flex-row gap-8 items-start">
                     {t.photo && (

@@ -1,11 +1,11 @@
 import { Phone, MessageCircle, Lock, Shield, Clock, Fingerprint } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
-import HeroSection from "./sections/HeroSection";
-import TrustBar from "./sections/TrustBar";
-import FeaturesSection from "./sections/FeaturesSection";
-import TestimonialsSection from "./sections/TestimonialsSection";
-import FAQSection from "./sections/FAQSection";
-import DemoForm from "./sections/DemoForm";
+import HeroSection from "@/components/sections/HeroSection";
+import TrustBar from "@/components/sections/TrustBar";
+import FeaturesSection from "@/components/sections/FeaturesSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import FAQSection from "@/components/sections/FAQSection";
+import DemoForm from "@/components/sections/DemoForm";
 
 export default function Home() {
   return (

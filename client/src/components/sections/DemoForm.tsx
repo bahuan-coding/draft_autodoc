@@ -30,9 +30,7 @@ export default function DemoForm() {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (data: FormValues) => {
-    // Aqui você faria a chamada real à API
-    console.log("Dados do formulário:", data);
+  const onSubmit = (_data: FormValues) => {
     setSubmitted(true);
   };
 
@@ -144,9 +142,10 @@ export default function DemoForm() {
                     <select
                       id="demo-obras"
                       {...register("obras")}
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/30 transition-colors"
+                      defaultValue=""
+                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-blue-500/50 focus:ring-2 focus:ring-blue-500/30 transition-colors [&:has(option[value='']:checked)]:text-navy-500 text-white"
                     >
-                      <option value="" className="bg-navy-950">Selecione</option>
+                      <option value="" disabled className="bg-navy-950 text-navy-500">Selecione</option>
                       <option value="1-5" className="bg-navy-950">1 a 5</option>
                       <option value="6-20" className="bg-navy-950">6 a 20</option>
                       <option value="21-50" className="bg-navy-950">21 a 50</option>

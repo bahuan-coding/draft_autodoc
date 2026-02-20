@@ -9,9 +9,9 @@ export default function Privacidade() {
         <div className="mesh-gradient" />
 
         <div className="container relative z-10">
-          <Link href="/">
-            <span className="inline-flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors mb-8">
-              <ArrowLeft size={16} />
+          <Link href="/" className="inline-block mb-8 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md">
+            <span className="inline-flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors">
+              <ArrowLeft size={16} aria-hidden="true" />
               Voltar para Home
             </span>
           </Link>
@@ -96,11 +96,11 @@ export default function Privacidade() {
               <h2 className="text-xl font-bold text-white mb-3">7. Contato</h2>
               <p>
                 Para exercer seus direitos ou esclarecer dúvidas sobre esta política, entre em contato pelo e-mail{" "}
-                <a href="mailto:privacidade@autodoc.com.br" className="text-blue-400 hover:underline">
+                <a href="mailto:privacidade@autodoc.com.br" className="text-blue-400 hover:underline focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm">
                   privacidade@autodoc.com.br
                 </a>{" "}
                 ou pelo telefone{" "}
-                <a href="tel:+551150437900" className="text-blue-400 hover:underline">(11) 5043-7900</a>.
+                <a href="tel:+551150437900" className="text-blue-400 hover:underline focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm">(11) 5043-7900</a>.
               </p>
             </div>
 

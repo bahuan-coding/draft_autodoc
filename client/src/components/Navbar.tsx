@@ -39,7 +39,7 @@ export default function Navbar() {
         }`}
       >
         <div className="container flex items-center justify-between">
-          <Link href="/">
+          <Link href="/" className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md inline-block">
             <span className="text-xl font-bold tracking-tight text-white group relative inline-block">
               AUTO<span className="text-blue-400 transition-all duration-300 hover:drop-shadow-[0_0_12px_oklch(0.70_0.18_260)]">DOC</span>
             </span>
@@ -106,7 +106,7 @@ export default function Navbar() {
             >
               <nav aria-label="Menu mobile" className="container py-6 flex flex-col gap-2">
                 {navLinks.map((link) => (
-                  <Link key={link.href} href={link.href}>
+                  <Link key={link.href} href={link.href} className="block focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-lg">
                     <span
                       className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                         location === link.href
@@ -123,11 +123,11 @@ export default function Navbar() {
                     href="https://autodoc.com.br"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-center text-sm font-medium text-navy-300 hover:text-white transition-colors py-2"
+                    className="text-center text-sm font-medium text-navy-300 hover:text-white transition-colors py-2 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md block"
                   >
                     Entrar
                   </a>
-                  <Link href="/#demonstracao">
+                  <Link href="/#demonstracao" className="block focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-lg">
                     <span className="block text-center text-sm font-semibold bg-blue-500 text-white px-5 py-3 rounded-lg">
                       Teste Grátis
                     </span>

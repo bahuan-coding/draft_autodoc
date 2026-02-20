@@ -3,7 +3,7 @@
  * Footer: Dark navy, clean grid, subtle borders, social icons
  */
 import { Link } from "wouter";
-import { Linkedin, Instagram, Youtube, Phone, Mail } from "lucide-react";
+import { Linkedin, Instagram, Youtube, Phone } from "lucide-react";
 
 const footerLinks = {
   solucoes: [

@@ -36,14 +36,14 @@ export default function PageHero({
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
       <div className="absolute inset-0">
-        <img src={bgImage} alt="" role="presentation" aria-hidden="true" className="w-full h-full object-cover opacity-25" loading="eager" width={1920} height={1080} />
+        <img src={bgImage} alt="" role="presentation" aria-hidden="true" className="w-full h-full object-cover opacity-25" loading="eager" decoding="async" width={1920} height={1080} />
         <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/70 to-navy-950" />
       </div>
 
       <div className="container relative z-10">
-        <Link href="/">
-          <span className="inline-flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors mb-8">
-            <ArrowLeft size={16} />
+        <Link href="/" className="inline-block mb-8 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md">
+          <span className="inline-flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors">
+            <ArrowLeft size={16} aria-hidden="true" />
             Voltar para Home
           </span>
         </Link>
@@ -81,8 +81,8 @@ export default function PageHero({
           {children}
 
           {ctaText && (
-            <Link href={ctaHref}>
-              <span className={`inline-flex items-center gap-2 font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg ${ctaBg}`}>
+            <Link href={ctaHref} className="inline-block focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-xl">
+              <span className={`inline-flex items-center gap-2 font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] ${ctaBg}`}>
                 {ctaText}
               </span>
             </Link>
