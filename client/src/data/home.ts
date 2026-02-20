@@ -26,14 +26,14 @@ export interface ClientLogo {
 
 export const clients: ClientLogo[] = [
   { name: "CYRELA", logo: "/logos/cyrela-logo.svg" },
-  { name: "MRV", logo: "/logos/mrv-logo.svg" },
-  { name: "DIRECIONAL", logo: "/logos/direcional-logo.svg" },
-  { name: "TENDA", logo: "/logos/tenda-logo.svg" },
-  { name: "CURY", logo: "/logos/cury-logo.svg" },
+  { name: "MRV", logo: "/logos/mrv-logo.png" },
+  { name: "DIRECIONAL", logo: "/logos/direcional-logo.png" },
+  { name: "TENDA", logo: "/logos/tenda-logo.png" },
+  { name: "CURY", logo: "/logos/cury-logo.png" },
   { name: "EVEN", logo: "/logos/even-logo.svg" },
-  { name: "TEGRA", logo: "/logos/tegra-logo.svg" },
+  { name: "TEGRA", logo: "/logos/tegra-logo.png" },
   { name: "PATRIMAR", logo: "/logos/patrimar-logo.svg" },
-  { name: "KALLAS", logo: "/logos/kallas-logo.svg" },
+  { name: "KALLAS", logo: "/logos/kallas-logo.png" },
   { name: "GAFISA", logo: "/logos/gafisa-logo.svg" },
 ];
 

@@ -57,7 +57,7 @@ export default function TrustBar() {
                       key={`${setIdx}-${client.name}`}
                       src={client.logo}
                       alt={client.name}
-                      className="h-6 lg:h-8 w-auto opacity-30 hover:opacity-60 transition-opacity duration-500 select-none"
+                      className="h-6 lg:h-8 w-auto opacity-30 hover:opacity-60 transition-opacity duration-500 select-none brightness-0 invert"
                       width={120}
                       height={32}
                       loading="lazy"
