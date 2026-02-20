@@ -26,10 +26,10 @@ export default function CTASection({
     : "bg-blue-500 hover:bg-blue-400 text-white";
 
   return (
-    <section id={id} className="py-24 lg:py-32">
+    <section id={id} className="py-16 sm:py-20 lg:py-32">
       <div className="container">
         <SectionReveal>
-          <div className={`glass-card p-12 lg:p-16 text-center glow-${glow}`}>
+          <div className={`glass-card p-6 sm:p-8 lg:p-16 text-center glow-${glow}`}>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">{title}</h2>
             <p className="text-navy-300 text-lg mb-8 max-w-xl mx-auto">{description}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

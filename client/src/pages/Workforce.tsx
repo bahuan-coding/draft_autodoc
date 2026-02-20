@@ -1,6 +1,4 @@
 import { Users, Fingerprint, CheckCircle2 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import SectionReveal from "@/components/SectionReveal";
 import PageHero from "@/components/sections/PageHero";
 import FeatureGrid from "@/components/sections/FeatureGrid";
@@ -11,8 +9,6 @@ import { features, painPoints, complianceChecklist } from "@/data/workforce";
 export default function Workforce() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-
       <PageHero
         icon={Users}
         iconColor="text-amber-400"
@@ -25,7 +21,7 @@ export default function Workforce() {
       />
 
       {/* Before/After */}
-      <section className="py-24 lg:py-32 bg-navy-900/30">
+      <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -60,7 +56,7 @@ export default function Workforce() {
       </section>
 
       {/* Compliance Checklist */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -97,7 +93,7 @@ export default function Workforce() {
       </section>
 
       {/* Integração Catraca + GD4 */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -186,7 +182,7 @@ export default function Workforce() {
       </section>
 
       {/* Features */}
-      <section className="py-24 lg:py-32 bg-navy-900/30">
+      <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -211,7 +207,6 @@ export default function Workforce() {
         glow="amber"
       />
 
-      <Footer />
     </div>
   );
 }

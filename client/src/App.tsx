@@ -5,6 +5,8 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
 import { AnimatePresence, motion } from "framer-motion";
 import ErrorBoundary from "./components/ErrorBoundary";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import CookieBanner from "./components/CookieBanner";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -24,8 +26,9 @@ function ScrollToTop() {
 
 function PageLoader() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
+    <div className="min-h-screen bg-background flex items-center justify-center" role="status" aria-label="Carregando">
       <div className="w-8 h-8 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
+      <span className="sr-only">Carregando...</span>
     </div>
   );
 }
@@ -72,9 +75,11 @@ function App() {
             Pular para o conteúdo
           </a>
           <div className="noise-overlay" aria-hidden="true" />
+          <Navbar />
           <main id="main-content">
             <Router />
           </main>
+          <Footer />
           <WhatsAppFloat />
           <CookieBanner />
         </TooltipProvider>

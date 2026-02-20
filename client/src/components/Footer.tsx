@@ -46,7 +46,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/autodoc-tecnologia/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-blue-500/20 flex items-center justify-center transition-colors"
+                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-blue-500/20 flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={16} className="text-navy-400 hover:text-blue-400" />
@@ -55,7 +55,7 @@ export default function Footer() {
                 href="https://www.instagram.com/autodoc.tech/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-pink-500/20 flex items-center justify-center transition-colors"
+                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-pink-500/20 flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={16} className="text-navy-400" />
@@ -64,7 +64,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@AutodocTecnologia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-red-500/20 flex items-center justify-center transition-colors"
+                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-red-500/20 flex items-center justify-center transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube size={16} className="text-navy-400" />
@@ -104,6 +104,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-navy-400 hover:text-white transition-colors"
+                      aria-label={`${link.label} (abre em nova aba)`}
                     >
                       {link.label}
                     </a>
@@ -133,6 +134,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-navy-400 hover:text-white transition-colors"
+                      aria-label={`${link.label} (abre em nova aba)`}
                     >
                       {link.label}
                     </a>
@@ -151,6 +153,7 @@ export default function Footer() {
               <a
                 href="tel:+551150437900"
                 className="flex items-center gap-2 text-sm text-white font-medium hover:text-blue-400 transition-colors"
+                aria-label="Ligar para (11) 5043-7900"
               >
                 <Phone size={14} />
                 (11) 5043-7900
@@ -164,7 +167,7 @@ export default function Footer() {
           <p className="text-xs text-navy-500">
             &copy; {new Date().getFullYear()} Autodoc Processamento de Dados Ltda. CNPJ: 04.714.448/0001-28
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 flex-wrap">
             <span className="text-xs text-navy-600">Ecossistema</span>
             <span className="text-xs text-navy-400 font-medium">Ambar</span>
             <span className="text-xs text-navy-500">|</span>

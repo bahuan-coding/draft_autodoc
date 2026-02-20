@@ -34,12 +34,10 @@ import {
   Ruler,
   Briefcase,
 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import SectionReveal from "@/components/SectionReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { IMAGES } from "@/lib/images";
-import { testimonials } from "@/data/home";
+import { testimonials, clients } from "@/data/home";
 
 const typingPhrases = [
   "projetos e plantas.",
@@ -149,7 +147,7 @@ function DemoForm() {
   };
 
   return (
-    <section id="demonstracao" className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="demonstracao" className="py-16 sm:py-20 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={IMAGES.construction}
@@ -265,7 +263,7 @@ function TestimonialsSection() {
   const next = testimonials[(current + 1) % total];
 
   return (
-    <section className="py-24 lg:py-32 bg-navy-900/30 overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30 overflow-hidden">
       <div className="container">
         <SectionReveal>
           <div className="text-center mb-6">
@@ -283,13 +281,13 @@ function TestimonialsSection() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => paginate(-1)}
-              className="shrink-0 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
+              className="shrink-0 w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
               aria-label="Depoimento anterior"
             >
               <ChevronLeft size={18} />
             </button>
 
-            <div className="flex-1 relative min-h-[280px] sm:min-h-[240px]">
+            <div className="flex-1 relative min-h-[240px] sm:min-h-[280px]">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={current}
@@ -300,14 +298,26 @@ function TestimonialsSection() {
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   className="glass-card gradient-border p-8 sm:p-10"
                 >
-                  <div className="flex flex-col sm:flex-row gap-8">
+                  <div className="flex flex-col sm:flex-row gap-8 items-start">
+                    {t.photo && (
+                      <div className="shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-white/10">
+                        <img
+                          src={t.photo}
+                          alt={t.name}
+                          className="w-full h-full object-cover grayscale"
+                          width={96}
+                          height={96}
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
                     <div className="flex-1">
-                      <div className="flex gap-1 mb-5">
+                      <div className="flex gap-1 mb-4">
                         {[...Array(5)].map((_, j) => (
                           <Star key={j} size={14} className="text-amber-400 fill-amber-400" />
                         ))}
                       </div>
-                      <blockquote className="text-navy-200 text-base sm:text-lg leading-relaxed mb-6 italic">
+                      <blockquote className="text-navy-200 text-base sm:text-lg leading-relaxed mb-5 italic">
                         "{t.quote}"
                       </blockquote>
                       <div className="flex items-center justify-between flex-wrap gap-4">
@@ -327,7 +337,7 @@ function TestimonialsSection() {
                             href={t.video}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 bg-blue-500/10 hover:bg-blue-500/20 px-4 py-2 rounded-full border border-blue-500/20 transition-all"
+                            className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 bg-blue-500/10 hover:bg-blue-500/20 px-4 py-2.5 rounded-full border border-blue-500/20 transition-all min-h-[44px]"
                           >
                             <Play size={14} className="fill-blue-400" />
                             Assistir depoimento
@@ -342,38 +352,41 @@ function TestimonialsSection() {
 
             <button
               onClick={() => paginate(1)}
-              className="shrink-0 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
+              className="shrink-0 w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
               aria-label="Próximo depoimento"
             >
               <ChevronRight size={18} />
             </button>
           </div>
 
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-1 mt-8">
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "w-8 bg-blue-400" : "w-2 bg-white/20 hover:bg-white/40"
-                }`}
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label={`Ir para depoimento ${i + 1}`}
-              />
+              >
+                <span className={`block h-2 rounded-full transition-all duration-300 ${
+                  i === current ? "w-8 bg-blue-400" : "w-2 bg-white/20 hover:bg-white/40"
+                }`} />
+              </button>
             ))}
           </div>
 
           <div className="hidden lg:grid grid-cols-3 gap-4 mt-8">
             {[prev, t, next].map((item, i) => (
-              <div
+              <button
                 key={`preview-${item.name}`}
                 onClick={() => {
                   if (i === 0) paginate(-1);
                   if (i === 2) paginate(1);
                 }}
-                className={`p-4 rounded-xl border transition-all duration-300 cursor-pointer ${
+                aria-label={i === 0 ? "Depoimento anterior" : i === 2 ? "Próximo depoimento" : `Depoimento atual: ${item.name}`}
+                className={`p-4 rounded-xl border transition-all duration-300 text-left ${
                   i === 1
                     ? "bg-white/5 border-blue-500/30"
-                    : "bg-white/[0.02] border-white/5 hover:border-white/10 hover:bg-white/[0.04]"
+                    : "bg-white/[0.02] border-white/5 hover:border-white/10 hover:bg-white/[0.04] cursor-pointer"
                 }`}
               >
                 <p className="text-xs text-navy-300 line-clamp-2 leading-relaxed mb-2 italic">
@@ -383,7 +396,7 @@ function TestimonialsSection() {
                   {item.name}
                 </p>
                 <p className="text-[10px] text-navy-500">{item.company}</p>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -399,8 +412,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-
       {/* ══════ HERO ══════ */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
         <div className="mesh-gradient" />
@@ -414,6 +425,7 @@ export default function Home() {
             aria-hidden="true"
             className="w-full h-full object-cover opacity-20"
             fetchPriority="high"
+            loading="eager"
             width={1920}
             height={1080}
           />
@@ -547,10 +559,22 @@ export default function Home() {
           >
             {[...Array(2)].map((_, setIdx) => (
               <div key={setIdx} className="flex gap-16 items-center">
-                {["MRV", "DIRECIONAL", "TENDA", "CURY", "CYRELA", "EVEN", "PATRIMAR", "KALLAS", "TEGRA", "GAFISA"].map((client) => (
-                  <span key={`${setIdx}-${client}`} className="text-xl lg:text-2xl font-extrabold text-white/20 hover:text-white/50 tracking-[0.2em] transition-colors duration-500 select-none">
-                    {client}
-                  </span>
+                {clients.map((client) => (
+                  client.logo ? (
+                    <img
+                      key={`${setIdx}-${client.name}`}
+                      src={client.logo}
+                      alt={client.name}
+                      className="h-6 lg:h-8 w-auto opacity-30 hover:opacity-60 transition-opacity duration-500 select-none brightness-0 invert"
+                      width={120}
+                      height={32}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span key={`${setIdx}-${client.name}`} className="text-xl lg:text-2xl font-extrabold text-white/20 hover:text-white/50 tracking-[0.2em] transition-colors duration-500 select-none">
+                      {client.name}
+                    </span>
+                  )
                 ))}
               </div>
             ))}
@@ -560,7 +584,7 @@ export default function Home() {
 
       {/* ══════ PRODUTO 1: PROJETOS ══════ */}
       <div className="section-divider" />
-      <section id="solucoes" className="py-24 lg:py-32 overflow-hidden">
+      <section id="solucoes" className="py-16 sm:py-20 lg:py-32 overflow-hidden">
         <div className="container">
           <SectionReveal>
             <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -625,7 +649,7 @@ export default function Home() {
 
       {/* ══════ PRODUTO 2: WORKFORCE ══════ */}
       <div className="section-divider" />
-      <section className="py-24 lg:py-32 overflow-hidden bg-navy-900/30">
+      <section className="py-16 sm:py-20 lg:py-32 overflow-hidden bg-navy-900/30">
         <div className="container">
           <SectionReveal>
             <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
@@ -690,7 +714,7 @@ export default function Home() {
 
       {/* ══════ PRODUTO 3: AGENTES GD4 ══════ */}
       <div className="section-divider" />
-      <section className="py-24 lg:py-32 relative overflow-hidden">
+      <section className="py-16 sm:py-20 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={IMAGES.aiAgents}
@@ -808,7 +832,7 @@ export default function Home() {
 
       {/* ══════ ATORES DA CONSTRUÇÃO ══════ */}
       <div className="section-divider" />
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -909,7 +933,7 @@ export default function Home() {
 
       {/* ══════ JORNADA DA CONSTRUÇÃO INTELIGENTE ══════ */}
       <div className="section-divider" />
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -952,7 +976,7 @@ export default function Home() {
 
       {/* ══════ POR QUE AUTODOC ══════ */}
       <div className="section-divider" />
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -1019,7 +1043,7 @@ export default function Home() {
 
       {/* ══════ COMPARATIVO DE PRODUTOS ══════ */}
       <div className="section-divider" />
-      <section className="py-24 lg:py-32 bg-navy-900/30">
+      <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -1094,7 +1118,7 @@ export default function Home() {
 
       {/* ══════ FAQ ══════ */}
       <div className="section-divider" />
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container max-w-3xl">
           <SectionReveal>
             <div className="text-center mb-12">
@@ -1138,7 +1162,7 @@ export default function Home() {
 
       {/* ══════ SEGURANÇA E CERTIFICAÇÕES ══════ */}
       <div className="section-divider" />
-      <section className="py-24 lg:py-32 bg-navy-900/30">
+      <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -1201,7 +1225,6 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 }

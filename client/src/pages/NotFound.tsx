@@ -1,13 +1,9 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, SearchX } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
 
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="mesh-gradient" />
@@ -45,7 +41,6 @@ export default function NotFound() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

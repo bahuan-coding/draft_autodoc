@@ -1,8 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, Bot, Zap, Shield, Clock, CheckCircle2, Timer } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import SectionReveal from "@/components/SectionReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import CTASection from "@/components/sections/CTASection";
@@ -14,8 +12,6 @@ export default function AgentesGD4() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -79,7 +75,7 @@ export default function AgentesGD4() {
       </section>
 
       {/* What are GD4 */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="max-w-3xl mx-auto">
@@ -120,7 +116,7 @@ export default function AgentesGD4() {
       </section>
 
       {/* How it works */}
-      <section className="py-24 lg:py-32 bg-navy-900/30">
+      <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -150,7 +146,7 @@ export default function AgentesGD4() {
       </section>
 
       {/* 21 Agents by Category */}
-      <section id="agentes" className="py-24 lg:py-32">
+      <section id="agentes" className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -211,7 +207,7 @@ export default function AgentesGD4() {
       </section>
 
       {/* Impact Metrics */}
-      <section className="py-24 lg:py-32 bg-navy-900/30">
+      <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -239,7 +235,7 @@ export default function AgentesGD4() {
       </section>
 
       {/* Impacto Ambiental */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -263,7 +259,7 @@ export default function AgentesGD4() {
       </section>
 
       {/* Roadmap */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -304,7 +300,6 @@ export default function AgentesGD4() {
         glow="amber"
       />
 
-      <Footer />
     </div>
   );
 }

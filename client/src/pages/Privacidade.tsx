@@ -1,13 +1,9 @@
 import { Link } from "wouter";
 import { ArrowLeft, Shield } from "lucide-react";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-
 export default function Privacidade() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
 
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="mesh-gradient" />
@@ -115,7 +111,6 @@ export default function Privacidade() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

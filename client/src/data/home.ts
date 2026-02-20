@@ -19,8 +19,22 @@ export const stats: Stat[] = [
   { value: 60, suffix: "", label: "das 100 maiores construtoras", icon: Shield },
 ];
 
-export const clients = [
-  "MRV", "DIRECIONAL", "TENDA", "CURY", "CYRELA", "EVEN", "PATRIMAR", "KALLAS", "TEGRA", "GAFISA",
+export interface ClientLogo {
+  name: string;
+  logo?: string;
+}
+
+export const clients: ClientLogo[] = [
+  { name: "CYRELA", logo: "/logos/cyrela-logo.png" },
+  { name: "MRV", logo: "/logos/mrv-logo.png" },
+  { name: "DIRECIONAL", logo: "/logos/direcional-logo.png" },
+  { name: "TENDA", logo: "/logos/tenda-logo.png" },
+  { name: "CURY", logo: "/logos/cury-logo.png" },
+  { name: "EVEN", logo: "/logos/even-logo.png" },
+  { name: "TEGRA", logo: "/logos/tegra-logo.png" },
+  { name: "PATRIMAR", logo: "/logos/patrimar-logo.svg" },
+  { name: "KALLAS", logo: "/logos/kallas-logo.png" },
+  { name: "GAFISA", logo: "/logos/gafisa-logo.svg" },
 ];
 
 export interface Persona {
@@ -107,6 +121,7 @@ export interface Testimonial {
   role: string;
   company: string;
   video?: string;
+  photo?: string;
   inMemoriam?: boolean;
 }
 
@@ -117,6 +132,7 @@ export const testimonials: Testimonial[] = [
     role: "CEO",
     company: "Qu4ttro Arquitetos Associados",
     video: "https://www.youtube.com/watch?v=1AHWDr61QJ0",
+    photo: "/testimonials/paula-dias.png",
   },
   {
     quote: "O GD4 nos atende em todas as nossas necessidades. É uma ferramenta de fácil uso, intuitiva e que atende todas as nossas áreas de apoio.",
@@ -124,6 +140,7 @@ export const testimonials: Testimonial[] = [
     role: "Vice-presidente",
     company: "P4 Engenharia",
     video: "https://www.youtube.com/watch?v=9PyJOeXnjRQ",
+    photo: "/testimonials/thiago-sanches.webp",
   },
   {
     quote: "A Kallas não poderia deixar de ter uma ferramenta de última geração que consiga controlar a entrada das pessoas e suas documentações dentro das nossas obras. O sistema GD4 é essencial para isso.",
@@ -131,6 +148,7 @@ export const testimonials: Testimonial[] = [
     role: "Diretor Executivo",
     company: "Kallas Construtora",
     video: "https://www.youtube.com/watch?v=EOYG0ZY4G-Y",
+    photo: "/testimonials/david-fratel.png",
   },
   {
     quote: "Já passei por outras empresas e trabalhei em obras com 950 profissionais. O controle era visual e o risco era grande pela falta de controle. O GD4 foi uma melhoria muito grande para as construtoras porque garante a integridade dos funcionários e controle em obras.",
@@ -138,6 +156,7 @@ export const testimonials: Testimonial[] = [
     role: "Administrador",
     company: "Tegra Incorporadora",
     video: "https://www.youtube.com/watch?v=6HuId6FqcEc",
+    photo: "/testimonials/francisco-wanderley.png",
     inMemoriam: true,
   },
   {
@@ -146,6 +165,7 @@ export const testimonials: Testimonial[] = [
     role: "Sócio-Diretor",
     company: "GP&D Consultoria e Projetos",
     video: "https://www.youtube.com/watch?v=ZknPfqo5fhQ",
+    photo: "/testimonials/alexandre-barbas.png",
   },
   {
     quote: "Uso a Autodoc há mais de 15 anos. É uma ferramenta bem completa que traz para a gente uma bagagem histórica muito boa e nos permite replicar modelos. Usamos muito a Autodoc para dividir conhecimento com outras áreas internas da Lavvi.",
@@ -153,6 +173,7 @@ export const testimonials: Testimonial[] = [
     role: "Gerente de Projetos",
     company: "LAVVI",
     video: "https://www.youtube.com/watch?v=rzEXiyAAapk",
+    photo: "/testimonials/marina-gabrieli.png",
   },
   {
     quote: "Com a catraca torniquete temos maior assertividade na condução do controle de acesso e na certeza de que as pessoas que estão entrando no canteiro estão realmente autorizadas.",
@@ -160,12 +181,14 @@ export const testimonials: Testimonial[] = [
     role: "Diretor Executivo de Operações",
     company: "Even Construtora",
     video: "https://www.youtube.com/watch?v=Vsbou6y7qYo",
+    photo: "/testimonials/marcelo-moraes.png",
   },
   {
     quote: "O Diário de Obras do Autodoc chegou para otimizar a forma de fazermos os registros diários. Antes de implementarmos a ferramenta, tínhamos que utilizar papel e caneta para fazer o campo, anotando para, depois, atualizarmos em uma planilha de Excel.",
     name: "Ana Carolina Bonifacio",
     role: "Coordenadora",
     company: "P4 Engenharia",
+    photo: "/testimonials/ana-carolina.png",
   },
 ];
 

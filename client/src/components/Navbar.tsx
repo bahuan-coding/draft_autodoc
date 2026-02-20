@@ -45,7 +45,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Navegação principal">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 <span
@@ -85,9 +85,10 @@ export default function Navbar() {
           </div>
 
           <button
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-white p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Menu"
+            aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -102,7 +103,7 @@ export default function Navbar() {
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="lg:hidden bg-navy-950/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
             >
-              <div className="container py-6 flex flex-col gap-2">
+              <nav aria-label="Menu mobile" className="container py-6 flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href}>
                     <span
@@ -131,7 +132,7 @@ export default function Navbar() {
                     </span>
                   </Link>
                 </div>
-              </div>
+              </nav>
             </motion.div>
           )}
         </AnimatePresence>

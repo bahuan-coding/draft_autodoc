@@ -1,7 +1,5 @@
 import { Link } from "wouter";
 import { ArrowRight, FolderOpen } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import SectionReveal from "@/components/SectionReveal";
 import PageHero from "@/components/sections/PageHero";
 import FeatureGrid from "@/components/sections/FeatureGrid";
@@ -12,8 +10,6 @@ import { features, disciplines } from "@/data/projetos";
 export default function Projetos() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-
       <PageHero
         icon={FolderOpen}
         iconColor="text-blue-400"
@@ -61,7 +57,7 @@ export default function Projetos() {
       </section>
 
       {/* How it works */}
-      <section className="py-24 lg:py-32">
+      <section className="py-16 sm:py-20 lg:py-32">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -91,7 +87,7 @@ export default function Projetos() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-24 lg:py-32 bg-navy-900/30">
+      <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
@@ -117,7 +113,6 @@ export default function Projetos() {
         glow="blue"
       />
 
-      <Footer />
     </div>
   );
 }
