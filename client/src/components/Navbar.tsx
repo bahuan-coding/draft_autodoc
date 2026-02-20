@@ -47,9 +47,9 @@ export default function Navbar() {
 
           <nav className="hidden lg:flex items-center gap-1" aria-label="Navegação principal">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <span
-                  className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                <Link key={link.href} href={link.href} className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-lg">
+                  <span
+                    className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     location === link.href
                       ? "text-white bg-white/10"
                       : "text-navy-300 hover:text-white hover:bg-white/5"
@@ -73,19 +73,20 @@ export default function Navbar() {
               href="https://autodoc.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-navy-300 hover:text-white transition-colors px-4 py-2"
+              className="text-sm font-medium text-navy-300 hover:text-white transition-colors px-4 py-2 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md"
             >
               Entrar
             </a>
-            <Link href="/#demonstracao">
-              <span className="text-sm font-semibold bg-blue-500 hover:bg-blue-400 text-white px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.03] active:scale-[0.97]">
+            <Link href="/#demonstracao" className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-lg inline-block">
+              <span className="text-sm font-semibold bg-blue-500 hover:bg-blue-400 text-white px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.03] active:scale-[0.97] block">
                 Teste Grátis
               </span>
             </Link>
           </div>
 
           <button
-            className="lg:hidden text-white p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center"
+            type="button"
+            className="lg:hidden text-white p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-lg"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={mobileOpen}

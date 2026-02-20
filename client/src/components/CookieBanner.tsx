@@ -45,14 +45,16 @@ export default function CookieBanner() {
               </p>
               <div className="flex gap-3 shrink-0">
                 <button
+                  type="button"
                   onClick={handleReject}
-                  className="text-sm font-medium text-navy-400 hover:text-white px-4 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-colors min-h-[44px]"
+                  className="text-sm font-medium text-navy-400 hover:text-white px-4 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-colors min-h-[44px] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
                 >
                   Rejeitar
                 </button>
                 <button
+                  type="button"
                   onClick={handleAccept}
-                  className="text-sm font-semibold bg-blue-500 hover:bg-blue-400 text-white px-5 py-2.5 rounded-lg transition-colors min-h-[44px]"
+                  className="text-sm font-semibold bg-blue-500 hover:bg-blue-400 text-white px-5 py-2.5 rounded-lg transition-colors min-h-[44px] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
                 >
                   Aceitar
                 </button>

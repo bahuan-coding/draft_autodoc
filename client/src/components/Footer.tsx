@@ -46,7 +46,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/autodoc-tecnologia/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-blue-500/20 flex items-center justify-center transition-colors"
+                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-blue-500/20 flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={16} className="text-navy-400 hover:text-blue-400" />
@@ -55,7 +55,7 @@ export default function Footer() {
                 href="https://www.instagram.com/autodoc.tech/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-pink-500/20 flex items-center justify-center transition-colors"
+                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-pink-500/20 flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                 aria-label="Instagram"
               >
                 <Instagram size={16} className="text-navy-400" />
@@ -64,7 +64,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@AutodocTecnologia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-red-500/20 flex items-center justify-center transition-colors"
+                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-red-500/20 flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
                 aria-label="YouTube"
               >
                 <Youtube size={16} className="text-navy-400" />
@@ -80,7 +80,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.solucoes.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href}>
+                  <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
                     <span className="text-sm text-navy-400 hover:text-white transition-colors">
                       {link.label}
                     </span>
@@ -103,13 +103,13 @@ export default function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-navy-400 hover:text-white transition-colors"
+                      className="text-sm text-navy-400 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block"
                       aria-label={`${link.label} (abre em nova aba)`}
                     >
                       {link.label}
                     </a>
                   ) : (
-                    <Link href={link.href}>
+                    <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
                       <span className="text-sm text-navy-400 hover:text-white transition-colors">
                         {link.label}
                       </span>
@@ -133,13 +133,13 @@ export default function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-navy-400 hover:text-white transition-colors"
+                      className="text-sm text-navy-400 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block"
                       aria-label={`${link.label} (abre em nova aba)`}
                     >
                       {link.label}
                     </a>
                   ) : (
-                    <Link href={link.href}>
+                    <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
                       <span className="text-sm text-navy-400 hover:text-white transition-colors">
                         {link.label}
                       </span>
