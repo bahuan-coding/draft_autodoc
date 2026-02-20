@@ -77,12 +77,11 @@ export default function Navbar() {
             >
               Entrar
             </a>
-            <a
-              href="#contato"
-              className="text-sm font-semibold bg-blue-500 hover:bg-blue-400 text-white px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.03] active:scale-[0.97]"
-            >
-              Teste Grátis
-            </a>
+            <Link href="/#demonstracao">
+              <span className="text-sm font-semibold bg-blue-500 hover:bg-blue-400 text-white px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.03] active:scale-[0.97]">
+                Teste Grátis
+              </span>
+            </Link>
           </div>
 
           <button
@@ -126,12 +125,11 @@ export default function Navbar() {
                   >
                     Entrar
                   </a>
-                  <a
-                    href="#contato"
-                    className="text-center text-sm font-semibold bg-blue-500 text-white px-5 py-3 rounded-lg"
-                  >
-                    Teste Grátis
-                  </a>
+                  <Link href="/#demonstracao">
+                    <span className="block text-center text-sm font-semibold bg-blue-500 text-white px-5 py-3 rounded-lg">
+                      Teste Grátis
+                    </span>
+                  </Link>
                 </div>
               </div>
             </motion.div>

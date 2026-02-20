@@ -21,13 +21,96 @@
     <meta name="twitter:description" content="Gestão de projetos, documentos, fornecedores e canteiro em uma só plataforma." />
     <meta name="twitter:image" content="/images/autodoc-hero.webp" />
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://autodoc.com.br" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Fonts -->
+    <!-- Fonts (preconnect + subset optimization) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap&subset=latin,latin-ext"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap&subset=latin,latin-ext" rel="stylesheet" />
+
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Autodoc Processamento de Dados Ltda",
+      "url": "https://autodoc.com.br",
+      "logo": "https://autodoc.com.br/favicon.svg",
+      "description": "Plataforma líder em gestão de projetos, documentos e mão de obra para construção civil.",
+      "telephone": "+55-11-5043-7900",
+      "taxID": "04.714.448/0001-28",
+      "sameAs": [
+        "https://www.linkedin.com/company/autodoc-tecnologia/",
+        "https://www.instagram.com/autodoc.tech/",
+        "https://www.youtube.com/@AutodocTecnologia"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BR"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Autodoc Projetos",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "CDE (Common Data Environment) para gestão de projetos, plantas e documentos de construção civil.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL",
+        "description": "Solicite uma demonstração gratuita"
+      }
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O que é o Autodoc?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O Autodoc é uma plataforma de gestão digital para construção civil que integra projetos, documentos, fornecedores e mão de obra em um único ambiente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a diferença entre Autodoc Projetos e Autodoc Workforce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O Autodoc Projetos é um CDE para gestão de projetos arquitetônicos e documentos técnicos. O Autodoc Workforce é focado em gestão de fornecedores, compliance trabalhista e controle de acesso ao canteiro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que são os Agentes GD4?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os Agentes GD4 são 21 sistemas de inteligência artificial especializados em validação automática de documentos da construção civil."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

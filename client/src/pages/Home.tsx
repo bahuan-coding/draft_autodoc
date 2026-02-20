@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useId } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import {
@@ -13,6 +13,9 @@ import {
   Building2,
   Zap,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Play,
   Phone,
   MessageCircle,
   FileCheck,
@@ -27,12 +30,16 @@ import {
   Fingerprint,
   AlertTriangle,
   FileSearch,
+  HardHat,
+  Ruler,
+  Briefcase,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionReveal from "@/components/SectionReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { IMAGES } from "@/lib/images";
+import { testimonials } from "@/data/home";
 
 const typingPhrases = [
   "projetos e plantas.",
@@ -77,10 +84,17 @@ function useTypingEffect(phrases: string[], typingSpeed = 80, deletingSpeed = 40
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
+  const id = useId();
+  const panelId = `faq-panel-${id}`;
+  const buttonId = `faq-btn-${id}`;
+
   return (
     <div className="border-b border-white/5 last:border-0">
       <button
+        id={buttonId}
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={panelId}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
         <span className="text-base sm:text-lg font-semibold text-white group-hover:text-blue-400 transition-colors pr-4">
@@ -97,6 +111,9 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            id={panelId}
+            role="region"
+            aria-labelledby={buttonId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -123,6 +140,258 @@ function Particles() {
   );
 }
 
+function DemoForm() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  return (
+    <section id="demonstracao" className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src={IMAGES.construction}
+          alt=""
+          className="w-full h-full object-cover opacity-12"
+          loading="lazy"
+          role="presentation"
+          aria-hidden="true"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-950" />
+      </div>
+
+      <div className="container relative z-10">
+        <SectionReveal>
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+                Sua obra no controle{" "}
+                <span className="gradient-text">começa aqui.</span>
+              </h2>
+              <p className="text-navy-300 text-lg">
+                Junte-se a mais de 3.500 empresas. Agende uma demonstração personalizada.
+              </p>
+            </div>
+
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="glass-card p-10 text-center"
+              >
+                <CheckCircle2 size={48} className="text-emerald-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Solicitação enviada!</h3>
+                <p className="text-navy-300">Nossa equipe entrará em contato em até 24 horas.</p>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="glass-card p-8 sm:p-10 space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="demo-name" className="block text-sm font-medium text-navy-300 mb-1.5">Nome *</label>
+                    <input id="demo-name" name="name" required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-navy-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-colors" placeholder="Seu nome completo" />
+                  </div>
+                  <div>
+                    <label htmlFor="demo-company" className="block text-sm font-medium text-navy-300 mb-1.5">Empresa *</label>
+                    <input id="demo-company" name="company" required type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-navy-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-colors" placeholder="Nome da empresa" />
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="demo-email" className="block text-sm font-medium text-navy-300 mb-1.5">E-mail *</label>
+                    <input id="demo-email" name="email" required type="email" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-navy-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-colors" placeholder="seu@email.com" />
+                  </div>
+                  <div>
+                    <label htmlFor="demo-phone" className="block text-sm font-medium text-navy-300 mb-1.5">Telefone</label>
+                    <input id="demo-phone" name="phone" type="tel" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-navy-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-colors" placeholder="(11) 99999-9999" />
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="demo-role" className="block text-sm font-medium text-navy-300 mb-1.5">Cargo</label>
+                    <input id="demo-role" name="role" type="text" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder:text-navy-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-colors" placeholder="Diretor de Engenharia" />
+                  </div>
+                  <div>
+                    <label htmlFor="demo-obras" className="block text-sm font-medium text-navy-300 mb-1.5">Nº de obras</label>
+                    <select id="demo-obras" name="obras" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-colors">
+                      <option value="" className="bg-navy-950">Selecione</option>
+                      <option value="1-5" className="bg-navy-950">1 a 5</option>
+                      <option value="6-20" className="bg-navy-950">6 a 20</option>
+                      <option value="21-50" className="bg-navy-950">21 a 50</option>
+                      <option value="51-100" className="bg-navy-950">51 a 100</option>
+                      <option value="100+" className="bg-navy-950">Mais de 100</option>
+                    </select>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-blue-500 hover:bg-blue-400 text-white font-semibold py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.01] active:scale-[0.99] text-base"
+                >
+                  Agendar Demonstração Gratuita
+                </button>
+                <p className="text-xs text-navy-500 text-center">
+                  Ao enviar, você concorda com nossa{" "}
+                  <Link href="/privacidade"><span className="text-blue-400 hover:underline">Política de Privacidade</span></Link>.
+                </p>
+              </form>
+            )}
+          </div>
+        </SectionReveal>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const total = testimonials.length;
+
+  const paginate = (dir: number) => {
+    setDirection(dir);
+    setCurrent((prev) => (prev + dir + total) % total);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => paginate(1), 6000);
+    return () => clearInterval(timer);
+  }, [current]);
+
+  const t = testimonials[current];
+  const prev = testimonials[(current - 1 + total) % total];
+  const next = testimonials[(current + 1) % total];
+
+  return (
+    <section className="py-24 lg:py-32 bg-navy-900/30 overflow-hidden">
+      <div className="container">
+        <SectionReveal>
+          <div className="text-center mb-6">
+            <span className="text-xs text-navy-500 uppercase tracking-widest font-medium">
+              Opinião de quem usa
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-5">
+              A plataforma das maiores{" "}
+              <span className="gradient-text">construtoras do Brasil</span>
+            </h2>
+          </div>
+        </SectionReveal>
+
+        <div className="relative max-w-5xl mx-auto">
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => paginate(-1)}
+              className="shrink-0 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
+              aria-label="Depoimento anterior"
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            <div className="flex-1 relative min-h-[280px] sm:min-h-[240px]">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={current}
+                  custom={direction}
+                  initial={{ opacity: 0, x: direction * 60 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: direction * -60 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="glass-card gradient-border p-8 sm:p-10"
+                >
+                  <div className="flex flex-col sm:flex-row gap-8">
+                    <div className="flex-1">
+                      <div className="flex gap-1 mb-5">
+                        {[...Array(5)].map((_, j) => (
+                          <Star key={j} size={14} className="text-amber-400 fill-amber-400" />
+                        ))}
+                      </div>
+                      <blockquote className="text-navy-200 text-base sm:text-lg leading-relaxed mb-6 italic">
+                        "{t.quote}"
+                      </blockquote>
+                      <div className="flex items-center justify-between flex-wrap gap-4">
+                        <div>
+                          <p className="text-white font-semibold">
+                            {t.name}
+                            {t.inMemoriam && (
+                              <span className="text-navy-500 text-xs font-normal ml-2">in memoriam</span>
+                            )}
+                          </p>
+                          <p className="text-navy-400 text-sm">
+                            {t.role} — {t.company}
+                          </p>
+                        </div>
+                        {t.video && (
+                          <a
+                            href={t.video}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 bg-blue-500/10 hover:bg-blue-500/20 px-4 py-2 rounded-full border border-blue-500/20 transition-all"
+                          >
+                            <Play size={14} className="fill-blue-400" />
+                            Assistir depoimento
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <button
+              onClick={() => paginate(1)}
+              className="shrink-0 w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
+              aria-label="Próximo depoimento"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  i === current ? "w-8 bg-blue-400" : "w-2 bg-white/20 hover:bg-white/40"
+                }`}
+                aria-label={`Ir para depoimento ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          <div className="hidden lg:grid grid-cols-3 gap-4 mt-8">
+            {[prev, t, next].map((item, i) => (
+              <div
+                key={`preview-${item.name}`}
+                onClick={() => {
+                  if (i === 0) paginate(-1);
+                  if (i === 2) paginate(1);
+                }}
+                className={`p-4 rounded-xl border transition-all duration-300 cursor-pointer ${
+                  i === 1
+                    ? "bg-white/5 border-blue-500/30"
+                    : "bg-white/[0.02] border-white/5 hover:border-white/10 hover:bg-white/[0.04]"
+                }`}
+              >
+                <p className="text-xs text-navy-300 line-clamp-2 leading-relaxed mb-2 italic">
+                  "{item.quote}"
+                </p>
+                <p className={`text-xs font-semibold ${i === 1 ? "text-white" : "text-navy-400"}`}>
+                  {item.name}
+                </p>
+                <p className="text-[10px] text-navy-500">{item.company}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   const typedText = useTypingEffect(typingPhrases);
   const { scrollYProgress } = useScroll();
@@ -141,8 +410,12 @@ export default function Home() {
           <img
             src={IMAGES.hero}
             alt=""
+            role="presentation"
+            aria-hidden="true"
             className="w-full h-full object-cover opacity-20"
             fetchPriority="high"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/40 via-navy-950/70 to-navy-950" />
         </motion.div>
@@ -193,16 +466,19 @@ export default function Home() {
               className="flex flex-wrap gap-4"
             >
               <a
-                href="#solucoes"
+                href="#demonstracao"
                 className="group inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 text-base hover:scale-[1.02] active:scale-[0.98]"
               >
                 Agendar Demonstração
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#contato"
+                href="https://wa.me/551150437900"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white font-medium px-7 py-3.5 rounded-xl border border-white/10 transition-all duration-300 text-base hover:scale-[1.02] active:scale-[0.98]"
               >
+                <MessageCircle size={16} />
                 Fale com um Especialista
               </a>
             </motion.div>
@@ -254,19 +530,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════ SOCIAL PROOF ══════ */}
-      <section className="py-12 bg-navy-900/20">
+      {/* ══════ SOCIAL PROOF — MARQUEE ══════ */}
+      <section className="py-12 bg-navy-900/20 overflow-hidden">
         <div className="container">
           <p className="text-center text-xs text-navy-500 uppercase tracking-widest font-medium mb-6">
             Confiado pelas maiores construtoras e incorporadoras do Brasil
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-10 lg:gap-16">
-            {["MRV", "DIRECIONAL", "TENDA", "CURY", "CYRELA", "EVEN", "PATRIMAR"].map((client) => (
-              <span key={client} className="text-lg lg:text-xl font-bold text-white/30 hover:text-white/60 tracking-wider transition-colors duration-300">
-                {client}
-              </span>
+        </div>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-navy-950 to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-navy-950 to-transparent z-10" />
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            className="flex gap-16 items-center whitespace-nowrap"
+          >
+            {[...Array(2)].map((_, setIdx) => (
+              <div key={setIdx} className="flex gap-16 items-center">
+                {["MRV", "DIRECIONAL", "TENDA", "CURY", "CYRELA", "EVEN", "PATRIMAR", "KALLAS", "TEGRA", "GAFISA"].map((client) => (
+                  <span key={`${setIdx}-${client}`} className="text-xl lg:text-2xl font-extrabold text-white/20 hover:text-white/50 tracking-[0.2em] transition-colors duration-500 select-none">
+                    {client}
+                  </span>
+                ))}
+              </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -298,7 +586,7 @@ export default function Home() {
                     { icon: Send, label: "Distribuição Automática" },
                     { icon: ClipboardCheck, label: "Workflow de Aprovação" },
                     { icon: Layers, label: "Visualizador BIM Integrado" },
-                    { icon: Eye, label: "RDO — Registro de Obra" },
+                    { icon: Eye, label: "RDO — Registro Diário de Obra" },
                   ].map((feat) => (
                     <div key={feat.label} className="flex items-center gap-2.5 text-sm text-navy-200">
                       <feat.icon size={15} className="text-blue-400 shrink-0" />
@@ -324,6 +612,8 @@ export default function Home() {
                       alt="Autodoc Projetos - CDE"
                       className="w-full rounded-xl"
                       loading="lazy"
+                      width={640}
+                      height={400}
                     />
                   </div>
                 </div>
@@ -387,6 +677,8 @@ export default function Home() {
                       alt="Autodoc Workforce"
                       className="w-full rounded-xl"
                       loading="lazy"
+                      width={640}
+                      height={400}
                     />
                   </div>
                 </div>
@@ -403,8 +695,12 @@ export default function Home() {
           <img
             src={IMAGES.aiAgents}
             alt=""
+            role="presentation"
+            aria-hidden="true"
             className="w-full h-full object-cover opacity-12"
             loading="lazy"
+            width={1920}
+            height={1080}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/90 to-navy-950" />
         </div>
@@ -510,6 +806,80 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ══════ ATORES DA CONSTRUÇÃO ══════ */}
+      <div className="section-divider" />
+      <section className="py-24 lg:py-32">
+        <div className="container">
+          <SectionReveal>
+            <div className="text-center mb-16">
+              <span className="text-sm font-medium text-blue-400 uppercase tracking-wider">
+                Para cada ator da construção
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-5">
+                Uma solução para cada{" "}
+                <span className="gradient-text">papel na obra</span>
+              </h2>
+              <p className="text-navy-400 text-lg max-w-2xl mx-auto">
+                Incorporadores, construtores, projetistas e empreiteiros — todos encontram
+                na Autodoc as ferramentas certas para sua operação.
+              </p>
+            </div>
+          </SectionReveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Building2,
+                title: "Incorporador",
+                desc: "Simplifique a gestão de seus empreendimentos. Visão consolidada de projetos, documentos e compliance em todo o portfólio.",
+                link: "/projetos",
+                color: "blue",
+              },
+              {
+                icon: HardHat,
+                title: "Construtor",
+                desc: "Controle o ciclo de vida, a produtividade e a qualidade da obra. Do planejamento à entrega, tudo em uma plataforma.",
+                link: "/workforce",
+                color: "amber",
+              },
+              {
+                icon: Ruler,
+                title: "Projetista",
+                desc: "Coordene os projetos da obra e as entregas com softwares em BIM. Controle de revisões e distribuição automática.",
+                link: "/projetos",
+                color: "teal",
+              },
+              {
+                icon: Briefcase,
+                title: "Empreiteiro",
+                desc: "Gerencie equipes de forma digital. Documentação de trabalhadores, ASOs, NRs e EPIs sempre em dia.",
+                link: "/workforce",
+                color: "amber",
+              },
+            ].map((persona, i) => (
+              <SectionReveal key={i} delay={i * 0.1}>
+                <Link href={persona.link}>
+                  <div className="glass-card glass-card-hover gradient-border p-7 h-full cursor-pointer group">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${
+                      persona.color === "amber" ? "bg-amber-500/10" : persona.color === "teal" ? "bg-teal-500/10" : "bg-blue-500/10"
+                    }`}>
+                      <persona.icon size={24} className={
+                        persona.color === "amber" ? "text-amber-400" : persona.color === "teal" ? "text-teal-400" : "text-blue-400"
+                      } />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-3">{persona.title}</h3>
+                    <p className="text-sm text-navy-400 leading-relaxed mb-4">{persona.desc}</p>
+                    <span className="inline-flex items-center gap-1 text-sm text-blue-400 font-medium group-hover:gap-2 transition-all">
+                      Saiba mais <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══════ COMPLIANCE RIBBON ══════ */}
       <div className="section-divider" />
       <section className="py-14 bg-navy-900/40 border-y border-white/5">
@@ -534,6 +904,49 @@ export default function Home() {
               ))}
             </div>
           </SectionReveal>
+        </div>
+      </section>
+
+      {/* ══════ JORNADA DA CONSTRUÇÃO INTELIGENTE ══════ */}
+      <div className="section-divider" />
+      <section className="py-24 lg:py-32">
+        <div className="container">
+          <SectionReveal>
+            <div className="text-center mb-16">
+              <span className="text-sm font-medium text-blue-400 uppercase tracking-wider">
+                Nossa história
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-5">
+                Jornada da <span className="gradient-text">construção inteligente</span>
+              </h2>
+              <p className="text-navy-400 text-lg max-w-2xl mx-auto">
+                Líderes em soluções digitais para redução de riscos e aumento de produtividade na construção civil.
+              </p>
+            </div>
+          </SectionReveal>
+
+          <div className="max-w-3xl mx-auto">
+            {[
+              { year: "Era 1.0", title: "Papel", desc: "Pastas físicas, cópias heliográficas e arquivos em estantes. Risco de extravio e versões desatualizadas.", color: "navy-400" },
+              { year: "Era 2.0", title: "Digital", desc: "Digitalização de documentos, PDFs e planilhas Excel. Arquivos locais sem controle de versão.", color: "navy-300" },
+              { year: "Era 3.0", title: "Nuvem", desc: "Plataformas cloud com CDE, controle de revisões e distribuição automática. A era do Autodoc Projetos.", color: "blue-400" },
+              { year: "Era 4.0", title: "Inteligência Artificial", desc: "21 Agentes GD4 validando documentos automaticamente. Gestão de Documentos 4.0 — de minutos para segundos.", color: "amber-400" },
+            ].map((era, i) => (
+              <SectionReveal key={i} delay={i * 0.12}>
+                <div className="flex gap-6 mb-8 last:mb-0">
+                  <div className="flex flex-col items-center">
+                    <div className={`w-4 h-4 rounded-full border-2 border-${era.color} bg-navy-950 shrink-0 z-10`} />
+                    {i < 3 && <div className="w-0.5 flex-1 bg-white/5" />}
+                  </div>
+                  <div className="pb-8">
+                    <span className={`text-xs font-bold uppercase tracking-wider text-${era.color}`}>{era.year}</span>
+                    <h3 className="text-lg font-bold text-white mt-1 mb-1">{era.title}</h3>
+                    <p className="text-sm text-navy-400 leading-relaxed">{era.desc}</p>
+                  </div>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -604,62 +1017,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════ TESTIMONIALS ══════ */}
+      {/* ══════ COMPARATIVO DE PRODUTOS ══════ */}
       <div className="section-divider" />
       <section className="py-24 lg:py-32 bg-navy-900/30">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
               <span className="text-sm font-medium text-blue-400 uppercase tracking-wider">
-                Depoimentos
+                Nossas soluções
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-5">
-                Quem usa, <span className="gradient-text">recomenda</span>
+                Três produtos, uma <span className="gradient-text">plataforma</span>
               </h2>
             </div>
           </SectionReveal>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                quote: "Com o Autodoc Projetos, centralizamos mais de 2.000 plantas em uma única plataforma. O controle de revisões eliminou o retrabalho por arquivos desatualizados — algo que nos custava semanas por empreendimento.",
-                name: "Carlos Mendes",
-                role: "Diretor de Engenharia",
-                company: "Construtora Líder",
+                name: "Autodoc Projetos",
+                icon: FolderOpen,
+                color: "blue",
+                audience: "Projetistas, Coordenadores",
+                highlights: ["CDE — Ambiente Comum de Dados", "Controle de revisões", "Workflow de aprovação", "Visualizador BIM integrado", "Distribuição automática"],
+                link: "/projetos",
               },
               {
-                quote: "O Workforce transformou nossa homologação de fornecedores. Antes levávamos 5 dias para validar CND, CRF, CNDT e ASOs. Com os Agentes GD4, caiu para menos de 4 horas. É outro patamar.",
-                name: "Ana Paula Silva",
-                role: "Gerente de Suprimentos",
-                company: "Incorporadora Nacional",
+                name: "Autodoc Workforce",
+                icon: Users,
+                color: "amber",
+                audience: "Suprimentos, RH, Compliance",
+                highlights: ["Homologação de fornecedores", "Compliance trabalhista (FGTS, INSS)", "Controle de acesso biométrico", "Portal do fornecedor", "Alertas de vencimento"],
+                link: "/workforce",
               },
               {
-                quote: "Os Agentes GD4 validam ARTs, NRs e certidões automaticamente com precisão que supera a análise manual. Nosso compliance de canteiro nunca esteve tão em dia. Recomendo sem ressalvas.",
-                name: "Roberto Almeida",
-                role: "Coordenador de Compliance",
-                company: "Grupo Construtor",
+                name: "Agentes GD4",
+                icon: Bot,
+                color: "amber",
+                audience: "Toda a operação",
+                highlights: ["21 agentes de IA", "Validação automática de documentos", "Precisão >97%", "Disponível 24/7", "Orquestrador inteligente"],
+                link: "/agentes-gd4",
               },
-            ].map((testimonial, i) => (
+            ].map((product, i) => (
               <SectionReveal key={i} delay={i * 0.1}>
-                <div className="glass-card gradient-border p-7 h-full flex flex-col">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} size={14} className="text-amber-400 fill-amber-400" />
-                    ))}
+                <Link href={product.link}>
+                  <div className="glass-card gradient-border p-7 h-full flex flex-col cursor-pointer group hover:border-white/10 transition-colors">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${
+                      product.color === "amber" ? "bg-amber-500/10" : "bg-blue-500/10"
+                    }`}>
+                      <product.icon size={24} className={product.color === "amber" ? "text-amber-400" : "text-blue-400"} />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-1">{product.name}</h3>
+                    <p className="text-xs text-navy-500 mb-5">{product.audience}</p>
+                    <ul className="space-y-2.5 flex-1">
+                      {product.highlights.map((h) => (
+                        <li key={h} className="flex items-center gap-2 text-sm text-navy-300">
+                          <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                    <span className="inline-flex items-center gap-1 text-sm text-blue-400 font-medium mt-6 group-hover:gap-2 transition-all">
+                      Ver detalhes <ArrowRight size={14} />
+                    </span>
                   </div>
-                  <p className="text-navy-200 text-sm leading-relaxed mb-6 flex-1">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="pt-4 border-t border-white/5">
-                    <p className="text-white font-semibold text-sm">{testimonial.name}</p>
-                    <p className="text-navy-400 text-xs">{testimonial.role} — {testimonial.company}</p>
-                  </div>
-                </div>
+                </Link>
               </SectionReveal>
             ))}
           </div>
         </div>
       </section>
+
+      {/* ══════ TESTIMONIALS ══════ */}
+      <div className="section-divider" />
+      <TestimonialsSection />
 
       {/* ══════ FAQ ══════ */}
       <div className="section-divider" />
@@ -705,52 +1136,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════ CTA FINAL ══════ */}
+      {/* ══════ SEGURANÇA E CERTIFICAÇÕES ══════ */}
       <div className="section-divider" />
-      <section id="contato" className="py-24 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={IMAGES.construction}
-            alt=""
-            className="w-full h-full object-cover opacity-12"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-950" />
-        </div>
-
-        <div className="container relative z-10">
+      <section className="py-24 lg:py-32 bg-navy-900/30">
+        <div className="container">
           <SectionReveal>
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-                Sua obra no controle{" "}
-                <span className="gradient-text">começa aqui.</span>
+            <div className="text-center mb-16">
+              <span className="text-sm font-medium text-blue-400 uppercase tracking-wider">
+                Segurança
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-5">
+                Seus dados <span className="gradient-text">protegidos</span>
               </h2>
-              <p className="text-navy-300 text-lg mb-10">
-                Junte-se a mais de 3.500 empresas que já confiam na Autodoc.
-                Agende uma demonstração personalizada e veja na prática.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://autodoc.com.br"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 text-base hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  Agendar Demonstração
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a
-                  href="tel:+551150437900"
-                  className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-xl border border-white/10 transition-all duration-300 text-base hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  <Phone size={16} />
-                  (11) 5043-7900
-                </a>
-              </div>
             </div>
           </SectionReveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {[
+              { icon: Lock, title: "Criptografia", desc: "Dados criptografados em trânsito e em repouso (AES-256)" },
+              { icon: Shield, title: "LGPD", desc: "Em conformidade com a Lei Geral de Proteção de Dados" },
+              { icon: Clock, title: "SLA 99.9%", desc: "Alta disponibilidade com backup automático diário" },
+              { icon: Fingerprint, title: "Autenticação", desc: "Autenticação multifator e controle granular de permissões" },
+            ].map((item, i) => (
+              <SectionReveal key={i} delay={i * 0.1}>
+                <div className="glass-card p-6 text-center h-full">
+                  <div className="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon size={22} className="text-blue-400" />
+                  </div>
+                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-navy-400">{item.desc}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* ══════ FORMULÁRIO DE DEMONSTRAÇÃO ══════ */}
+      <div className="section-divider" />
+      <DemoForm />
 
       {/* ══════ CONTACT BAR ══════ */}
       <div className="bg-blue-500 py-3">

@@ -1,15 +1,26 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
+import { AnimatePresence, motion } from "framer-motion";
 import ErrorBoundary from "./components/ErrorBoundary";
+import WhatsAppFloat from "./components/WhatsAppFloat";
+import CookieBanner from "./components/CookieBanner";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
 const Home = lazy(() => import("./pages/Home"));
 const Projetos = lazy(() => import("./pages/Projetos"));
 const Workforce = lazy(() => import("./pages/Workforce"));
 const AgentesGD4 = lazy(() => import("./pages/AgentesGD4"));
+
+function ScrollToTop() {
+  const [location] = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 });
+  }, [location]);
+  return null;
+}
 
 function PageLoader() {
   return (
@@ -20,16 +31,29 @@ function PageLoader() {
 }
 
 function Router() {
+  const [location] = useLocation();
+
   return (
     <Suspense fallback={<PageLoader />}>
-      <Switch>
-        <Route path={"/"} component={Home} />
-        <Route path={"/projetos"} component={Projetos} />
-        <Route path={"/workforce"} component={Workforce} />
-        <Route path={"/agentes-gd4"} component={AgentesGD4} />
-        <Route path={"/404"} component={NotFound} />
-        <Route component={NotFound} />
-      </Switch>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={location}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
+        >
+          <Switch location={location}>
+            <Route path={"/"} component={Home} />
+            <Route path={"/projetos"} component={Projetos} />
+            <Route path={"/workforce"} component={Workforce} />
+            <Route path={"/agentes-gd4"} component={AgentesGD4} />
+            <Route path={"/privacidade"} component={lazy(() => import("./pages/Privacidade"))} />
+            <Route path={"/404"} component={NotFound} />
+            <Route component={NotFound} />
+          </Switch>
+        </motion.div>
+      </AnimatePresence>
     </Suspense>
   );
 }
@@ -40,8 +64,19 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
+          <ScrollToTop />
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold"
+          >
+            Pular para o conteúdo
+          </a>
           <div className="noise-overlay" aria-hidden="true" />
-          <Router />
+          <main id="main-content">
+            <Router />
+          </main>
+          <WhatsAppFloat />
+          <CookieBanner />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

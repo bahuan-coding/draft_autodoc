@@ -12,16 +12,16 @@ const footerLinks = {
     { label: "Agentes GD4", href: "/agentes-gd4" },
   ],
   empresa: [
-    { label: "Sobre a Autodoc", href: "#" },
-    { label: "Carreira", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Cases de Sucesso", href: "#" },
+    { label: "Sobre a Autodoc", href: "https://autodoc.com.br/sobre", external: true },
+    { label: "Carreira", href: "https://autodoc.com.br/carreiras", external: true },
+    { label: "Blog", href: "https://autodoc.com.br/blog", external: true },
+    { label: "Cases de Sucesso", href: "https://autodoc.com.br/cases", external: true },
   ],
   suporte: [
-    { label: "Fale Conosco", href: "#contato" },
-    { label: "Central de Ajuda", href: "#" },
-    { label: "Política de Privacidade", href: "#" },
-    { label: "Política de Cookies", href: "#" },
+    { label: "Fale Conosco", href: "https://wa.me/551150437900", external: true },
+    { label: "Central de Ajuda", href: "https://autodoc.com.br/suporte", external: true },
+    { label: "Política de Privacidade", href: "/privacidade" },
+    { label: "Política de Cookies", href: "/privacidade" },
   ],
 };
 
@@ -43,21 +43,27 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 pt-2">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/autodoc-tecnologia/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 hover:bg-blue-500/20 flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={16} className="text-navy-400 hover:text-blue-400" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/autodoc.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 hover:bg-pink-500/20 flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={16} className="text-navy-400" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@AutodocTecnologia"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/5 hover:bg-red-500/20 flex items-center justify-center transition-colors"
                 aria-label="YouTube"
               >
@@ -92,12 +98,22 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.empresa.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-navy-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {"external" in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-navy-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href}>
+                      <span className="text-sm text-navy-400 hover:text-white transition-colors">
+                        {link.label}
+                      </span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -111,12 +127,22 @@ export default function Footer() {
             <ul className="space-y-3">
               {footerLinks.suporte.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-navy-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {"external" in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-navy-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={link.href}>
+                      <span className="text-sm text-navy-400 hover:text-white transition-colors">
+                        {link.label}
+                      </span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

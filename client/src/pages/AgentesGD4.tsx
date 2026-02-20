@@ -1,110 +1,13 @@
-/*
- * DESIGN: Liquid Glass — Fintech Premium
- * AUDIT: Engenharia Civil — 21 Agentes GD4 com documentos reais
- * Agentes GD4 page: AI agents showcase with real civil engineering documents
- */
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  ArrowLeft,
-  Bot,
-  Zap,
-  Shield,
-  Clock,
-  CheckCircle2,
-  FileSearch,
-  FileCheck,
-  FileText,
-  Building,
-  HardHat,
-  Receipt,
-  Timer,
-  Search,
-  Landmark,
-  UserCheck,
-  FileSpreadsheet,
-  Globe,
-  Wrench,
-  ClipboardCheck,
-  BarChart3,
-  Lock,
-  GraduationCap,
-  Handshake,
-  HeartPulse,
-  Fingerprint,
-  Scale,
-  Briefcase,
-  AlertTriangle,
-  CreditCard,
-} from "lucide-react";
+import { ArrowRight, ArrowLeft, Bot, Zap, Shield, Clock, CheckCircle2, Timer } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionReveal from "@/components/SectionReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import CTASection from "@/components/sections/CTASection";
 import { IMAGES } from "@/lib/images";
-
-const agentCategories = [
-  {
-    category: "Validação de Empresa",
-    color: "blue",
-    agents: [
-      { icon: FileSearch, name: "Validador de CNPJ", desc: "Consulta Receita Federal, verifica situação cadastral, CNAE e quadro societário", time: "2 min", precision: "99.8%" },
-      { icon: FileCheck, name: "CND Federal", desc: "Valida Certidão Negativa de Débitos junto à Receita Federal e Procuradoria-Geral", time: "3 min", precision: "99.5%" },
-      { icon: Landmark, name: "CRF / FGTS", desc: "Verifica Certidão de Regularidade do FGTS na Caixa Econômica Federal", time: "2 min", precision: "99.6%" },
-      { icon: Scale, name: "CNDT Trabalhista", desc: "Valida Certidão Negativa de Débitos Trabalhistas no Tribunal Superior do Trabalho", time: "2 min", precision: "99.4%" },
-      { icon: FileText, name: "Contrato Social", desc: "Extrai dados do contrato social, verifica objeto social compatível com a atividade", time: "5 min", precision: "97.8%" },
-    ],
-  },
-  {
-    category: "Validação de Trabalhador",
-    color: "amber",
-    agents: [
-      { icon: HeartPulse, name: "ASO — Atestado de Saúde", desc: "Verifica Atestado de Saúde Ocupacional (NR-7), aptidão e data de validade", time: "3 min", precision: "99.1%" },
-      { icon: HardHat, name: "NR-18 — Segurança", desc: "Valida certificado de treinamento de Segurança na Construção Civil", time: "4 min", precision: "98.5%" },
-      { icon: AlertTriangle, name: "NR-35 — Trabalho em Altura", desc: "Verifica certificado de trabalho em altura, carga horária e validade", time: "3 min", precision: "98.7%" },
-      { icon: Zap, name: "NR-10 — Eletricidade", desc: "Valida certificado de Segurança em Instalações e Serviços em Eletricidade", time: "3 min", precision: "98.9%" },
-      { icon: Lock, name: "NR-33 — Espaços Confinados", desc: "Verifica certificado de trabalho em espaços confinados e autorização", time: "4 min", precision: "98.3%" },
-      { icon: Shield, name: "Ficha de EPI", desc: "Valida entrega e assinatura de Equipamentos de Proteção Individual (NR-6)", time: "2 min", precision: "99.2%" },
-      { icon: Fingerprint, name: "Integração do Trabalhador", desc: "Verifica certificado de integração na obra e treinamento admissional", time: "2 min", precision: "99.0%" },
-    ],
-  },
-  {
-    category: "Validação Técnica",
-    color: "teal",
-    agents: [
-      { icon: ClipboardCheck, name: "ART — CREA", desc: "Valida Anotação de Responsabilidade Técnica, responsável e escopo no CREA", time: "3 min", precision: "99.1%" },
-      { icon: Briefcase, name: "RRT — CAU", desc: "Verifica Registro de Responsabilidade Técnica de arquitetos no CAU", time: "3 min", precision: "99.0%" },
-      { icon: Building, name: "Alvará de Construção", desc: "Valida alvará emitido pela prefeitura, escopo da obra e data de validade", time: "4 min", precision: "98.5%" },
-      { icon: Globe, name: "Licença Ambiental", desc: "Verifica licença ambiental (LP, LI, LO), condicionantes e órgão emissor", time: "5 min", precision: "97.8%" },
-    ],
-  },
-  {
-    category: "Validação Fiscal",
-    color: "blue",
-    agents: [
-      { icon: FileSpreadsheet, name: "GFIP / SEFIP", desc: "Analisa Guia de Recolhimento do FGTS e Informações à Previdência Social", time: "4 min", precision: "98.6%" },
-      { icon: CreditCard, name: "GPS — Previdência", desc: "Verifica Guia da Previdência Social, valores e competência", time: "3 min", precision: "99.0%" },
-      { icon: Receipt, name: "NFS-e — Notas Fiscais", desc: "Valida Notas Fiscais de Serviço eletrônicas, ISS e retenções", time: "2 min", precision: "99.4%" },
-      { icon: BarChart3, name: "Retenções Fiscais", desc: "Verifica comprovantes de retenção de INSS 11%, IR, CSLL, PIS e COFINS", time: "4 min", precision: "98.2%" },
-    ],
-  },
-  {
-    category: "Orquestração",
-    color: "amber",
-    agents: [
-      { icon: Wrench, name: "Orquestrador GD4", desc: "Coordena todos os 20 agentes, gera relatório consolidado de compliance e score de risco", time: "1 min", precision: "99.9%" },
-    ],
-  },
-];
-
-const roadmap = [
-  { status: "live", label: "AO VIVO", title: "Validação Automática de Documentos", desc: "21 agentes validando CNPJ, CND, CRF, CNDT, ASO, NRs, ART, RRT, GFIP, NFS-e e mais." },
-  { status: "live", label: "AO VIVO", title: "Alertas Inteligentes de Vencimento", desc: "Notificações automáticas 30, 15 e 7 dias antes do vencimento de cada documento." },
-  { status: "beta", label: "EM BETA", title: "Aprendizado Contínuo", desc: "Agentes que aprendem com cada validação, melhorando precisão e reduzindo falsos positivos." },
-  { status: "planned", label: "Q3 2026", title: "Análise Preditiva de Risco", desc: "Previsão de não-conformidades antes que aconteçam, baseada em padrões históricos de fornecedores." },
-  { status: "planned", label: "Q4 2026", title: "Agentes Conversacionais", desc: "Interação via chat com fornecedores para solicitar documentos faltantes automaticamente." },
-];
+import { agentCategories, roadmap, impactMetrics, environmentalImpact } from "@/data/agentes";
 
 export default function AgentesGD4() {
   const totalAgents = agentCategories.reduce((sum, cat) => sum + cat.agents.length, 0);
@@ -116,7 +19,7 @@ export default function AgentesGD4() {
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={IMAGES.aiAgents} alt="" className="w-full h-full object-cover opacity-20" loading="eager" />
+          <img src={IMAGES.aiAgents} alt="" role="presentation" aria-hidden="true" className="w-full h-full object-cover opacity-20" loading="eager" width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-950/70 to-navy-950" />
         </div>
 
@@ -318,12 +221,7 @@ export default function AgentesGD4() {
           </SectionReveal>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {[
-              { value: 80, suffix: "%", label: "Redução de Tempo", desc: "Validações 5x mais rápidas" },
-              { value: 97, suffix: "%+", label: "Precisão Média", desc: "Superior à análise manual" },
-              { value: 65, suffix: "%", label: "Menos Retrabalho", desc: "Acerto na primeira vez" },
-              { value: 24, suffix: "/7", label: "Disponibilidade", desc: "Validações a qualquer hora" },
-            ].map((metric, i) => (
+            {impactMetrics.map((metric, i) => (
               <SectionReveal key={i} delay={i * 0.1}>
                 <div className="glass-card p-6 text-center glow-amber">
                   <AnimatedCounter
@@ -333,6 +231,30 @@ export default function AgentesGD4() {
                   />
                   <p className="text-white font-semibold mt-2">{metric.label}</p>
                   <p className="text-xs text-navy-400 mt-1">{metric.desc}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impacto Ambiental */}
+      <section className="py-24 lg:py-32">
+        <div className="container">
+          <SectionReveal>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Impacto Ambiental</h2>
+              <p className="text-navy-400 text-lg">A digitalização que faz bem para o planeta</p>
+            </div>
+          </SectionReveal>
+
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            {environmentalImpact.map((item, i) => (
+              <SectionReveal key={i} delay={i * 0.1}>
+                <div className="glass-card p-6 text-center">
+                  <p className="text-3xl lg:text-4xl font-extrabold text-emerald-400 mb-1">{item.value}</p>
+                  <p className="text-white font-semibold text-sm">{item.label}</p>
+                  <p className="text-xs text-navy-400 mt-1">{item.desc}</p>
                 </div>
               </SectionReveal>
             ))}
@@ -374,39 +296,13 @@ export default function AgentesGD4() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="demo" className="py-24 lg:py-32">
-        <div className="container">
-          <SectionReveal>
-            <div className="glass-card p-12 lg:p-16 text-center glow-amber">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Veja os Agentes GD4 em ação
-              </h2>
-              <p className="text-navy-300 text-lg mb-8 max-w-xl mx-auto">
-                Agende uma demonstração e descubra como {totalAgents} agentes de IA
-                podem automatizar a validação de documentos da sua construtora.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://autodoc.com.br"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-navy-950 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
-                >
-                  Agendar Demo ao Vivo
-                  <ArrowRight size={18} />
-                </a>
-                <a
-                  href="tel:+551150437900"
-                  className="inline-flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white font-medium px-8 py-4 rounded-xl border border-white/10 transition-all"
-                >
-                  (11) 5043-7900
-                </a>
-              </div>
-            </div>
-          </SectionReveal>
-        </div>
-      </section>
+      <CTASection
+        id="demo"
+        title="Veja os Agentes GD4 em ação"
+        description={`Agende uma demonstração e descubra como ${totalAgents} agentes de IA podem automatizar a validação de documentos da sua construtora.`}
+        ctaText="Agendar Demo ao Vivo"
+        glow="amber"
+      />
 
       <Footer />
     </div>
