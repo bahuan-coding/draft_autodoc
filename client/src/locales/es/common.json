@@ -26,7 +26,8 @@
     "salesCenter": "Centro de Ventas",
     "callPhone": "Llamar al (11) 5043-7900",
     "opensNewTab": "abre en nueva pestaña",
-    "ecosystem": "Ecosistema"
+    "ecosystem": "Ecosistema",
+    "copyright": "Autodoc Procesamiento de Datos Ltda. CNPJ: 04.714.448/0001-28"
   },
   "cookie": {
     "message": "Utilizamos cookies para mejorar tu experiencia de navegación. Al continuar, aceptas nuestra",
@@ -48,7 +49,7 @@
   "viewDetails": "Ver detalles",
   "notFound": {
     "title": "Página no encontrada",
-    "line1": "La página que buscas no existe o fue trasladada.",
+    "line1": "La página que buscas no existe o fue movida.",
     "line2": "Regresa al inicio y explora nuestras soluciones.",
     "backHome": "Volver al Inicio"
   }

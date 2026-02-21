@@ -57,7 +57,13 @@ function LanguageSync() {
     const lang = i18n.language?.substring(0, 2) ?? "pt";
     const htmlLangMap: Record<string, string> = { pt: "pt-BR", en: "en", es: "es" };
     const ogLocaleMap: Record<string, string> = { pt: "pt_BR", en: "en_US", es: "es_419" };
+    const titleMap: Record<string, string> = {
+      pt: "Autodoc — A Evolução Digital da Construção Civil",
+      en: "Autodoc — The Digital Evolution of Civil Construction",
+      es: "Autodoc — La Evolución Digital de la Construcción Civil",
+    };
     document.documentElement.lang = htmlLangMap[lang] ?? "pt-BR";
+    document.title = titleMap[lang] ?? titleMap.pt;
     const ogLocale = document.querySelector('meta[property="og:locale"]');
     if (ogLocale) ogLocale.setAttribute("content", ogLocaleMap[lang] ?? "pt_BR");
   }, [i18n.language]);

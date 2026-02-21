@@ -484,21 +484,21 @@ export default function FeaturesSection() {
           <div className="grid lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                name: "Autodoc Projetos",
+                nameKey: "nav.projetos",
                 icon: FolderOpen,
                 audienceKey: "features.products.projetosAudience",
                 highlightKeys: ["features.products.projetosH1", "features.products.projetosH2", "features.products.projetosH3", "features.products.projetosH4", "features.products.projetosH5"],
                 link: "/projetos",
               },
               {
-                name: "Autodoc Workforce",
+                nameKey: "nav.workforce",
                 icon: Users,
                 audienceKey: "features.products.workforceAudience",
                 highlightKeys: ["features.products.workforceH1", "features.products.workforceH2", "features.products.workforceH3", "features.products.workforceH4", "features.products.workforceH5"],
                 link: "/workforce",
               },
               {
-                name: "Agentes GD4",
+                nameKey: "nav.agentes",
                 icon: Bot,
                 audienceKey: "features.products.agentesAudience",
                 highlightKeys: ["features.products.agentesH1", "features.products.agentesH2", "features.products.agentesH3", "features.products.agentesH4", "features.products.agentesH5"],
@@ -511,7 +511,7 @@ export default function FeaturesSection() {
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-[#FB0047]/10">
                       <product.icon size={24} className="text-[#FB0047]" />
                     </div>
-                    <h3 className="text-lg font-bold font-display text-white mb-1">{product.name}</h3>
+                    <h3 className="text-lg font-bold font-display text-white mb-1">{t(product.nameKey, { ns: "common" })}</h3>
                     <p className="text-xs text-[#5D5D5D] mb-5 font-display">{t(product.audienceKey)}</p>
                     <ul className="space-y-2.5 flex-1">
                       {product.highlightKeys.map((hKey) => (

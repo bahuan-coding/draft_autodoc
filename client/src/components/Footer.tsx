@@ -166,7 +166,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-[#5D5D5D]">
-            &copy; {new Date().getFullYear()} Autodoc Processamento de Dados Ltda. CNPJ: 04.714.448/0001-28
+            &copy; {new Date().getFullYear()} {t("footer.copyright")}
           </p>
           <div className="flex items-center gap-6 flex-wrap">
             <span className="text-xs text-[#5D5D5D]">{t("footer.ecosystem")}</span>
