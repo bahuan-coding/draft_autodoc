@@ -9,7 +9,7 @@ import DemoForm from "@/components/sections/DemoForm";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-black text-white">
       <HeroSection />
       
       <TrustBar />
@@ -22,14 +22,14 @@ export default function Home() {
 
       {/* ══════ SEGURANÇA E CERTIFICAÇÕES ══════ */}
       <div className="section-divider" />
-      <section className="py-16 sm:py-20 lg:py-32 bg-navy-900/30">
+      <section className="py-16 sm:py-20 lg:py-32 bg-[#0A0A0A]">
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
-              <span className="text-sm font-medium text-blue-400 uppercase tracking-wider">
+              <span className="text-sm font-semibold font-display text-[#FB0047] uppercase tracking-wider">
                 Segurança
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-5">
+              <h2 className="text-3xl sm:text-4xl font-bold font-display mt-3 mb-5">
                 Seus dados <span className="gradient-text">protegidos</span>
               </h2>
             </div>
@@ -44,11 +44,11 @@ export default function Home() {
             ].map((item, i) => (
               <SectionReveal key={i} delay={i * 0.1}>
                 <div className="glass-card p-6 text-center h-full">
-                  <div className="w-11 h-11 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
-                    <item.icon size={22} className="text-blue-400" aria-hidden="true" />
+                  <div className="w-11 h-11 rounded-xl bg-[#FB0047]/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon size={22} className="text-[#FB0047]" aria-hidden="true" />
                   </div>
-                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-sm text-navy-400">{item.desc}</p>
+                  <h3 className="text-base font-bold font-display text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#5D5D5D]" style={{ lineHeight: '150%' }}>{item.desc}</p>
                 </div>
               </SectionReveal>
             ))}
@@ -59,13 +59,13 @@ export default function Home() {
       <DemoForm />
 
       {/* ══════ CONTACT BAR ══════ */}
-      <div className="bg-blue-500 py-3">
+      <div className="bg-[#FB0047] py-3">
         <div className="container flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-          <span className="text-white font-semibold text-sm">Fale com um especialista:</span>
+          <span className="text-white font-bold font-display text-sm">Fale com um especialista:</span>
           <div className="flex items-center gap-6">
             <a
               href="tel:+551150437900"
-              className="inline-flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-sm px-1"
+              className="inline-flex items-center gap-2 text-white/90 hover:text-white text-sm font-semibold transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-sm px-1"
             >
               <Phone size={14} aria-hidden="true" />
               (11) 5043-7900
@@ -74,7 +74,7 @@ export default function Home() {
               href="https://wa.me/551150437900"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-sm font-medium px-4 py-1.5 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+              className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-sm font-bold font-display px-4 py-1.5 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
             >
               <MessageCircle size={14} aria-hidden="true" />
               WhatsApp

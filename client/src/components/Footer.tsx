@@ -1,6 +1,6 @@
 /*
- * DESIGN: Liquid Glass — Fintech Premium + Conta Azul Positioning
- * Footer: Dark navy, clean grid, subtle borders, social icons
+ * AUTODOC® Design System V2 — Footer
+ * Dark, clean, #FB0047 accents, Titillium Web headings
  */
 import { Link } from "wouter";
 import { Linkedin, Instagram, Youtube, Phone } from "lucide-react";
@@ -27,17 +27,18 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-950 border-t border-white/5">
+    <footer className="bg-black border-t border-white/5">
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/">
-              <span className="text-xl font-bold tracking-tight text-white">
-                AUTO<span className="text-blue-400">DOC</span>
+              <span className="text-xl font-bold font-display tracking-tight text-white">
+                AUTO<span className="text-[#FB0047]">DOC</span>
+                <span className="text-[#FB0047] text-[10px] align-super ml-0.5">®</span>
               </span>
             </Link>
-            <p className="text-sm text-navy-400 leading-relaxed max-w-sm">
+            <p className="text-sm text-[#5D5D5D] leading-relaxed max-w-sm" style={{ lineHeight: '180%' }}>
               A evolução digital da construção civil. Plataforma líder em gestão
               de projetos, documentos e mão de obra para as maiores construtoras do Brasil.
             </p>
@@ -46,42 +47,42 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/autodoc-tecnologia/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-blue-500/20 flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-[#FB0047]/15 flex items-center justify-center transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none group"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={16} className="text-navy-400 hover:text-blue-400" />
+                <Linkedin size={16} className="text-[#5D5D5D] group-hover:text-[#FB0047] transition-colors" />
               </a>
               <a
                 href="https://www.instagram.com/autodoc.tech/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-pink-500/20 flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-[#FB0047]/15 flex items-center justify-center transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none group"
                 aria-label="Instagram"
               >
-                <Instagram size={16} className="text-navy-400" />
+                <Instagram size={16} className="text-[#5D5D5D] group-hover:text-[#FB0047] transition-colors" />
               </a>
               <a
                 href="https://www.youtube.com/@AutodocTecnologia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-red-500/20 flex items-center justify-center transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+                className="w-11 h-11 rounded-lg bg-white/5 hover:bg-[#FB0047]/15 flex items-center justify-center transition-all duration-300 focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none group"
                 aria-label="YouTube"
               >
-                <Youtube size={16} className="text-navy-400" />
+                <Youtube size={16} className="text-[#5D5D5D] group-hover:text-[#FB0047] transition-colors" />
               </a>
             </div>
           </div>
 
           {/* Soluções */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-5 uppercase tracking-wider">
+            <h4 className="text-sm font-bold font-display text-white mb-5 uppercase tracking-wider">
               Soluções
             </h4>
             <ul className="space-y-3">
               {footerLinks.solucoes.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
-                    <span className="text-sm text-navy-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
+                    <span className="text-sm text-[#5D5D5D] hover:text-white transition-colors">
                       {link.label}
                     </span>
                   </Link>
@@ -92,7 +93,7 @@ export default function Footer() {
 
           {/* Empresa */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-5 uppercase tracking-wider">
+            <h4 className="text-sm font-bold font-display text-white mb-5 uppercase tracking-wider">
               Empresa
             </h4>
             <ul className="space-y-3">
@@ -103,14 +104,14 @@ export default function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-navy-400 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block"
+                      className="text-sm text-[#5D5D5D] hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block"
                       aria-label={`${link.label} (abre em nova aba)`}
                     >
                       {link.label}
                     </a>
                   ) : (
-                    <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
-                      <span className="text-sm text-navy-400 hover:text-white transition-colors">
+                    <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
+                      <span className="text-sm text-[#5D5D5D] hover:text-white transition-colors">
                         {link.label}
                       </span>
                     </Link>
@@ -122,7 +123,7 @@ export default function Footer() {
 
           {/* Suporte */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-5 uppercase tracking-wider">
+            <h4 className="text-sm font-bold font-display text-white mb-5 uppercase tracking-wider">
               Suporte
             </h4>
             <ul className="space-y-3">
@@ -133,14 +134,14 @@ export default function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-navy-400 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block"
+                      className="text-sm text-[#5D5D5D] hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block"
                       aria-label={`${link.label} (abre em nova aba)`}
                     >
                       {link.label}
                     </a>
                   ) : (
-                    <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
-                      <span className="text-sm text-navy-400 hover:text-white transition-colors">
+                    <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
+                      <span className="text-sm text-[#5D5D5D] hover:text-white transition-colors">
                         {link.label}
                       </span>
                     </Link>
@@ -149,10 +150,10 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-6 pt-4 border-t border-white/5 space-y-2">
-              <p className="text-xs text-navy-500 uppercase tracking-wider">Central de Vendas</p>
+              <p className="text-xs text-[#5D5D5D] uppercase tracking-wider font-display">Central de Vendas</p>
               <a
                 href="tel:+551150437900"
-                className="flex items-center gap-2 text-sm text-white font-medium hover:text-blue-400 transition-colors"
+                className="flex items-center gap-2 text-sm text-white font-semibold hover:text-[#FB0047] transition-colors"
                 aria-label="Ligar para (11) 5043-7900"
               >
                 <Phone size={14} />
@@ -164,16 +165,16 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-navy-500">
+          <p className="text-xs text-[#5D5D5D]">
             &copy; {new Date().getFullYear()} Autodoc Processamento de Dados Ltda. CNPJ: 04.714.448/0001-28
           </p>
           <div className="flex items-center gap-6 flex-wrap">
-            <span className="text-xs text-navy-600">Ecossistema</span>
-            <span className="text-xs text-navy-400 font-medium">Ambar</span>
-            <span className="text-xs text-navy-500">|</span>
-            <span className="text-xs text-navy-400 font-medium">Polar</span>
-            <span className="text-xs text-navy-500">|</span>
-            <span className="text-xs text-navy-400 font-medium">Simple Wall</span>
+            <span className="text-xs text-[#5D5D5D]">Ecossistema</span>
+            <span className="text-xs text-[#CCCCCC] font-semibold font-display">Ambar</span>
+            <span className="text-xs text-[#5D5D5D]">|</span>
+            <span className="text-xs text-[#CCCCCC] font-semibold font-display">Polar</span>
+            <span className="text-xs text-[#5D5D5D]">|</span>
+            <span className="text-xs text-[#CCCCCC] font-semibold font-display">Simple Wall</span>
           </div>
         </div>
       </div>

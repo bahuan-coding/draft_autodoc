@@ -37,11 +37,11 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-32">
+    <section className="py-16 sm:py-20 lg:py-32 bg-black">
       <div className="container max-w-3xl">
         <SectionReveal>
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold">
+            <h2 className="text-3xl sm:text-4xl font-bold font-display">
               Perguntas <span className="gradient-text">frequentes</span>
             </h2>
           </div>
@@ -57,18 +57,18 @@ export default function FAQSection() {
                   className="border-b border-white/5 last:border-0"
                 >
                   <Accordion.Header className="flex">
-                    <Accordion.Trigger className="w-full flex items-center justify-between py-5 text-left group focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md px-2 -mx-2">
-                      <span className="text-base sm:text-lg font-semibold text-white group-hover:text-blue-400 transition-colors pr-4">
+                    <Accordion.Trigger className="w-full flex items-center justify-between py-5 text-left group focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-md px-2 -mx-2">
+                      <span className="text-base sm:text-lg font-bold font-display text-white group-hover:text-[#FB0047] transition-colors pr-4">
                         {faq.question}
                       </span>
                       <ChevronDown
                         size={20}
-                        className="text-navy-400 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-data-[state=open]:rotate-180 shrink-0"
+                        className="text-[#5D5D5D] transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-data-[state=open]:rotate-180 shrink-0"
                         aria-hidden="true"
                       />
                     </Accordion.Trigger>
                   </Accordion.Header>
-                  <Accordion.Content className="overflow-hidden text-navy-300 text-sm sm:text-base leading-relaxed data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                  <Accordion.Content className="overflow-hidden text-[#CCCCCC] text-sm sm:text-base leading-relaxed data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" style={{ lineHeight: '150%' }}>
                     <div className="pb-5 px-2 -mx-2">{faq.answer}</div>
                   </Accordion.Content>
                 </Accordion.Item>
