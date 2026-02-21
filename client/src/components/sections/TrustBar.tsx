@@ -8,14 +8,14 @@ const logoSet = clients.map((client) =>
       <img
         src={client.logo}
         alt={client.name}
-        className="h-6 lg:h-7 w-auto max-w-full object-contain opacity-40 hover:opacity-70 transition-opacity duration-500 select-none brightness-0 invert"
+        className="h-6 lg:h-7 w-auto max-w-full object-contain opacity-30 hover:opacity-60 transition-opacity duration-500 select-none brightness-0 invert"
         loading="lazy"
         decoding="async"
       />
     </div>
   ) : (
     <div key={client.name} className="shrink-0 flex items-center justify-center w-[120px] lg:w-[140px]">
-      <span className="text-sm lg:text-base font-bold text-white/25 hover:text-white/50 tracking-[0.15em] transition-colors duration-500 select-none uppercase">
+      <span className="text-sm lg:text-base font-bold font-display text-white/20 hover:text-white/50 tracking-[0.15em] transition-colors duration-500 select-none uppercase">
         {client.name}
       </span>
     </div>
@@ -25,7 +25,7 @@ const logoSet = clients.map((client) =>
 export default function TrustBar() {
   return (
     <>
-      <section className="relative z-10 bg-navy-900/50 border-y border-white/5 backdrop-blur-sm">
+      <section className="relative z-10 bg-[#0A0A0A] border-y border-white/5">
         <div className="container py-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
             {[
@@ -35,16 +35,16 @@ export default function TrustBar() {
               { value: 60, suffix: "", label: "das 100 maiores construtoras", icon: Shield },
             ].map((stat, i) => (
               <div key={i} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
-                  <stat.icon size={18} className="text-blue-400" aria-hidden="true" />
+                <div className="w-10 h-10 rounded-lg bg-[#FB0047]/10 flex items-center justify-center shrink-0">
+                  <stat.icon size={18} className="text-[#FB0047]" aria-hidden="true" />
                 </div>
                 <div>
                   <AnimatedCounter
                     end={stat.value}
                     suffix={stat.suffix}
-                    className="text-xl lg:text-2xl font-bold text-white"
+                    className="text-xl lg:text-2xl font-bold font-display text-white"
                   />
-                  <p className="text-xs text-navy-400 mt-0.5">{stat.label}</p>
+                  <p className="text-xs text-[#5D5D5D] mt-0.5">{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -52,15 +52,15 @@ export default function TrustBar() {
         </div>
       </section>
 
-      <section className="py-10 bg-navy-900/20 overflow-hidden">
+      <section className="py-10 bg-black overflow-hidden">
         <div className="container">
-          <p className="text-center text-xs text-navy-500 uppercase tracking-widest font-medium mb-8">
+          <p className="text-center text-xs text-[#5D5D5D] uppercase tracking-widest font-semibold font-display mb-8">
             Confiado pelas maiores construtoras e incorporadoras do Brasil
           </p>
         </div>
         <div className="relative" aria-hidden="true">
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-navy-950 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-navy-950 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
           <div
             className="flex w-max"
             style={{ animation: "marquee 35s linear infinite" }}

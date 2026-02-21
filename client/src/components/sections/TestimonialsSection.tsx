@@ -27,7 +27,7 @@ export default function TestimonialsSection() {
 
   return (
     <section
-      className="py-16 sm:py-20 lg:py-32 bg-navy-900/30 overflow-hidden"
+      className="py-16 sm:py-20 lg:py-32 bg-[#0A0A0A] overflow-hidden"
       aria-roledescription="carousel"
       aria-label="Depoimentos de clientes"
       onMouseEnter={() => setPaused(true)}
@@ -40,10 +40,10 @@ export default function TestimonialsSection() {
       <div className="container">
         <SectionReveal>
           <div className="text-center mb-6">
-            <span className="text-xs text-navy-500 uppercase tracking-widest font-medium">
+            <span className="text-xs text-[#5D5D5D] uppercase tracking-widest font-semibold font-display">
               Opinião de quem usa
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-5">
+            <h2 className="text-3xl sm:text-4xl font-bold font-display mt-3 mb-5">
               A plataforma das maiores{" "}
               <span className="gradient-text">construtoras do Brasil</span>
             </h2>
@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
             <button
               type="button"
               onClick={() => paginate(-1)}
-              className="shrink-0 w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+              className="shrink-0 w-11 h-11 rounded-full bg-white/5 hover:bg-[#FB0047]/10 border border-white/10 hover:border-[#FB0047]/30 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none"
               aria-label="Depoimento anterior"
             >
               <ChevronLeft size={18} aria-hidden="true" />
@@ -92,21 +92,21 @@ export default function TestimonialsSection() {
                     <div className="flex-1">
                       <div className="flex gap-1 mb-4" aria-hidden="true">
                         {[...Array(5)].map((_, j) => (
-                          <Star key={j} size={14} className="text-amber-400 fill-amber-400" />
+                          <Star key={j} size={14} className="text-[#FB0047] fill-[#FB0047]" />
                         ))}
                       </div>
-                      <blockquote className="text-navy-200 text-base sm:text-lg leading-relaxed mb-5 italic">
+                      <blockquote className="text-[#CCCCCC] text-base sm:text-lg leading-relaxed mb-5 italic" style={{ lineHeight: '150%' }}>
                         "{t.quote}"
                       </blockquote>
                       <div className="flex items-center justify-between flex-wrap gap-4">
                         <div>
-                          <p className="text-white font-semibold">
+                          <p className="text-white font-bold font-display">
                             {t.name}
                             {t.inMemoriam && (
-                              <span className="text-navy-500 text-xs font-normal ml-2">in memoriam</span>
+                              <span className="text-[#5D5D5D] text-xs font-normal ml-2">in memoriam</span>
                             )}
                           </p>
-                          <p className="text-navy-400 text-sm">
+                          <p className="text-[#5D5D5D] text-sm">
                             {t.role} — {t.company}
                           </p>
                         </div>
@@ -115,9 +115,9 @@ export default function TestimonialsSection() {
                             href={t.video}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 bg-blue-500/10 hover:bg-blue-500/20 px-4 py-2.5 rounded-full border border-blue-500/20 transition-all min-h-[44px] focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
+                            className="inline-flex items-center gap-2 text-sm font-bold font-display text-[#FB0047] hover:text-[#FF1A5E] bg-[#FB0047]/10 hover:bg-[#FB0047]/20 px-4 py-2.5 rounded-full border border-[#FB0047]/20 transition-all min-h-[44px] focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                           >
-                            <Play size={14} className="fill-blue-400" aria-hidden="true" />
+                            <Play size={14} className="fill-[#FB0047]" aria-hidden="true" />
                             Assistir depoimento
                           </a>
                         )}
@@ -131,7 +131,7 @@ export default function TestimonialsSection() {
             <button
               type="button"
               onClick={() => paginate(1)}
-              className="shrink-0 w-11 h-11 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+              className="shrink-0 w-11 h-11 rounded-full bg-white/5 hover:bg-[#FB0047]/10 border border-white/10 hover:border-[#FB0047]/30 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none"
               aria-label="Próximo depoimento"
             >
               <ChevronRight size={18} aria-hidden="true" />
@@ -144,11 +144,11 @@ export default function TestimonialsSection() {
                 key={i}
                 type="button"
                 onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                className="min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-full"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-full"
                 aria-label={`Ir para depoimento ${i + 1}`}
               >
                 <span className={`block h-2 rounded-full transition-all duration-300 ${
-                  i === current ? "w-8 bg-blue-400" : "w-2 bg-white/20 hover:bg-white/40"
+                  i === current ? "w-8 bg-[#FB0047]" : "w-2 bg-white/20 hover:bg-white/40"
                 }`} />
               </button>
             ))}
@@ -164,19 +164,19 @@ export default function TestimonialsSection() {
                   if (i === 2) paginate(1);
                 }}
                 aria-label={i === 0 ? "Depoimento anterior" : i === 2 ? "Próximo depoimento" : `Depoimento atual: ${item.name}`}
-                className={`p-4 rounded-xl border transition-all duration-300 text-left focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                className={`p-4 rounded-xl border transition-all duration-300 text-left focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none ${
                   i === 1
-                    ? "bg-white/5 border-blue-500/30"
+                    ? "bg-white/5 border-[#FB0047]/30"
                     : "bg-white/[0.02] border-white/5 hover:border-white/10 hover:bg-white/[0.04] cursor-pointer"
                 }`}
               >
-                <p className="text-xs text-navy-300 line-clamp-2 leading-relaxed mb-2 italic">
+                <p className="text-xs text-[#CCCCCC] line-clamp-2 leading-relaxed mb-2 italic">
                   "{item.quote}"
                 </p>
-                <p className={`text-xs font-semibold ${i === 1 ? "text-white" : "text-navy-400"}`}>
+                <p className={`text-xs font-bold font-display ${i === 1 ? "text-white" : "text-[#5D5D5D]"}`}>
                   {item.name}
                 </p>
-                <p className="text-[10px] text-navy-500">{item.company}</p>
+                <p className="text-[10px] text-[#5D5D5D]">{item.company}</p>
               </button>
             ))}
           </div>
