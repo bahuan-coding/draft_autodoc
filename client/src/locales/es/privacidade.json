@@ -1,0 +1,37 @@
+{
+  "title": "Política de Privacidad",
+  "s1Title": "1. Información General",
+  "s1Text": "Autodoc Processamento de Dados Ltda. (CNPJ: 04.714.448/0001-28) está comprometida con la protección de los datos personales de sus usuarios, en cumplimiento con la Ley General de Protección de Datos de Brasil (Ley N.° 13.709/2018 — LGPD).",
+  "s2Title": "2. Datos Recopilados",
+  "s2Text": "Podemos recopilar los siguientes datos personales:",
+  "s2Items": [
+    "Nombre, correo electrónico, teléfono y empresa (formularios de contacto)",
+    "Datos de navegación (cookies, IP, tipo de navegador)",
+    "Datos de uso de la plataforma (para clientes activos)"
+  ],
+  "s3Title": "3. Finalidad",
+  "s3Text": "Los datos recopilados se utilizan para:",
+  "s3Items": [
+    "Responder solicitudes de contacto y demostración",
+    "Mejorar la experiencia de navegación del sitio web",
+    "Enviar comunicaciones relacionadas con nuestros servicios",
+    "Garantizar la seguridad y el rendimiento de la plataforma"
+  ],
+  "s4Title": "4. Compartición",
+  "s4Text": "Tus datos no se venden a terceros. Pueden ser compartidos con empresas del grupo Ambar exclusivamente para fines de prestación de servicios, siempre en cumplimiento con la LGPD.",
+  "s5Title": "5. Cookies",
+  "s5Text": "Utilizamos cookies esenciales para el funcionamiento del sitio web y cookies analíticas para mejorar tu experiencia. Puedes gestionar tus preferencias de cookies en cualquier momento a través del banner de consentimiento.",
+  "s6Title": "6. Tus Derechos",
+  "s6Text": "Bajo la LGPD, puedes solicitar:",
+  "s6Items": [
+    "Acceso a tus datos personales",
+    "Corrección de datos incompletos o desactualizados",
+    "Eliminación de datos innecesarios",
+    "Portabilidad de datos",
+    "Revocación del consentimiento"
+  ],
+  "s7Title": "7. Contacto",
+  "s7Text": "Para ejercer tus derechos o aclarar dudas sobre esta política, contáctanos en",
+  "s7TextEnd": "o por teléfono al",
+  "lastUpdate": "Última actualización: febrero de 2026"
+}

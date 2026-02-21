@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "title": "Autodoc Workforce",
+    "subtitle": "Gestión de Proveedores y Obra",
+    "description": "Habilitación de proveedores, cumplimiento laboral y control de acceso al sitio de obra en una sola plataforma. Validación automática de registros empresariales, certificados tributarios, certificados de salud, certificaciones de seguridad, EPP, registros técnicos, informes de nómina y más — con 21 Agentes de IA."
+  },
+  "beforeAfter": {
+    "title": "Antes vs.",
+    "titleHighlight": "Después",
+    "subtitle": "La transformación que Autodoc Workforce trae a tu operación",
+    "items": [
+      { "before": "30-60 min validando cada documento manualmente", "after": "2-5 min con validación automática por Agentes GD4" },
+      { "before": "Hojas de cálculo desactualizadas y desconectadas", "after": "Dashboard en tiempo real con puntaje de cumplimiento" },
+      { "before": "Riesgo de multas por certificados vencidos o irregulares", "after": "Alertas automáticas 30/15/7 días antes del vencimiento" },
+      { "before": "Proveedores llamando para consultar estatus", "after": "Portal de autoservicio con estatus en tiempo real" },
+      { "before": "Trabajador sin NR-35 ingresando a trabajos en altura", "after": "Bloqueo biométrico automático por documentación irregular" },
+      { "before": "Auditoría manual de aportes laborales y deudas tributarias", "after": "Cumplimiento continuo con validación de IA 24/7" }
+    ]
+  },
+  "compliance": {
+    "title": "Checklist de",
+    "titleHighlight": "Cumplimiento",
+    "titleEnd": "Completo",
+    "subtitle": "Todos los documentos obligatorios para la construcción civil, organizados por categoría, validados automáticamente por los Agentes GD4.",
+    "categories": [
+      { "title": "Empresa", "docs": ["Registro Fiscal Activo", "Certificado Tributario Federal", "Certificado Tributario Estatal", "Certificado Tributario Municipal", "Cumplimiento FGTS", "Deudas Laborales", "Acta Constitutiva", "Licencia de Funcionamiento"] },
+      { "title": "Trabajador", "docs": ["Certificado de Salud (NR-7)", "NR-18 Construcción", "NR-35 Trabajos en Altura", "NR-10 Electricidad", "NR-33 Espacios Confinados", "Ficha de EPP", "Carnet de Trabajo", "Integración"] },
+      { "title": "Técnico", "docs": ["ART (CREA)", "RRT (CAU)", "Permiso de Construcción", "Licencia Ambiental", "Registro de Obra", "PCMSO", "PGR"] },
+      { "title": "Fiscal", "docs": ["GFIP/SEFIP", "GPS", "Factura Electrónica", "Guías de ISS", "DARF", "Retenciones INSS", "Retenciones IR/CSLL"] }
+    ]
+  },
+  "catraca": {
+    "badge": "Autodoc Torniquete",
+    "title": "Control de acceso con",
+    "titleHighlight": "reconocimiento facial",
+    "desc": "La integración entre GD4 y el Torniquete Autodoc valida automáticamente la documentación de los trabajadores en el momento del acceso a la obra. Reconocimiento facial, código QR o torniquete virtual — el acceso solo se autoriza si toda la documentación está al día.",
+    "feat1": "Reconocimiento facial integrado con base documental",
+    "feat2": "Código QR dinámico para acceso desde el celular",
+    "feat3": "Torniquete virtual sin hardware dedicado",
+    "feat4": "Bloqueo automático por certificado vencido o irregular",
+    "feat5": "Control de asistencia digital con geolocalización",
+    "flowTitle": "Flujo de Acceso Inteligente",
+    "flow1": "El trabajador se identifica (facial/QR)",
+    "flow2": "GD4 verifica certificados de salud, seguridad y EPP en tiempo real",
+    "flow3": "Documentación OK → acceso autorizado",
+    "flow4": "Documentación irregular → acceso bloqueado + alerta"
+  },
+  "metrics": {
+    "m1Value": "50%",
+    "m1Label": "Reducción en pasivos laborales",
+    "m2Value": "R$ 50M",
+    "m2Label": "Ahorro potencial/año",
+    "m3Value": "180/mes",
+    "m3Label": "Documentos analizados por agente",
+    "m4Value": "99.5%",
+    "m4Label": "Precisión de validación"
+  },
+  "featuresGrid": {
+    "title": "Funcionalidades",
+    "titleHighlight": "completas",
+    "subtitle": "Todo para gestionar proveedores, trabajadores y documentación con seguridad y eficiencia — de la oficina al sitio de obra."
+  },
+  "features": {
+    "f1Title": "Habilitación de Proveedores",
+    "f1Desc": "Proceso completo de calificación con checklist automático de documentos obligatorios: registro fiscal, certificados tributarios federales/estatales/municipales, cumplimiento de aportes, deudas laborales, acta constitutiva, licencia de funcionamiento y registro profesional.",
+    "f2Title": "Gestión Documental Centralizada",
+    "f2Desc": "Control centralizado de toda la documentación de proveedores y trabajadores. Historial completo, versionamiento y trazabilidad de cada documento recibido.",
+    "f3Title": "Control de Acceso a Obra",
+    "f3Desc": "Gestión de entrada y salida de trabajadores con validación biométrica. Bloqueo automático de acceso cuando la documentación es irregular o está vencida.",
+    "f4Title": "Cumplimiento Laboral",
+    "f4Desc": "Validación automática de FGTS (CRF), INSS (GPS), GFIP/SEFIP, nómina y otras obligaciones laborales. Monitoreo continuo de cumplimiento.",
+    "f5Title": "Salud y Seguridad — NRs",
+    "f5Desc": "Validación de certificados de salud (NR-7), NR-18 (Construcción), NR-35 (Trabajos en Altura), NR-10 (Electricidad), NR-33 (Espacios Confinados), PCMSO y PGR.",
+    "f6Title": "Control de EPP",
+    "f6Desc": "Gestión de fichas de EPP (NR-6) con validación de entrega, firma y certificado de aprobación. Alertas de reposición por desgaste o vencimiento.",
+    "f7Title": "Alertas Inteligentes",
+    "f7Desc": "Notificaciones automáticas 30, 15 y 7 días antes del vencimiento de cada documento. Escalamiento a gerentes cuando el proveedor no regulariza a tiempo.",
+    "f8Title": "Portal del Proveedor",
+    "f8Desc": "Entorno de autoservicio vía web y app (GD4 Obra) para que los proveedores envíen documentos, den seguimiento al estatus de calificación y reciban retroalimentación en tiempo real.",
+    "f9Title": "Dashboard de Cumplimiento",
+    "f9Desc": "Visión consolidada de cumplimiento por obra, proveedor y tipo de documento. Puntaje de riesgo, indicadores de cumplimiento y reportes gerenciales exportables.",
+    "f10Title": "Validación con IA — Agentes GD4",
+    "f10Desc": "21 agentes de IA especializados que validan automáticamente cada documento: registro fiscal, certificados tributarios, de salud, seguridad, registros técnicos, nómina, facturas. De horas a minutos."
+  },
+  "cta": {
+    "title": "¿Listo para controlar tu mano de obra?",
+    "description": "Agenda una demostración y descubre cómo Autodoc Workforce puede transformar la gestión de proveedores y el cumplimiento en tu obra."
+  }
+}

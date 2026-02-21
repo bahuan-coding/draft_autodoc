@@ -8,12 +8,20 @@ interface LocaleLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 
   replace?: boolean;
 }
 
+const LOCALE_PREFIXES = ["/en", "/es"];
+
+export function getLangPrefix(lang: string | undefined): string {
+  if (lang?.startsWith("en")) return "/en";
+  if (lang?.startsWith("es")) return "/es";
+  return "";
+}
+
 export default function LocaleLink({ href, children, replace, ...rest }: LocaleLinkProps) {
   const { i18n } = useTranslation();
-  const isEn = i18n.language?.startsWith("en");
+  const prefix = getLangPrefix(i18n.language);
   let resolved = href;
-  if (isEn && resolved.startsWith("/") && !resolved.startsWith("/en")) {
-    resolved = `/en${resolved === "/" ? "" : resolved}`;
+  if (prefix && resolved.startsWith("/") && !LOCALE_PREFIXES.some((p) => resolved.startsWith(p))) {
+    resolved = `${prefix}${resolved === "/" ? "" : resolved}`;
   }
   return (
     <Link href={resolved} replace={replace} {...rest}>

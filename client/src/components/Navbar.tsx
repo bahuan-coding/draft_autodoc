@@ -1,29 +1,37 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import LocaleLink from "./LocaleLink";
+import LocaleLink, { getLangPrefix } from "./LocaleLink";
+
+const LANGS = [
+  { code: "pt", label: "Português", short: "PT" },
+  { code: "en", label: "English", short: "EN" },
+  { code: "es", label: "Español", short: "ES" },
+] as const;
+
+const LOCALE_RE = /^\/(en|es)(\/|$)/;
 
 export default function Navbar() {
   const { t, i18n } = useTranslation("common");
   const [location, setLocation] = useLocation();
-  const currentLang = i18n.language?.startsWith("en") ? "en" : "pt";
-  const basePath = currentLang === "en" ? location.replace(/^\/en\/?/, "/").replace(/\/$/, "") || "/" : location;
-  const toggleLang = () => {
-    const next = currentLang === "pt" ? "en" : "pt";
+  const curLang = i18n.language?.substring(0, 2) ?? "pt";
+  const basePath = location.replace(LOCALE_RE, "/").replace(/\/+$/, "") || "/";
+
+  const switchLang = (next: string) => {
     i18n.changeLanguage(next);
-    const path = window.location.pathname;
-    if (next === "en") {
-      const clean = path.startsWith("/en") ? path : `/en${path === "/" ? "" : path}`;
-      setLocation(clean);
-    } else {
-      const clean = path.replace(/^\/en/, "") || "/";
-      setLocation(clean);
-    }
+    const clean = basePath === "/" ? "" : basePath;
+    const prefix = getLangPrefix(next);
+    setLocation(`${prefix}${clean}` || "/");
+    setLangOpen(false);
   };
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
+
   const navLinks = [
     { href: "/projetos", label: t("nav.projetos") },
     { href: "/workforce", label: t("nav.workforce") },
@@ -40,11 +48,21 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
+    setLangOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  const currentLangObj = LANGS.find((l) => l.code === curLang) ?? LANGS[0];
 
   return (
     <>
-      {/* Scroll progress bar */}
       <motion.div className="scroll-progress" style={{ scaleX }} />
 
       <header
@@ -85,15 +103,50 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <button
-              type="button"
-              onClick={toggleLang}
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-navy-300 hover:text-white transition-colors px-3 py-2 rounded-lg border border-white/10 hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
-              aria-label={currentLang === "pt" ? "Switch to English" : "Mudar para Português"}
-            >
-              <Globe size={14} />
-              {currentLang === "pt" ? "EN" : "PT"}
-            </button>
+            {/* Language Dropdown */}
+            <div ref={langRef} className="relative">
+              <button
+                type="button"
+                onClick={() => setLangOpen(!langOpen)}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-navy-300 hover:text-white transition-colors px-3 py-2 rounded-lg border border-white/10 hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
+                aria-expanded={langOpen}
+                aria-haspopup="listbox"
+              >
+                <Globe size={14} />
+                {currentLangObj.short}
+                <ChevronDown size={12} className={`transition-transform ${langOpen ? "rotate-180" : ""}`} />
+              </button>
+              <AnimatePresence>
+                {langOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute right-0 mt-1 w-36 rounded-lg border border-white/10 bg-navy-950/95 backdrop-blur-xl shadow-xl overflow-hidden"
+                    role="listbox"
+                  >
+                    {LANGS.map((lang) => (
+                      <button
+                        key={lang.code}
+                        type="button"
+                        role="option"
+                        aria-selected={lang.code === curLang}
+                        onClick={() => switchLang(lang.code)}
+                        className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
+                          lang.code === curLang
+                            ? "text-white bg-white/10 font-semibold"
+                            : "text-navy-300 hover:text-white hover:bg-white/5"
+                        }`}
+                      >
+                        {lang.label}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <a
               href="https://autodoc.com.br"
               target="_blank"
@@ -144,14 +197,22 @@ export default function Navbar() {
                   </LocaleLink>
                 ))}
                 <div className="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
-                  <button
-                    type="button"
-                    onClick={toggleLang}
-                    className="flex items-center justify-center gap-2 text-sm font-medium text-navy-300 hover:text-white transition-colors py-3 rounded-lg border border-white/10 hover:bg-white/5 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
-                  >
-                    <Globe size={14} />
-                    {currentLang === "pt" ? "English" : "Português"}
-                  </button>
+                  <div className="flex gap-2">
+                    {LANGS.map((lang) => (
+                      <button
+                        key={lang.code}
+                        type="button"
+                        onClick={() => switchLang(lang.code)}
+                        className={`flex-1 flex items-center justify-center gap-2 text-sm font-medium py-3 rounded-lg border transition-colors focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${
+                          lang.code === curLang
+                            ? "text-white bg-white/10 border-blue-500/40"
+                            : "text-navy-300 hover:text-white border-white/10 hover:bg-white/5"
+                        }`}
+                      >
+                        {lang.short}
+                      </button>
+                    ))}
+                  </div>
                   <a
                     href="https://autodoc.com.br"
                     target="_blank"

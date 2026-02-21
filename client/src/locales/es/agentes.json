@@ -1,0 +1,135 @@
+{
+  "hero": {
+    "badge": "Inteligencia Artificial para la Construcción Civil",
+    "title": "Agentes",
+    "titleHighlight": "GD4",
+    "desc": "{{count}} agentes de IA especializados en validación de documentos de la construcción civil. De registros empresariales a certificaciones de seguridad, de registros técnicos a informes de nómina — cada agente está entrenado para un tipo específico de documento.",
+    "badgeAgents": "{{count}} Agentes",
+    "badgeFaster": "80% Más Rápido",
+    "badgePrecision": "Precisión >97%",
+    "badgeAvailable": "Disponible 24/7",
+    "cta": "Ver Todos los Agentes"
+  },
+  "what": {
+    "title": "¿Qué son los Agentes",
+    "titleHighlight": "GD4",
+    "p1": "Los Agentes GD4 son sistemas de inteligencia artificial especializados que automatizan la validación de documentos obligatorios en la construcción civil. Cada agente está entrenado para analizar un tipo específico de documento — desde certificados tributarios federales hasta certificaciones de seguridad NR-35 — y validar si está completo, correcto y en cumplimiento con la legislación vigente.",
+    "p2company": "empresa/proveedor",
+    "p2worker": "trabajador",
+    "p2technical": "técnico",
+    "p2and": "y",
+    "p2fiscal": "fiscal",
+    "p2text": "Cubren las 4 categorías fundamentales de cumplimiento en la construcción: documentos de",
+    "p2end": "Un agente orquestador coordina a todos los demás y genera un puntaje de cumplimiento consolidado.",
+    "boxTitle": "GD4 = Gestión de Documentos 4.0",
+    "boxDesc": "Representa la cuarta evolución en gestión documental: del papel a lo digital, de lo digital a la nube, de la nube a la automatización, y de la automatización a la inteligencia artificial autónoma.",
+    "boxPaper": "papel",
+    "boxDigital": "digital",
+    "boxCloud": "nube",
+    "boxAutomation": "automatización",
+    "boxAI": "inteligencia artificial autónoma"
+  },
+  "howItWorks": {
+    "title": "¿Cómo Funciona?",
+    "subtitle": "De la carga a la validación en 4 pasos",
+    "step1Title": "Carga",
+    "step1Desc": "El proveedor sube el documento a través de la plataforma web o la app GD4 Obra",
+    "step2Title": "Clasificación",
+    "step2Desc": "El Orquestador identifica el tipo y activa al agente especializado",
+    "step3Title": "Validación",
+    "step3Desc": "El agente extrae datos, cruza con bases oficiales y valida el cumplimiento",
+    "step4Title": "Dictamen",
+    "step4Desc": "Aprobado o rechazado con justificación técnica en tiempo real"
+  },
+  "agents": {
+    "title": "Los",
+    "titleHighlight": "{{count}} Agentes",
+    "titleEnd": "Especializados",
+    "subtitle": "Organizados por categoría de documento. Cada agente es un especialista entrenado para validar un tipo específico de documento de la construcción civil.",
+    "agentSingular": "agente",
+    "agentPlural": "agentes",
+    "categories": [
+      {
+        "category": "Validación Empresarial",
+        "agents": [
+          { "name": "Validador de Registro Fiscal", "desc": "Consulta el Servicio de Impuestos, verifica estatus de registro, códigos de actividad y estructura societaria" },
+          { "name": "Certificado Tributario Federal", "desc": "Valida el Certificado Negativo de Deudas con la Receita Federal y la Procuraduría" },
+          { "name": "Cumplimiento FGTS", "desc": "Verifica el Certificado de Regularidad FGTS con la Caixa Econômica Federal" },
+          { "name": "Deudas Laborales", "desc": "Valida el Certificado Negativo de Deudas Laborales con el Tribunal Superior del Trabajo" },
+          { "name": "Acta Constitutiva", "desc": "Extrae datos del acta constitutiva, verifica compatibilidad del objeto social" }
+        ]
+      },
+      {
+        "category": "Validación de Trabajador",
+        "agents": [
+          { "name": "Certificado de Salud", "desc": "Verifica el Certificado de Salud Ocupacional (NR-7), aptitud y fecha de vencimiento" },
+          { "name": "NR-18 — Seguridad", "desc": "Valida el certificado de capacitación en Seguridad en la Construcción" },
+          { "name": "NR-35 — Trabajos en Altura", "desc": "Verifica certificado de trabajos en altura, horas de capacitación y vigencia" },
+          { "name": "NR-10 — Electricidad", "desc": "Valida certificado de Seguridad en Instalaciones y Servicios Eléctricos" },
+          { "name": "NR-33 — Espacios Confinados", "desc": "Verifica certificado de trabajo en espacios confinados y autorización" },
+          { "name": "Ficha de EPP", "desc": "Valida la entrega y firma de Equipos de Protección Personal (NR-6)" },
+          { "name": "Integración del Trabajador", "desc": "Verifica certificado de integración al sitio de obra y capacitación de ingreso" }
+        ]
+      },
+      {
+        "category": "Validación Técnica",
+        "agents": [
+          { "name": "ART — CREA", "desc": "Valida la Anotación de Responsabilidad Técnica, responsable y alcance en el CREA" },
+          { "name": "RRT — CAU", "desc": "Verifica el Registro de Responsabilidad Técnica para arquitectos en el CAU" },
+          { "name": "Permiso de Construcción", "desc": "Valida permiso expedido por la municipalidad, alcance del proyecto y vigencia" },
+          { "name": "Licencia Ambiental", "desc": "Verifica licencia ambiental (LP, LI, LO), condiciones y autoridad emisora" }
+        ]
+      },
+      {
+        "category": "Validación Fiscal",
+        "agents": [
+          { "name": "GFIP / SEFIP", "desc": "Analiza la Guía de Aportes al FGTS e Información a la Seguridad Social" },
+          { "name": "GPS — Seguridad Social", "desc": "Verifica la Guía de Pago de Seguridad Social, montos y período" },
+          { "name": "Facturas Electrónicas", "desc": "Valida facturas electrónicas de servicios, ISS y retenciones" },
+          { "name": "Retenciones Fiscales", "desc": "Verifica comprobantes de retención INSS 11%, IR, CSLL, PIS y COFINS" }
+        ]
+      },
+      {
+        "category": "Orquestación",
+        "agents": [
+          { "name": "Orquestador GD4", "desc": "Coordina a los 20 agentes, genera reporte consolidado de cumplimiento y puntaje de riesgo" }
+        ]
+      }
+    ]
+  },
+  "impact": {
+    "title": "Impacto Medible",
+    "subtitle": "Resultados reales de clientes que usan los Agentes GD4",
+    "metrics": [
+      { "label": "Reducción de Pasivos", "desc": "Hasta R$ 50 millones/año evitados" },
+      { "label": "Capacidad por Hora", "desc": "180 documentos analizados/mes" },
+      { "label": "Precisión Promedio", "desc": "Superior al análisis manual" },
+      { "label": "Disponibilidad", "desc": "Validaciones en cualquier momento" }
+    ]
+  },
+  "environmental": {
+    "title": "Impacto Ambiental",
+    "subtitle": "Digitalización que le hace bien al planeta",
+    "items": [
+      { "value": "3.7 ton", "label": "Papel ahorrado", "desc": "Toneladas de papel no impresas" },
+      { "value": "7.3 ton", "label": "CO₂ evitado", "desc": "Toneladas de emisiones reducidas" },
+      { "value": "2M L", "label": "Agua ahorrada", "desc": "Litros de agua ahorrados en producción" }
+    ]
+  },
+  "roadmap": {
+    "title": "Hoja de Ruta de Evolución",
+    "subtitle": "El futuro de los Agentes GD4",
+    "items": [
+      { "label": "ACTIVO", "title": "Validación Automática de Documentos", "desc": "21 agentes validando registros fiscales, certificados tributarios, de salud, seguridad, registros técnicos, nómina, facturas y más." },
+      { "label": "ACTIVO", "title": "Alertas Inteligentes de Vencimiento", "desc": "Notificaciones automáticas 30, 15 y 7 días antes del vencimiento de cada documento." },
+      { "label": "BETA", "title": "Aprendizaje Continuo", "desc": "Agentes que aprenden de cada validación, mejorando la precisión y reduciendo falsos positivos." },
+      { "label": "Q3 2026", "title": "Análisis Predictivo de Riesgo", "desc": "Predicción de incumplimientos antes de que ocurran, basada en patrones históricos del proveedor." },
+      { "label": "Q4 2026", "title": "Agentes Conversacionales", "desc": "Interacción por chat con proveedores para solicitar automáticamente documentos faltantes." }
+    ]
+  },
+  "cta": {
+    "title": "Mira los Agentes GD4 en acción",
+    "description": "Agenda una demostración y descubre cómo {{count}} agentes de IA pueden automatizar la validación documental de tu constructora.",
+    "button": "Agendar Demostración en Vivo"
+  }
+}

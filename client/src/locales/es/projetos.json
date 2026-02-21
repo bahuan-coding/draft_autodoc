@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title": "Autodoc Proyectos",
+    "subtitle": "CDE — Entorno Común de Datos",
+    "description": "El Entorno Común de Datos (CDE) que centraliza proyectos arquitectónicos, estructurales, hidráulicos y eléctricos. Control de revisiones, flujos de aprobación y distribución automática para equipos de campo y oficina.",
+    "moreDisciplines": "+{{count}} disciplinas"
+  },
+  "disciplines": {
+    "title": "Todas las Disciplinas en un Solo Lugar",
+    "subtitle": "Organiza por desarrollo, edificio y disciplina",
+    "items": ["Arquitectura", "Estructura", "Hidráulica", "Eléctrica", "Cimentaciones", "Climatización", "Paisajismo", "Protección contra Incendios", "Instalaciones Especiales", "Topografía", "Geotecnia", "Acústica"]
+  },
+  "howItWorks": {
+    "title": "¿Cómo funciona?",
+    "subtitle": "De la carga a la distribución en 4 pasos",
+    "step1Title": "Carga",
+    "step1Desc": "El proyectista sube planos, proyectos y documentos técnicos a la plataforma",
+    "step2Title": "Organización",
+    "step2Desc": "La plataforma organiza automáticamente por desarrollo, disciplina y revisión",
+    "step3Title": "Aprobación",
+    "step3Desc": "Flujo configurable: proyectista → coordinador → gerente, con comentarios",
+    "step4Title": "Distribución",
+    "step4Desc": "Distribución automática a equipos de campo, proveedores y socios"
+  },
+  "featuresGrid": {
+    "title": "Todo lo que necesitas para",
+    "titleHighlight": "gestionar proyectos",
+    "subtitle": "Funcionalidades diseñadas para el día a día de la construcción civil, de la oficina al sitio de obra."
+  },
+  "features": {
+    "f1Title": "Gestión de Proyectos y Planos",
+    "f1Desc": "Organiza proyectos arquitectónicos, estructurales, hidráulicos, eléctricos y de cimentaciones en una estructura jerárquica por desarrollo, edificio y disciplina.",
+    "f2Title": "Control de Revisiones",
+    "f2Desc": "Historial completo de revisiones con trazabilidad total. Cada versión registrada con autor, fecha, comentarios y aprobación. Nunca más trabajar con un archivo desactualizado.",
+    "f3Title": "Distribución Automática",
+    "f3Desc": "Distribuye automáticamente proyectos y planos a proyectistas, equipos de campo y proveedores. Notificaciones en tiempo real cuando se publica una nueva revisión.",
+    "f4Title": "Flujo de Aprobación",
+    "f4Desc": "Flujos de aprobación configurables con múltiples niveles: proyectista → coordinador → gerente. Estatus en tiempo real: en revisión, aprobado, rechazado con comentarios.",
+    "f5Title": "Visor BIM Integrado",
+    "f5Desc": "Compatible con Revit, ArchiCAD y Tekla. Sube modelos IFC, visualízalos en 3D en la plataforma y vincúlalos al proyecto correspondiente.",
+    "f6Title": "BDO — Bitácora Diaria de Obra",
+    "f6Desc": "Registros digitales con fotos, notas, condiciones climáticas y seguimiento de actividades. Todo documentado, trazable y exportable.",
+    "f7Title": "Búsqueda Inteligente",
+    "f7Desc": "Encuentra cualquier proyecto, plano o documento en segundos. Busca por nombre, disciplina, revisión, autor, fecha o etiqueta. Filtros avanzados por desarrollo.",
+    "f8Title": "Seguridad y Control de Acceso",
+    "f8Desc": "Cifrado de extremo a extremo, control de acceso granular por perfil y respaldo automático. Define quién puede ver, editar, aprobar o distribuir cada documento.",
+    "f9Title": "Reportes y Análisis",
+    "f9Desc": "Dashboards con métricas de productividad, tiempos de aprobación, documentos pendientes y cumplimiento. Reportes exportables para reuniones de coordinación.",
+    "f10Title": "Acceso Móvil",
+    "f10Desc": "Accede a proyectos y planos directamente desde la obra con la app móvil. Visualiza, comenta y aprueba documentos desde cualquier lugar, con o sin conexión."
+  },
+  "cta": {
+    "title": "¿Listo para organizar tus proyectos?",
+    "description": "Agenda una demostración y descubre cómo Autodoc Proyectos puede transformar la gestión de proyectos y planos en tu obra."
+  }
+}

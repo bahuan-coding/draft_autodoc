@@ -1,0 +1,294 @@
+{
+  "hero": {
+    "badge": "Una empresa Ambar",
+    "heading": "Gestión inteligente de",
+    "phrases": ["proyectos y planos.", "documentos de obra.", "proveedores.", "cumplimiento en obra.", "validación con IA."],
+    "subtitle": "Del CDE al cumplimiento de proveedores, del control de acceso a la validación con IA.",
+    "subtitleBold": "Todo lo que tu obra necesita. Donde estés.",
+    "cta": "Agendar Demostración",
+    "ctaSecondary": "Habla con un Especialista",
+    "heroAlt": "Vista aérea de un sitio de construcción"
+  },
+  "trust": {
+    "stats": {
+      "years": "años en el mercado",
+      "clients": "clientes en Brasil",
+      "users": "usuarios activos",
+      "top100": "de las 100 mayores constructoras"
+    },
+    "trusted": "De la confianza de las mayores constructoras y desarrolladoras de Brasil"
+  },
+  "features": {
+    "projetos": {
+      "badge": "Autodoc Proyectos",
+      "title": "El CDE que organiza",
+      "titleHighlight": "proyectos, planos y documentos",
+      "desc": "Entorno Común de Datos (CDE) para centralizar proyectos arquitectónicos, estructurales, hidráulicos y eléctricos. Control de versiones, flujo de aprobación y distribución automática para equipos de campo y oficina.",
+      "feat1": "Gestión de Proyectos y Planos",
+      "feat2": "Control de Revisiones",
+      "feat3": "Distribución Automática",
+      "feat4": "Flujo de Aprobación",
+      "feat5": "Visor BIM Integrado",
+      "feat6": "BDO — Bitácora Diaria de Obra",
+      "cta": "Conoce Autodoc Proyectos",
+      "imgAlt": "Interfaz de Autodoc Proyectos"
+    },
+    "workforce": {
+      "badge": "Autodoc Workforce",
+      "title": "Calificación de proveedores y",
+      "titleHighlight": "cumplimiento en obra",
+      "desc": "Habilitación de proveedores con checklist de documentos obligatorios — registro fiscal, certificados de deuda, certificados de salud, certificaciones de seguridad, aportes laborales. Control de acceso biométrico y validación automática por IA con Agentes GD4.",
+      "feat1": "Habilitación de Proveedores",
+      "feat2": "Control de Acceso Biométrico",
+      "feat3": "Validación de Salud y Seguridad",
+      "feat4": "Cumplimiento Laboral",
+      "feat5": "Alertas de Vencimiento",
+      "feat6": "Dashboard de Cumplimiento",
+      "cta": "Conoce Autodoc Workforce",
+      "imgAlt": "Interfaz de Autodoc Workforce"
+    },
+    "ai": {
+      "badge": "Inteligencia Artificial",
+      "title1": "21 Agentes de IA",
+      "title2": "validando los documentos de tu obra",
+      "desc": "Los Agentes GD4 validan automáticamente registros empresariales, certificados de deuda tributaria, cumplimiento de aportes laborales, certificados de salud, certificaciones de seguridad (NR-18, NR-35, NR-10), registros técnicos, informes de nómina y facturas. Cada agente se especializa en un tipo de documento.",
+      "catCompany": "Empresa",
+      "catCompanyDocs": "Registro Fiscal, Certificados Tributarios, Aportes, Deudas Laborales",
+      "catWorker": "Trabajador",
+      "catWorkerDocs": "Cert. Salud, NR-18, NR-35, NR-10, Ficha de EPP",
+      "catTechnical": "Técnico",
+      "catTechnicalDocs": "Registro Técnico, Permiso, Licencia Ambiental",
+      "catFiscal": "Fiscal",
+      "catFiscalDocs": "Informes de Nómina, Seguridad Social, Facturas, Retenciones",
+      "cta": "Conoce los 21 Agentes",
+      "agentTitle": "Agente GD4 — Validador de CRF/FGTS",
+      "agentProcessing": "Procesando Certificado de Regularidad...",
+      "agentActive": "Activo",
+      "step1": "Extrayendo datos del CRF — Caixa Econômica",
+      "step2": "Validando registro del proveedor en Receita Federal",
+      "step3": "Verificando regularidad FGTS",
+      "step4": "Cruzando con base de deudas laborales",
+      "step5": "Verificando fecha de vencimiento del certificado",
+      "step6": "Generando dictamen de cumplimiento",
+      "time": "Tiempo: 1 min 47s",
+      "precision": "Precisión: 99.5%"
+    },
+    "personas": {
+      "sectionLabel": "Para cada rol en la construcción",
+      "title": "Una solución para cada",
+      "titleHighlight": "rol en la obra",
+      "desc": "Desarrolladoras, constructoras, proyectistas y contratistas — todos encuentran en Autodoc las herramientas adecuadas para su operación.",
+      "developer": "Desarrolladora",
+      "developerDesc": "Simplifica la gestión de tus proyectos inmobiliarios. Visión consolidada de proyectos, documentos y cumplimiento en todo tu portafolio.",
+      "builder": "Constructora",
+      "builderDesc": "Controla el ciclo de vida, la productividad y la calidad de la obra. De la planificación a la entrega, todo en una sola plataforma.",
+      "designer": "Proyectista",
+      "designerDesc": "Coordina los proyectos de la obra y las entregas con software BIM. Control de revisiones y distribución automática.",
+      "contractor": "Contratista",
+      "contractorDesc": "Gestiona equipos de forma digital. Documentación de trabajadores, certificados de salud, seguridad y EPP siempre al día."
+    },
+    "compliance": {
+      "label": "Documentos validados automáticamente por los Agentes GD4"
+    },
+    "journey": {
+      "sectionLabel": "Nuestra historia",
+      "title": "El camino de la",
+      "titleHighlight": "construcción inteligente",
+      "desc": "Líderes en soluciones digitales para reducción de riesgos y aumento de productividad en la construcción civil.",
+      "era1Year": "Era 1.0",
+      "era1Title": "Papel",
+      "era1Desc": "Carpetas físicas, copias de planos y archivos en estantes. Riesgo de extravío y versiones desactualizadas.",
+      "era2Year": "Era 2.0",
+      "era2Title": "Digital",
+      "era2Desc": "Digitalización de documentos, PDFs y hojas de cálculo en Excel. Archivos locales sin control de versiones.",
+      "era3Year": "Era 3.0",
+      "era3Title": "Nube",
+      "era3Desc": "Plataformas cloud con CDE, control de revisiones y distribución automática. La era de Autodoc Proyectos.",
+      "era4Year": "Era 4.0",
+      "era4Title": "Inteligencia Artificial",
+      "era4Desc": "21 Agentes GD4 validando documentos automáticamente. Gestión de Documentos 4.0 — de minutos a segundos."
+    },
+    "whyAutodoc": {
+      "sectionLabel": "¿Por qué Autodoc?",
+      "title": "La plataforma que las",
+      "titleHighlight": "mayores constructoras",
+      "titleEnd": "eligieron",
+      "desc": "+20 años de experiencia en tecnología para la construcción civil. Una empresa Ambar, junto a Polar y Simple Wall.",
+      "compliance": "Cumplimiento Automático",
+      "complianceDesc": "Validación continua de aportes laborales, certificados de salud, seguridad y deudas tributarias. Alertas automáticas antes del vencimiento. Cero riesgo de multas por documentación irregular.",
+      "time": "80% Menos Tiempo",
+      "timeDesc": "Validaciones que tomaban 30-60 minutos por documento ahora se completan en 2-5 minutos con los Agentes GD4. Tu equipo se enfoca en la obra, no en papeleo.",
+      "platform": "CDE + Workforce + IA",
+      "platformDesc": "Proyectos, planos, documentos técnicos, proveedores, trabajadores y validación por IA en una sola plataforma. De la oficina al sitio de obra.",
+      "supplier": "Portal del Proveedor",
+      "supplierDesc": "Entorno de autoservicio donde los proveedores envían documentos, dan seguimiento al estatus y reciben retroalimentación en tiempo real. Menos llamadas, más productividad.",
+      "agents": "21 Agentes de IA",
+      "agentsDesc": "Cada agente especializado en un tipo de documento: registro fiscal, certificados tributarios, aportes laborales, certificados de salud, seguridad, registros técnicos, nómina, facturas. Validación 24/7 con precisión superior al 97%.",
+      "scalable": "Escalable",
+      "scalableDesc": "De una sola obra a un portafolio de 200+ desarrollos simultáneos. La plataforma crece con tu operación, manteniendo rendimiento y control."
+    },
+    "products": {
+      "sectionLabel": "Nuestras soluciones",
+      "title": "Tres productos, una",
+      "titleHighlight": "plataforma",
+      "projetosAudience": "Proyectistas, Coordinadores",
+      "projetosH1": "CDE — Entorno Común de Datos",
+      "projetosH2": "Control de revisiones",
+      "projetosH3": "Flujo de aprobación",
+      "projetosH4": "Visor BIM integrado",
+      "projetosH5": "Distribución automática",
+      "workforceAudience": "Compras, RR.HH., Cumplimiento",
+      "workforceH1": "Habilitación de proveedores",
+      "workforceH2": "Cumplimiento laboral (FGTS, INSS)",
+      "workforceH3": "Control de acceso biométrico",
+      "workforceH4": "Portal del proveedor",
+      "workforceH5": "Alertas de vencimiento",
+      "agentesAudience": "Toda la operación",
+      "agentesH1": "21 agentes de IA",
+      "agentesH2": "Validación automática de documentos",
+      "agentesH3": "Precisión >97%",
+      "agentesH4": "Disponible 24/7",
+      "agentesH5": "Orquestador inteligente"
+    }
+  },
+  "testimonials": {
+    "sectionLabel": "Lo que dicen nuestros clientes",
+    "title": "La plataforma de las mayores",
+    "titleHighlight": "constructoras de Brasil",
+    "ariaLabel": "Testimonios de clientes",
+    "prevLabel": "Testimonio anterior",
+    "nextLabel": "Siguiente testimonio",
+    "watchVideo": "Ver testimonio",
+    "inMemoriam": "in memoriam",
+    "goToSlide": "Ir al testimonio {{num}}",
+    "slideLabel": "Testimonio {{current}} de {{total}}",
+    "currentSlide": "Testimonio actual: {{name}}",
+    "quotes": [
+      {
+        "quote": "Autodoc Proyectos es una plataforma donde podemos encontrar todos los archivos. Eso organizó el trabajo no solo para mí, sino para todo el equipo.",
+        "name": "Paula Dias Frassini",
+        "role": "CEO",
+        "company": "Qu4ttro Arquitetos Associados"
+      },
+      {
+        "quote": "GD4 cubre todas nuestras necesidades. Es una herramienta fácil de usar, intuitiva y que atiende todas nuestras áreas de soporte.",
+        "name": "Thiago Sanches",
+        "role": "Vicepresidente",
+        "company": "P4 Engenharia"
+      },
+      {
+        "quote": "Kallas no podía quedarse sin una herramienta de última generación para controlar el ingreso de personas y su documentación en nuestras obras. El sistema GD4 es esencial para eso.",
+        "name": "Davi Fratel",
+        "role": "Director Ejecutivo",
+        "company": "Kallas Construtora"
+      },
+      {
+        "quote": "Ya trabajé en otras empresas y en obras con 950 profesionales. El control era visual y el riesgo era alto por la falta de supervisión. GD4 fue una mejora enorme para las constructoras porque garantiza la seguridad de los trabajadores y el control en obra.",
+        "name": "Francisco Wanderley",
+        "role": "Administrador",
+        "company": "Tegra Incorporadora"
+      },
+      {
+        "quote": "Un proyecto es productividad. No puedes perder tiempo en tareas operativas. Autodoc tiene algunas funcionalidades muy poderosas. Subir un documento es muy rápido. Y también tiene el seguimiento por correo. Lo cubre todo.",
+        "name": "Alexandre Barbas",
+        "role": "Socio Director",
+        "company": "GP&D Consultoria e Projetos"
+      },
+      {
+        "quote": "Uso Autodoc hace más de 15 años. Es una herramienta muy completa que nos da un gran respaldo histórico y nos permite replicar modelos. Usamos Autodoc intensamente para compartir conocimiento entre las áreas internas de Lavvi.",
+        "name": "Marina Gabrieli",
+        "role": "Gerente de Proyectos",
+        "company": "LAVVI"
+      },
+      {
+        "quote": "Con el torniquete biométrico tenemos mayor precisión en el control de acceso y la certeza de que las personas que ingresan a la obra están realmente autorizadas.",
+        "name": "Marcelo Moraes",
+        "role": "Director Ejecutivo de Operaciones",
+        "company": "Even Construtora"
+      },
+      {
+        "quote": "La Bitácora de Obra de Autodoc optimizó la forma en que hacemos los registros diarios. Antes de implementar la herramienta, teníamos que usar papel y lápiz en campo y luego actualizar una hoja de Excel.",
+        "name": "Ana Carolina Bonifacio",
+        "role": "Coordinadora",
+        "company": "P4 Engenharia"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas",
+    "titleHighlight": "frecuentes",
+    "items": [
+      {
+        "question": "¿Qué es Autodoc?",
+        "answer": "Autodoc es una plataforma de gestión digital para la construcción civil que integra proyectos, documentos, proveedores y mano de obra en un solo entorno. Con dos productos — Autodoc Proyectos (CDE) y Autodoc Workforce (gestión de proveedores y obra) — y 21 agentes de IA para validación automática de documentos, la plataforma automatiza procesos, reduce riesgos y aumenta la productividad de tu obra. Autodoc es una empresa Ambar con más de 20 años en el mercado."
+      },
+      {
+        "question": "¿Cuál es la diferencia entre Autodoc Proyectos y Autodoc Workforce?",
+        "answer": "Autodoc Proyectos es un CDE (Entorno Común de Datos) para gestión de proyectos arquitectónicos, estructurales, hidráulicos y eléctricos, con control de revisiones, flujo de aprobación y distribución automática. Autodoc Workforce se enfoca en la gestión de proveedores y obra: habilitación, validación de documentos (registro fiscal, certificados tributarios, de salud, certificaciones de seguridad, EPP), control de acceso biométrico y cumplimiento laboral. Juntos cubren todo el ciclo de la construcción."
+      },
+      {
+        "question": "¿Qué son los Agentes GD4 y qué documentos validan?",
+        "answer": "Los Agentes GD4 son 21 sistemas de inteligencia artificial especializados en validación automática de documentos. Cubren 4 categorías: Empresa (registro fiscal, certificados tributarios federales, cumplimiento de aportes, deudas laborales, acta constitutiva), Trabajador (certificado de salud, NR-18, NR-35, NR-10, NR-33, ficha de EPP), Técnico (registro técnico ART/RRT, permiso de construcción, licencia ambiental) y Fiscal (informes de nómina, seguridad social, facturas, retenciones). Cada agente extrae datos, valida el cumplimiento y genera un dictamen automático."
+      },
+      {
+        "question": "¿Qué constructoras usan Autodoc?",
+        "answer": "Autodoc es utilizado por más de 3,500 empresas, incluyendo 60 de las 100 mayores constructoras de Brasil — MRV, Direcional, Tenda, Cury, Cyrela, Even y Patrimar, entre otras. Son más de 195 mil usuarios activos en la plataforma."
+      },
+      {
+        "question": "¿Autodoc es compatible con BIM?",
+        "answer": "Sí. Autodoc Proyectos cuenta con un visor BIM integrado, compatible con los principales softwares de modelado (Revit, ArchiCAD, Tekla). Puedes subir modelos IFC, visualizarlos en la plataforma y vincularlos a los proyectos y documentos correspondientes."
+      },
+      {
+        "question": "¿Cuánto tiempo toma la implementación?",
+        "answer": "La implementación es rápida y asistida. Nuestro equipo de Customer Success acompaña el onboarding, migración de datos y capacitación. La mayoría de los clientes están operando en menos de 2 semanas. Para operaciones más grandes (100+ obras), el plazo típico es de 4-6 semanas con soporte dedicado."
+      }
+    ]
+  },
+  "security": {
+    "sectionLabel": "Seguridad",
+    "title": "Tus datos",
+    "titleHighlight": "protegidos",
+    "encryption": "Cifrado",
+    "encryptionDesc": "Datos cifrados en tránsito y en reposo (AES-256)",
+    "lgpd": "LGPD",
+    "lgpdDesc": "En cumplimiento con la Ley General de Protección de Datos de Brasil",
+    "sla": "SLA 99.9%",
+    "slaDesc": "Alta disponibilidad con respaldo automático diario",
+    "auth": "Autenticación",
+    "authDesc": "Autenticación multifactor y control granular de permisos"
+  },
+  "demoForm": {
+    "title": "Tu obra bajo control",
+    "titleHighlight": "empieza aquí.",
+    "subtitle": "Únete a más de 3,500 empresas. Agenda una demostración personalizada.",
+    "successTitle": "¡Solicitud enviada!",
+    "successDesc": "Nuestro equipo se pondrá en contacto contigo en las próximas 24 horas.",
+    "nameLabel": "Nombre *",
+    "namePlaceholder": "Tu nombre completo",
+    "nameRequired": "El nombre es obligatorio",
+    "companyLabel": "Empresa *",
+    "companyPlaceholder": "Nombre de la empresa",
+    "companyRequired": "El nombre de la empresa es obligatorio",
+    "emailLabel": "Correo electrónico *",
+    "emailPlaceholder": "tu@correo.com",
+    "emailInvalid": "Correo electrónico inválido",
+    "phoneLabel": "Teléfono",
+    "phonePlaceholder": "+52 (55) 1234-5678",
+    "roleLabel": "Cargo",
+    "rolePlaceholder": "Director de Ingeniería",
+    "projectsLabel": "N.° de obras",
+    "projectsPlaceholder": "Seleccionar",
+    "projects1": "1 a 5",
+    "projects2": "6 a 20",
+    "projects3": "21 a 50",
+    "projects4": "51 a 100",
+    "projects5": "Más de 100",
+    "submit": "Agendar Demostración Gratuita",
+    "consent": "Al enviar, aceptas nuestra",
+    "privacyPolicy": "Política de Privacidad"
+  },
+  "contactBar": {
+    "cta": "Habla con un especialista:",
+    "whatsapp": "WhatsApp"
+  }
+}

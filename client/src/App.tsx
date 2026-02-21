@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import CookieBanner from "./components/CookieBanner";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { getLangPrefix } from "./components/LocaleLink";
 
 const Home = lazy(() => import("./pages/Home"));
 const Projetos = lazy(() => import("./pages/Projetos"));
@@ -26,23 +27,39 @@ function ScrollToTop() {
   return null;
 }
 
+const LOCALE_RE = /^\/(en|es)(\/|$)/;
+
+function stripLocale(path: string) {
+  return path.replace(LOCALE_RE, "/").replace(/\/+$/, "") || "/";
+}
+
+function detectLangFromPath(path: string): string | null {
+  const m = path.match(LOCALE_RE);
+  return m ? m[1] : null;
+}
+
 function LanguageSync() {
   const { i18n } = useTranslation();
   const [location, setLocation] = useLocation();
 
   useEffect(() => {
-    if (location.startsWith("/en")) {
-      if (!i18n.language?.startsWith("en")) i18n.changeLanguage("en");
-    } else if (i18n.language?.startsWith("en")) {
-      setLocation(`/en${location === "/" ? "" : location}`, { replace: true });
+    const pathLang = detectLangFromPath(location);
+    const curLang = i18n.language?.substring(0, 2);
+    if (pathLang) {
+      if (curLang !== pathLang) i18n.changeLanguage(pathLang);
+    } else if (curLang && curLang !== "pt") {
+      const clean = stripLocale(location);
+      setLocation(`/${curLang}${clean === "/" ? "" : clean}`, { replace: true });
     }
   }, [location]);
 
   useEffect(() => {
-    const lang = i18n.language?.startsWith("en") ? "en" : "pt";
-    document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+    const lang = i18n.language?.substring(0, 2) ?? "pt";
+    const htmlLangMap: Record<string, string> = { pt: "pt-BR", en: "en", es: "es" };
+    const ogLocaleMap: Record<string, string> = { pt: "pt_BR", en: "en_US", es: "es_419" };
+    document.documentElement.lang = htmlLangMap[lang] ?? "pt-BR";
     const ogLocale = document.querySelector('meta[property="og:locale"]');
-    if (ogLocale) ogLocale.setAttribute("content", lang === "pt" ? "pt_BR" : "en_US");
+    if (ogLocale) ogLocale.setAttribute("content", ogLocaleMap[lang] ?? "pt_BR");
   }, [i18n.language]);
 
   return null;
@@ -84,9 +101,11 @@ function Router() {
             {routes.map((r) => (
               <Route key={r.path} path={r.path} component={r.component} />
             ))}
-            {routes.map((r) => (
-              <Route key={`en${r.path}`} path={`/en${r.path === "/" ? "" : r.path}`} component={r.component} />
-            ))}
+            {["en", "es"].flatMap((lang) =>
+              routes.map((r) => (
+                <Route key={`${lang}${r.path}`} path={`/${lang}${r.path === "/" ? "" : r.path}`} component={r.component} />
+              ))
+            )}
             <Route component={NotFound} />
           </Switch>
         </motion.div>

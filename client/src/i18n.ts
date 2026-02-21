@@ -16,6 +16,13 @@ import enWorkforce from "./locales/en/workforce.json";
 import enAgentes from "./locales/en/agentes.json";
 import enPrivacidade from "./locales/en/privacidade.json";
 
+import esCommon from "./locales/es/common.json";
+import esHome from "./locales/es/home.json";
+import esProjetos from "./locales/es/projetos.json";
+import esWorkforce from "./locales/es/workforce.json";
+import esAgentes from "./locales/es/agentes.json";
+import esPrivacidade from "./locales/es/privacidade.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -37,9 +44,17 @@ i18n
         agentes: enAgentes,
         privacidade: enPrivacidade,
       },
+      es: {
+        common: esCommon,
+        home: esHome,
+        projetos: esProjetos,
+        workforce: esWorkforce,
+        agentes: esAgentes,
+        privacidade: esPrivacidade,
+      },
     },
     fallbackLng: "pt",
-    supportedLngs: ["pt", "en"],
+    supportedLngs: ["pt", "en", "es"],
     defaultNS: "common",
     ns: ["common", "home", "projetos", "workforce", "agentes", "privacidade"],
     detection: {
