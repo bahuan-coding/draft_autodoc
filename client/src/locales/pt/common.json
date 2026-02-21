@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "projetos": "Autodoc Projetos",
+    "workforce": "Autodoc Workforce",
+    "agentes": "Agentes GD4",
+    "login": "Entrar",
+    "freeTrial": "Teste Grátis",
+    "mainNav": "Navegação principal",
+    "mobileMenu": "Menu mobile",
+    "closeMenu": "Fechar menu",
+    "openMenu": "Abrir menu"
+  },
+  "footer": {
+    "description": "A evolução digital da construção civil. Plataforma líder em gestão de projetos, documentos e mão de obra para as maiores construtoras do Brasil.",
+    "solutions": "Soluções",
+    "company": "Empresa",
+    "about": "Sobre a Autodoc",
+    "careers": "Carreira",
+    "blog": "Blog",
+    "successCases": "Cases de Sucesso",
+    "support": "Suporte",
+    "contactUs": "Fale Conosco",
+    "helpCenter": "Central de Ajuda",
+    "privacyPolicy": "Política de Privacidade",
+    "cookiePolicy": "Política de Cookies",
+    "salesCenter": "Central de Vendas",
+    "callPhone": "Ligar para (11) 5043-7900",
+    "opensNewTab": "abre em nova aba",
+    "ecosystem": "Ecossistema"
+  },
+  "cookie": {
+    "message": "Utilizamos cookies para melhorar sua experiência de navegação. Ao continuar, você concorda com nossa",
+    "privacyPolicy": "Política de Privacidade",
+    "reject": "Rejeitar",
+    "accept": "Aceitar",
+    "ariaLabel": "Política de cookies"
+  },
+  "whatsapp": {
+    "ariaLabel": "Fale conosco pelo WhatsApp"
+  },
+  "loading": "Carregando",
+  "loadingText": "Carregando...",
+  "skipToContent": "Pular para o conteúdo",
+  "backHome": "Voltar para Home",
+  "scheduleDemo": "Agendar Demonstração",
+  "requestDemo": "Solicitar Demonstração",
+  "learnMore": "Saiba mais",
+  "viewDetails": "Ver detalhes",
+  "notFound": {
+    "title": "Página não encontrada",
+    "line1": "A página que você procura não existe ou foi movida.",
+    "line2": "Volte para o início e explore nossas soluções.",
+    "backHome": "Voltar para Home"
+  }
+}

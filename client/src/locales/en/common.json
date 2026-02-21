@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "projetos": "Autodoc Projects",
+    "workforce": "Autodoc Workforce",
+    "agentes": "GD4 Agents",
+    "login": "Sign In",
+    "freeTrial": "Free Trial",
+    "mainNav": "Main navigation",
+    "mobileMenu": "Mobile menu",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu"
+  },
+  "footer": {
+    "description": "The digital evolution of civil construction. Leading platform for project, document, and workforce management for the largest construction companies in Brazil.",
+    "solutions": "Solutions",
+    "company": "Company",
+    "about": "About Autodoc",
+    "careers": "Careers",
+    "blog": "Blog",
+    "successCases": "Success Stories",
+    "support": "Support",
+    "contactUs": "Contact Us",
+    "helpCenter": "Help Center",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "salesCenter": "Sales Center",
+    "callPhone": "Call (11) 5043-7900",
+    "opensNewTab": "opens in new tab",
+    "ecosystem": "Ecosystem"
+  },
+  "cookie": {
+    "message": "We use cookies to improve your browsing experience. By continuing, you agree to our",
+    "privacyPolicy": "Privacy Policy",
+    "reject": "Reject",
+    "accept": "Accept",
+    "ariaLabel": "Cookie policy"
+  },
+  "whatsapp": {
+    "ariaLabel": "Contact us via WhatsApp"
+  },
+  "loading": "Loading",
+  "loadingText": "Loading...",
+  "skipToContent": "Skip to content",
+  "backHome": "Back to Home",
+  "scheduleDemo": "Schedule Demo",
+  "requestDemo": "Request Demo",
+  "learnMore": "Learn more",
+  "viewDetails": "View details",
+  "notFound": {
+    "title": "Page not found",
+    "line1": "The page you're looking for doesn't exist or has been moved.",
+    "line2": "Go back to the homepage and explore our solutions.",
+    "backHome": "Back to Home"
+  }
+}

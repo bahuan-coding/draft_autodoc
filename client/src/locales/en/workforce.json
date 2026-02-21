@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "title": "Autodoc Workforce",
+    "subtitle": "Supplier & Jobsite Management",
+    "description": "Supplier onboarding, labor compliance, and jobsite access control in a single platform. Automatic validation of company registrations, tax clearances, health certificates, safety certifications, PPE, technical registrations, payroll reports, and more — with 21 AI Agents."
+  },
+  "beforeAfter": {
+    "title": "Before vs.",
+    "titleHighlight": "After",
+    "subtitle": "The transformation Autodoc Workforce brings to your operation",
+    "items": [
+      { "before": "30-60 min validating each document manually", "after": "2-5 min with automatic validation by GD4 Agents" },
+      { "before": "Outdated and disconnected Excel spreadsheets", "after": "Real-time dashboard with compliance score" },
+      { "before": "Risk of fines for expired health certificates or irregular safety certs", "after": "Automatic alerts 30/15/7 days before expiration" },
+      { "before": "Suppliers calling to check status", "after": "Self-service portal with real-time status" },
+      { "before": "Worker without NR-35 entering a height-work site", "after": "Automatic biometric block for irregular documentation" },
+      { "before": "Manual auditing of FGTS, INSS, and CNDT", "after": "Continuous compliance with 24/7 AI validation" }
+    ]
+  },
+  "compliance": {
+    "title": "Complete",
+    "titleHighlight": "Compliance",
+    "titleEnd": "Checklist",
+    "subtitle": "All mandatory documents for civil construction, organized by category, automatically validated by GD4 Agents.",
+    "categories": [
+      { "title": "Company", "docs": ["Active Registration", "Federal Tax Clearance", "State Tax Clearance", "Municipal Tax Clearance", "FGTS Compliance", "Labor Clearance", "Articles of Incorporation", "Business License"] },
+      { "title": "Worker", "docs": ["Health Certificate (NR-7)", "NR-18 Construction", "NR-35 Height Work", "NR-10 Electrical", "NR-33 Confined Spaces", "PPE Record", "Work Card", "Onboarding"] },
+      { "title": "Technical", "docs": ["ART (CREA)", "RRT (CAU)", "Construction Permit", "Environmental License", "Site Registration", "PCMSO", "PGR"] },
+      { "title": "Fiscal", "docs": ["GFIP/SEFIP", "GPS", "Electronic Invoice", "ISS Tax Guides", "DARF", "INSS Withholdings", "IR/CSLL Withholdings"] }
+    ]
+  },
+  "catraca": {
+    "badge": "Autodoc Turnstile",
+    "title": "Access control with",
+    "titleHighlight": "facial recognition",
+    "desc": "The integration between GD4 and Autodoc Turnstile automatically validates worker documentation at the moment of jobsite access. Facial recognition, QR Code, or virtual turnstile — access is only granted if all documentation is up to date.",
+    "feat1": "Facial recognition integrated with document database",
+    "feat2": "Dynamic QR Code for smartphone access",
+    "feat3": "Virtual turnstile without dedicated hardware",
+    "feat4": "Automatic block for expired health cert or irregular safety cert",
+    "feat5": "Digital time tracking with geolocation",
+    "flowTitle": "Smart Access Flow",
+    "flow1": "Worker identifies themselves (facial/QR)",
+    "flow2": "GD4 verifies health certs, safety certs, and PPE in real time",
+    "flow3": "Documentation OK → access granted",
+    "flow4": "Irregular documentation → access blocked + alert"
+  },
+  "metrics": {
+    "m1Value": "50%",
+    "m1Label": "Reduction in labor liabilities",
+    "m2Value": "R$ 50M",
+    "m2Label": "Potential savings/year",
+    "m3Value": "180/mo",
+    "m3Label": "Documents analyzed per agent",
+    "m4Value": "99.5%",
+    "m4Label": "Validation accuracy"
+  },
+  "featuresGrid": {
+    "title": "Complete",
+    "titleHighlight": "features",
+    "subtitle": "Everything to manage suppliers, workers, and documentation with security and efficiency — from office to jobsite."
+  },
+  "features": {
+    "f1Title": "Supplier Onboarding",
+    "f1Desc": "Complete qualification process with automatic mandatory document checklist: company registration, federal/state/municipal tax clearances, FGTS compliance, labor clearance, articles of incorporation, business license, and professional registration.",
+    "f2Title": "Centralized Document Management",
+    "f2Desc": "Centralized control of all supplier and worker documentation. Complete history, versioning, and traceability for every document received.",
+    "f3Title": "Jobsite Access Control",
+    "f3Desc": "Worker entry and exit management with biometric validation. Automatic access block when documentation is irregular or expired.",
+    "f4Title": "Labor Compliance",
+    "f4Desc": "Automatic validation of FGTS (CRF), INSS (GPS), GFIP/SEFIP, payroll, and other labor obligations. Continuous compliance monitoring.",
+    "f5Title": "Health & Safety — NRs",
+    "f5Desc": "Validation of health certificates (NR-7), NR-18 (Construction), NR-35 (Height Work), NR-10 (Electrical), NR-33 (Confined Spaces), PCMSO, and PGR certificates.",
+    "f6Title": "PPE Control",
+    "f6Desc": "PPE record management (NR-6) with delivery validation, signature, and approval certificate. Replacement alerts for wear or expiration.",
+    "f7Title": "Smart Alerts",
+    "f7Desc": "Automatic notifications 30, 15, and 7 days before each document expires. Escalation to managers when the supplier doesn't regularize on time.",
+    "f8Title": "Supplier Portal",
+    "f8Desc": "Self-service environment via web and app (GD4 Obra) for suppliers to submit documents, track qualification status, and receive real-time feedback.",
+    "f9Title": "Compliance Dashboard",
+    "f9Desc": "Consolidated compliance view by project, supplier, and document type. Risk score, compliance indicators, and exportable management reports.",
+    "f10Title": "AI Validation — GD4 Agents",
+    "f10Desc": "21 specialized AI agents automatically validate each document: company registration, tax clearances, health certificates, safety certs, technical registrations, payroll reports, invoices. From hours to minutes."
+  },
+  "cta": {
+    "title": "Ready to control your workforce?",
+    "description": "Schedule a demo and see how Autodoc Workforce can transform supplier management and jobsite compliance."
+  }
+}

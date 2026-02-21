@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function WhatsAppFloat() {
+  const { t } = useTranslation("common");
   return (
     <motion.a
       href="https://wa.me/551150437900"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Fale conosco pelo WhatsApp"
+      aria-label={t("whatsapp.ariaLabel")}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 2, type: "spring", stiffness: 260, damping: 20 }}

@@ -1,14 +1,28 @@
-import { Link } from "wouter";
+import LocaleLink from "@/components/LocaleLink";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { ArrowRight, ArrowLeft, Bot, Zap, Shield, Clock, CheckCircle2, Timer } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import CTASection from "@/components/sections/CTASection";
 import { IMAGES } from "@/lib/images";
-import { agentCategories, roadmap, impactMetrics, environmentalImpact } from "@/data/agentes";
+import { getAgentCategories } from "@/data/agentes";
 
 export default function AgentesGD4() {
+  const { t } = useTranslation("agentes");
+  const agentCategories = getAgentCategories(t);
+  const roadmap = t("roadmap.items", { returnObjects: true }) as { label: string; title: string; desc: string }[];
+  const impactMetrics = t("impact.metrics", { returnObjects: true }) as { label: string; desc: string }[];
+  const environmentalImpact = t("environmental.items", { returnObjects: true }) as { value: string; label: string; desc: string }[];
   const totalAgents = agentCategories.reduce((sum, cat) => sum + cat.agents.length, 0);
+
+  const impactValues = [
+    { value: 50, suffix: "%" },
+    { value: 12, suffix: " docs/h" },
+    { value: 97, suffix: "%+" },
+    { value: 24, suffix: "/7" },
+  ];
+  const roadmapStatuses: ("live" | "beta" | "planned")[] = ["live", "live", "beta", "planned", "planned"];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -20,12 +34,12 @@ export default function AgentesGD4() {
         </div>
 
         <div className="container relative z-10">
-          <Link href="/" className="inline-block mb-8 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md">
+          <LocaleLink href="/" className="inline-block mb-8 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md">
             <span className="inline-flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors">
               <ArrowLeft size={16} aria-hidden="true" />
-              Voltar para Home
+              {t("common:backHome")}
             </span>
-          </Link>
+          </LocaleLink>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -35,23 +49,22 @@ export default function AgentesGD4() {
           >
             <span className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 mb-6 px-4 py-1.5 rounded-full border border-amber-400/20 bg-amber-400/5">
               <Bot size={14} />
-              Inteligência Artificial para Construção Civil
+              {t("hero.badge")}
             </span>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
-              Agentes <span className="gradient-text-amber">GD4</span>
+              {t("hero.title")} <span className="gradient-text-amber">{t("hero.titleHighlight")}</span>
             </h1>
             <p className="text-lg sm:text-xl text-navy-300 leading-relaxed mb-6 max-w-2xl">
-              {totalAgents} agentes de IA especializados em validação de documentos da construção civil.
-              De CNPJ a NR-35, de ART a GFIP — cada agente é treinado para um tipo específico de documento.
+              {t("hero.desc", { count: totalAgents })}
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">
               {[
-                { icon: Bot, label: `${totalAgents} Agentes` },
-                { icon: Zap, label: "80% Mais Rápido" },
-                { icon: Shield, label: "Precisão >97%" },
-                { icon: Clock, label: "24/7 Disponível" },
+                { icon: Bot, label: t("hero.badgeAgents", { count: totalAgents }) },
+                { icon: Zap, label: t("hero.badgeFaster") },
+                { icon: Shield, label: t("hero.badgePrecision") },
+                { icon: Clock, label: t("hero.badgeAvailable") },
               ].map((badge, i) => (
                 <span
                   key={i}
@@ -67,7 +80,7 @@ export default function AgentesGD4() {
               href="#agentes"
               className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-navy-950 font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
             >
-              Ver Todos os Agentes
+              {t("hero.cta")}
               <ArrowRight size={18} aria-hidden="true" />
             </a>
           </motion.div>
@@ -80,34 +93,25 @@ export default function AgentesGD4() {
           <SectionReveal>
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-center">
-                O que são os Agentes <span className="gradient-text-amber">GD4</span>?
+                {t("what.title")} <span className="gradient-text-amber">{t("what.titleHighlight")}</span>?
               </h2>
               <div className="space-y-4 text-navy-300 leading-relaxed text-lg">
+                <p>{t("what.p1")}</p>
                 <p>
-                  Os Agentes GD4 são sistemas de inteligência artificial especializados
-                  que automatizam a validação de documentos obrigatórios na construção civil.
-                  Cada agente é treinado para analisar um tipo específico de documento —
-                  desde certidões da Receita Federal até certificados de NR-35 — e validar
-                  se está completo, correto e em conformidade com a legislação vigente.
-                </p>
-                <p>
-                  Eles cobrem as 4 categorias fundamentais de compliance na construção:
-                  documentos de <strong className="text-white">empresa/fornecedor</strong>,
-                  de <strong className="text-white">trabalhador</strong>,
-                  <strong className="text-white"> técnicos</strong> e
-                  <strong className="text-white"> fiscais</strong>.
-                  Um agente orquestrador coordena todos os demais e gera um score
-                  consolidado de conformidade.
+                  {t("what.p2text")}{" "}
+                  <strong className="text-white">{t("what.p2company")}</strong>,{" "}
+                  <strong className="text-white">{t("what.p2worker")}</strong>,{" "}
+                  <strong className="text-white">{t("what.p2technical")}</strong>{" "}
+                  {t("what.p2and")}{" "}
+                  <strong className="text-white">{t("what.p2fiscal")}</strong>.{" "}
+                  {t("what.p2end")}
                 </p>
               </div>
 
               <div className="glass-card p-6 mt-8 glow-amber">
-                <h3 className="text-white font-bold mb-2">GD4 = Gestão de Documentos 4.0</h3>
+                <h3 className="text-white font-bold mb-2">{t("what.boxTitle")}</h3>
                 <p className="text-navy-300 text-sm leading-relaxed">
-                  Representa a quarta evolução em gestão documental: do <strong className="text-navy-200">papel</strong> para
-                  o <strong className="text-navy-200">digital</strong>, do digital para a <strong className="text-navy-200">nuvem</strong>,
-                  da nuvem para a <strong className="text-navy-200">automação</strong>, e da automação para a
-                  <strong className="text-amber-400"> inteligência artificial autônoma</strong>.
+                  {t("what.boxDesc")}
                 </p>
               </div>
             </div>
@@ -120,17 +124,17 @@ export default function AgentesGD4() {
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Como Funciona</h2>
-              <p className="text-navy-400 text-lg">Do upload à validação em 4 etapas</p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("howItWorks.title")}</h2>
+              <p className="text-navy-400 text-lg">{t("howItWorks.subtitle")}</p>
             </div>
           </SectionReveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
-              { step: "01", title: "Upload", desc: "Fornecedor envia o documento via plataforma web ou app GD4 Obra", icon: "📤" },
-              { step: "02", title: "Classificação", desc: "O Orquestrador identifica o tipo e aciona o agente especializado", icon: "🧠" },
-              { step: "03", title: "Validação", desc: "O agente extrai dados, cruza com bases oficiais e valida conformidade", icon: "🔍" },
-              { step: "04", title: "Parecer", desc: "Aprovado ou reprovado com justificativa técnica em tempo real", icon: "✅" },
+              { step: "01", title: t("howItWorks.step1Title"), desc: t("howItWorks.step1Desc"), icon: "📤" },
+              { step: "02", title: t("howItWorks.step2Title"), desc: t("howItWorks.step2Desc"), icon: "🧠" },
+              { step: "03", title: t("howItWorks.step3Title"), desc: t("howItWorks.step3Desc"), icon: "🔍" },
+              { step: "04", title: t("howItWorks.step4Title"), desc: t("howItWorks.step4Desc"), icon: "✅" },
             ].map((item, i) => (
               <SectionReveal key={i} delay={i * 0.1}>
                 <div className="glass-card p-6 text-center h-full">
@@ -151,11 +155,10 @@ export default function AgentesGD4() {
           <SectionReveal>
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Os <span className="gradient-text-amber">{totalAgents} Agentes</span> Especializados
+                {t("agents.title")} <span className="gradient-text-amber">{t("agents.titleHighlight", { count: totalAgents })}</span>{" "}{t("agents.titleEnd")}
               </h2>
               <p className="text-navy-400 text-lg max-w-2xl mx-auto">
-                Organizados por categoria de documento. Cada agente é um especialista
-                treinado para validar um tipo específico de documento da construção civil.
+                {t("agents.subtitle")}
               </p>
             </div>
           </SectionReveal>
@@ -170,7 +173,7 @@ export default function AgentesGD4() {
                     }`} />
                     <h3 className="text-xl font-bold text-white">{cat.category}</h3>
                     <span className="text-xs text-navy-500 bg-white/5 px-2.5 py-0.5 rounded-full">
-                      {cat.agents.length} {cat.agents.length === 1 ? "agente" : "agentes"}
+                      {cat.agents.length} {cat.agents.length === 1 ? t("agents.agentSingular") : t("agents.agentPlural")}
                     </span>
                   </div>
 
@@ -211,8 +214,8 @@ export default function AgentesGD4() {
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Impacto Mensurável</h2>
-              <p className="text-navy-400 text-lg">Resultados reais em clientes que usam os Agentes GD4</p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("impact.title")}</h2>
+              <p className="text-navy-400 text-lg">{t("impact.subtitle")}</p>
             </div>
           </SectionReveal>
 
@@ -221,8 +224,8 @@ export default function AgentesGD4() {
               <SectionReveal key={i} delay={i * 0.1}>
                 <div className="glass-card p-6 text-center glow-amber">
                   <AnimatedCounter
-                    end={metric.value}
-                    suffix={metric.suffix}
+                    end={impactValues[i]?.value ?? 0}
+                    suffix={impactValues[i]?.suffix ?? ""}
                     className="text-4xl lg:text-5xl font-extrabold text-amber-400"
                   />
                   <p className="text-white font-semibold mt-2">{metric.label}</p>
@@ -239,8 +242,8 @@ export default function AgentesGD4() {
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Impacto Ambiental</h2>
-              <p className="text-navy-400 text-lg">A digitalização que faz bem para o planeta</p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("environmental.title")}</h2>
+              <p className="text-navy-400 text-lg">{t("environmental.subtitle")}</p>
             </div>
           </SectionReveal>
 
@@ -263,8 +266,8 @@ export default function AgentesGD4() {
         <div className="container">
           <SectionReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Roadmap de Evolução</h2>
-              <p className="text-navy-400 text-lg">O futuro dos Agentes GD4</p>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t("roadmap.title")}</h2>
+              <p className="text-navy-400 text-lg">{t("roadmap.subtitle")}</p>
             </div>
           </SectionReveal>
 
@@ -273,9 +276,9 @@ export default function AgentesGD4() {
               <SectionReveal key={i} delay={i * 0.1}>
                 <div className="glass-card p-6 flex items-start gap-4">
                   <div className={`shrink-0 px-3 py-1 rounded-full text-xs font-bold ${
-                    item.status === "live"
+                    roadmapStatuses[i] === "live"
                       ? "bg-emerald-500/20 text-emerald-400"
-                      : item.status === "beta"
+                      : roadmapStatuses[i] === "beta"
                       ? "bg-amber-500/20 text-amber-400"
                       : "bg-blue-500/20 text-blue-400"
                   }`}>
@@ -294,9 +297,9 @@ export default function AgentesGD4() {
 
       <CTASection
         id="demo"
-        title="Veja os Agentes GD4 em ação"
-        description={`Agende uma demonstração e descubra como ${totalAgents} agentes de IA podem automatizar a validação de documentos da sua construtora.`}
-        ctaText="Agendar Demo ao Vivo"
+        title={t("cta.title")}
+        description={t("cta.description", { count: totalAgents })}
+        ctaText={t("cta.button")}
         glow="amber"
       />
 

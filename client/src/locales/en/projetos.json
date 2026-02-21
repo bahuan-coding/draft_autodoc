@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title": "Autodoc Projects",
+    "subtitle": "CDE — Common Data Environment",
+    "description": "The Common Data Environment (CDE) that centralizes architectural, structural, hydraulic, and electrical projects. Revision control, approval workflows, and automatic distribution for field and office teams.",
+    "moreDisciplines": "+{{count}} disciplines"
+  },
+  "disciplines": {
+    "title": "All Disciplines in One Place",
+    "subtitle": "Organize by development, building, and discipline",
+    "items": ["Architectural", "Structural", "Hydraulic", "Electrical", "Foundations", "HVAC", "Landscaping", "Fire Protection", "Special Installations", "Surveying", "Geotechnical", "Acoustic"]
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "From upload to distribution in 4 steps",
+    "step1Title": "Upload",
+    "step1Desc": "Designer uploads blueprints, projects, and technical documents to the platform",
+    "step2Title": "Organization",
+    "step2Desc": "The platform automatically organizes by development, discipline, and revision",
+    "step3Title": "Approval",
+    "step3Desc": "Configurable workflow: designer → coordinator → manager, with comments",
+    "step4Title": "Distribution",
+    "step4Desc": "Automatic distribution to field teams, suppliers, and partners"
+  },
+  "featuresGrid": {
+    "title": "Everything you need to",
+    "titleHighlight": "manage projects",
+    "subtitle": "Features designed for the day-to-day of civil construction, from office to jobsite."
+  },
+  "features": {
+    "f1Title": "Project & Blueprint Management",
+    "f1Desc": "Organize architectural, structural, hydraulic, electrical, and foundation projects in a hierarchical structure by development, building, and discipline.",
+    "f2Title": "Revision Control",
+    "f2Desc": "Complete revision history with full traceability. Each version recorded with author, date, comments, and approval. Never work with an outdated file again.",
+    "f3Title": "Automatic Distribution",
+    "f3Desc": "Automatically distribute projects and blueprints to designers, field teams, and suppliers. Real-time notifications when a new revision is published.",
+    "f4Title": "Approval Workflow",
+    "f4Desc": "Configurable approval workflows with multiple levels: designer → coordinator → manager. Real-time status: under review, approved, rejected with comments.",
+    "f5Title": "Integrated BIM Viewer",
+    "f5Desc": "Compatible with Revit, ArchiCAD, and Tekla. Upload IFC models, view them in 3D on the platform, and link to the corresponding project.",
+    "f6Title": "DLR — Daily Log Report",
+    "f6Desc": "Digital records with photos, notes, weather conditions, and activity tracking. Everything documented, traceable, and exportable.",
+    "f7Title": "Smart Search",
+    "f7Desc": "Find any project, blueprint, or document in seconds. Search by name, discipline, revision, author, date, or tag. Advanced filters by development.",
+    "f8Title": "Security & Access Control",
+    "f8Desc": "End-to-end encryption, granular profile-based access control, and automatic backup. Define who can view, edit, approve, or distribute each document.",
+    "f9Title": "Reports & Analytics",
+    "f9Desc": "Dashboards with productivity metrics, approval timelines, pending documents, and compliance. Exportable reports for coordination meetings.",
+    "f10Title": "Mobile Access",
+    "f10Desc": "Access projects and blueprints directly from the jobsite via mobile app. View, comment, and approve documents from anywhere, online or offline."
+  },
+  "cta": {
+    "title": "Ready to organize your projects?",
+    "description": "Schedule a demo and see how Autodoc Projects can transform project and blueprint management at your construction site."
+  }
+}

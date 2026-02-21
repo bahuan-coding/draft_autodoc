@@ -1,4 +1,5 @@
-import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
+import LocaleLink from "@/components/LocaleLink";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -28,6 +29,7 @@ export default function PageHero({
   ctaHref = "/#demonstracao",
   children,
 }: PageHeroProps) {
+  const { t } = useTranslation("common");
   const iconBg = iconColor.includes("amber") ? "bg-amber-500/10" : "bg-blue-500/10";
   const ctaBg = iconColor.includes("amber")
     ? "bg-amber-500 hover:bg-amber-400 text-navy-950 hover:shadow-amber-500/25"
@@ -41,12 +43,12 @@ export default function PageHero({
       </div>
 
       <div className="container relative z-10">
-        <Link href="/" className="inline-block mb-8 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md">
+        <LocaleLink href="/" className="inline-block mb-8 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md">
           <span className="inline-flex items-center gap-2 text-sm text-navy-400 hover:text-white transition-colors">
             <ArrowLeft size={16} aria-hidden="true" />
-            Voltar para Home
+            {t("backHome")}
           </span>
-        </Link>
+        </LocaleLink>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -81,11 +83,11 @@ export default function PageHero({
           {children}
 
           {ctaText && (
-            <Link href={ctaHref} className="inline-block focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-xl">
+            <LocaleLink href={ctaHref} className="inline-block focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-xl">
               <span className={`inline-flex items-center gap-2 font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] ${ctaBg}`}>
                 {ctaText}
               </span>
-            </Link>
+            </LocaleLink>
           )}
         </motion.div>
       </div>

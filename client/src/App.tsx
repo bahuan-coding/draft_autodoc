@@ -1,4 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -15,6 +16,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Projetos = lazy(() => import("./pages/Projetos"));
 const Workforce = lazy(() => import("./pages/Workforce"));
 const AgentesGD4 = lazy(() => import("./pages/AgentesGD4"));
+const Privacidade = lazy(() => import("./pages/Privacidade"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -24,14 +26,46 @@ function ScrollToTop() {
   return null;
 }
 
+function LanguageSync() {
+  const { i18n } = useTranslation();
+  const [location, setLocation] = useLocation();
+
+  useEffect(() => {
+    if (location.startsWith("/en")) {
+      if (!i18n.language?.startsWith("en")) i18n.changeLanguage("en");
+    } else if (i18n.language?.startsWith("en")) {
+      setLocation(`/en${location === "/" ? "" : location}`, { replace: true });
+    }
+  }, [location]);
+
+  useEffect(() => {
+    const lang = i18n.language?.startsWith("en") ? "en" : "pt";
+    document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute("content", lang === "pt" ? "pt_BR" : "en_US");
+  }, [i18n.language]);
+
+  return null;
+}
+
 function PageLoader() {
+  const { t } = useTranslation("common");
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center" role="status" aria-label="Carregando">
+    <div className="min-h-screen bg-background flex items-center justify-center" role="status" aria-label={t("loading")}>
       <div className="w-8 h-8 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
-      <span className="sr-only">Carregando...</span>
+      <span className="sr-only">{t("loadingText")}</span>
     </div>
   );
 }
+
+const routes = [
+  { path: "/", component: Home },
+  { path: "/projetos", component: Projetos },
+  { path: "/workforce", component: Workforce },
+  { path: "/agentes-gd4", component: AgentesGD4 },
+  { path: "/privacidade", component: Privacidade },
+  { path: "/404", component: NotFound },
+];
 
 function Router() {
   const [location] = useLocation();
@@ -47,12 +81,12 @@ function Router() {
           transition={{ duration: 0.25, ease: "easeInOut" }}
         >
           <Switch location={location}>
-            <Route path={"/"} component={Home} />
-            <Route path={"/projetos"} component={Projetos} />
-            <Route path={"/workforce"} component={Workforce} />
-            <Route path={"/agentes-gd4"} component={AgentesGD4} />
-            <Route path={"/privacidade"} component={lazy(() => import("./pages/Privacidade"))} />
-            <Route path={"/404"} component={NotFound} />
+            {routes.map((r) => (
+              <Route key={r.path} path={r.path} component={r.component} />
+            ))}
+            {routes.map((r) => (
+              <Route key={`en${r.path}`} path={`/en${r.path === "/" ? "" : r.path}`} component={r.component} />
+            ))}
             <Route component={NotFound} />
           </Switch>
         </motion.div>
@@ -62,17 +96,19 @@ function Router() {
 }
 
 function App() {
+  const { t } = useTranslation("common");
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
           <ScrollToTop />
+          <LanguageSync />
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold"
           >
-            Pular para o conteúdo
+            {t("skipToContent")}
           </a>
           <div className="noise-overlay" aria-hidden="true" />
           <Navbar />

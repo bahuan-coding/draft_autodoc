@@ -1,0 +1,135 @@
+{
+  "hero": {
+    "badge": "Artificial Intelligence for Civil Construction",
+    "title": "GD4",
+    "titleHighlight": "Agents",
+    "desc": "{{count}} AI agents specialized in civil construction document validation. From company registrations to safety certifications, from technical registrations to payroll reports — each agent is trained for a specific document type.",
+    "badgeAgents": "{{count}} Agents",
+    "badgeFaster": "80% Faster",
+    "badgePrecision": "Accuracy >97%",
+    "badgeAvailable": "24/7 Available",
+    "cta": "View All Agents"
+  },
+  "what": {
+    "title": "What are GD4",
+    "titleHighlight": "Agents",
+    "p1": "GD4 Agents are specialized artificial intelligence systems that automate the validation of mandatory documents in civil construction. Each agent is trained to analyze a specific document type — from federal tax certificates to NR-35 safety certifications — and validate whether it is complete, correct, and in compliance with current legislation.",
+    "p2company": "company/supplier",
+    "p2worker": "worker",
+    "p2technical": "technical",
+    "p2and": "and",
+    "p2fiscal": "fiscal",
+    "p2text": "They cover the 4 fundamental compliance categories in construction: documents for",
+    "p2end": "An orchestrator agent coordinates all others and generates a consolidated compliance score.",
+    "boxTitle": "GD4 = Document Management 4.0",
+    "boxDesc": "Represents the fourth evolution in document management: from paper to digital, from digital to cloud, from cloud to automation, and from automation to autonomous artificial intelligence.",
+    "boxPaper": "paper",
+    "boxDigital": "digital",
+    "boxCloud": "cloud",
+    "boxAutomation": "automation",
+    "boxAI": "autonomous artificial intelligence"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "From upload to validation in 4 steps",
+    "step1Title": "Upload",
+    "step1Desc": "Supplier uploads the document via web platform or GD4 Obra app",
+    "step2Title": "Classification",
+    "step2Desc": "The Orchestrator identifies the type and activates the specialized agent",
+    "step3Title": "Validation",
+    "step3Desc": "The agent extracts data, cross-references with official databases, and validates compliance",
+    "step4Title": "Report",
+    "step4Desc": "Approved or rejected with technical justification in real time"
+  },
+  "agents": {
+    "title": "The",
+    "titleHighlight": "{{count}} Specialized",
+    "titleEnd": "Agents",
+    "subtitle": "Organized by document category. Each agent is a specialist trained to validate a specific type of civil construction document.",
+    "agentSingular": "agent",
+    "agentPlural": "agents",
+    "categories": [
+      {
+        "category": "Company Validation",
+        "agents": [
+          { "name": "Registration Validator", "desc": "Queries Federal Revenue, verifies registration status, activity codes, and corporate structure" },
+          { "name": "Federal Tax Clearance", "desc": "Validates Negative Debt Certificate with Federal Revenue and Attorney General's Office" },
+          { "name": "FGTS Compliance", "desc": "Verifies FGTS Compliance Certificate with the Federal Savings Bank" },
+          { "name": "Labor Clearance", "desc": "Validates Negative Labor Debt Certificate with the Superior Labor Court" },
+          { "name": "Articles of Incorporation", "desc": "Extracts data from articles of incorporation, verifies business purpose compatibility" }
+        ]
+      },
+      {
+        "category": "Worker Validation",
+        "agents": [
+          { "name": "Health Certificate", "desc": "Verifies Occupational Health Certificate (NR-7), fitness, and expiration date" },
+          { "name": "NR-18 — Safety", "desc": "Validates Construction Safety training certificate" },
+          { "name": "NR-35 — Height Work", "desc": "Verifies height work certificate, training hours, and validity" },
+          { "name": "NR-10 — Electrical", "desc": "Validates Electrical Installation and Service Safety certificate" },
+          { "name": "NR-33 — Confined Spaces", "desc": "Verifies confined space work certificate and authorization" },
+          { "name": "PPE Record", "desc": "Validates Personal Protective Equipment delivery and signature (NR-6)" },
+          { "name": "Worker Onboarding", "desc": "Verifies site onboarding certificate and admissional training" }
+        ]
+      },
+      {
+        "category": "Technical Validation",
+        "agents": [
+          { "name": "ART — CREA", "desc": "Validates Technical Responsibility Annotation, responsible party, and scope at CREA" },
+          { "name": "RRT — CAU", "desc": "Verifies Technical Responsibility Record for architects at CAU" },
+          { "name": "Construction Permit", "desc": "Validates permit issued by city hall, project scope, and expiration date" },
+          { "name": "Environmental License", "desc": "Verifies environmental license (LP, LI, LO), conditions, and issuing authority" }
+        ]
+      },
+      {
+        "category": "Fiscal Validation",
+        "agents": [
+          { "name": "GFIP / SEFIP", "desc": "Analyzes FGTS Collection Guide and Social Security Information" },
+          { "name": "GPS — Social Security", "desc": "Verifies Social Security Payment Guide, amounts, and period" },
+          { "name": "Electronic Invoices", "desc": "Validates electronic service invoices, ISS, and withholdings" },
+          { "name": "Tax Withholdings", "desc": "Verifies withholding receipts for INSS 11%, IR, CSLL, PIS, and COFINS" }
+        ]
+      },
+      {
+        "category": "Orchestration",
+        "agents": [
+          { "name": "GD4 Orchestrator", "desc": "Coordinates all 20 agents, generates consolidated compliance report and risk score" }
+        ]
+      }
+    ]
+  },
+  "impact": {
+    "title": "Measurable Impact",
+    "subtitle": "Real results from clients using GD4 Agents",
+    "metrics": [
+      { "label": "Liability Reduction", "desc": "Up to R$ 50 million/year avoided" },
+      { "label": "Capacity per Hour", "desc": "180 documents analyzed/month" },
+      { "label": "Average Accuracy", "desc": "Superior to manual analysis" },
+      { "label": "Availability", "desc": "Validations at any time" }
+    ]
+  },
+  "environmental": {
+    "title": "Environmental Impact",
+    "subtitle": "Digitization that's good for the planet",
+    "items": [
+      { "value": "3.7 tons", "label": "Paper saved", "desc": "Tons of paper not printed" },
+      { "value": "7.3 tons", "label": "CO₂ avoided", "desc": "Tons of emissions reduced" },
+      { "value": "2M L", "label": "Water saved", "desc": "Liters of water saved in production" }
+    ]
+  },
+  "roadmap": {
+    "title": "Evolution Roadmap",
+    "subtitle": "The future of GD4 Agents",
+    "items": [
+      { "label": "LIVE", "title": "Automatic Document Validation", "desc": "21 agents validating company registrations, tax clearances, health certificates, safety certs, technical registrations, payroll reports, invoices, and more." },
+      { "label": "LIVE", "title": "Smart Expiration Alerts", "desc": "Automatic notifications 30, 15, and 7 days before each document expires." },
+      { "label": "BETA", "title": "Continuous Learning", "desc": "Agents that learn from every validation, improving accuracy and reducing false positives." },
+      { "label": "Q3 2026", "title": "Predictive Risk Analysis", "desc": "Prediction of non-compliance before it happens, based on historical supplier patterns." },
+      { "label": "Q4 2026", "title": "Conversational Agents", "desc": "Chat interaction with suppliers to automatically request missing documents." }
+    ]
+  },
+  "cta": {
+    "title": "See GD4 Agents in action",
+    "description": "Schedule a demo and discover how {{count}} AI agents can automate document validation for your construction company.",
+    "button": "Schedule Live Demo"
+  }
+}

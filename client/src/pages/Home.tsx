@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Phone, MessageCircle, Lock, Shield, Clock, Fingerprint } from "lucide-react";
 import SectionReveal from "@/components/SectionReveal";
 import HeroSection from "@/components/sections/HeroSection";
@@ -8,6 +9,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import DemoForm from "@/components/sections/DemoForm";
 
 export default function Home() {
+  const { t } = useTranslation("home");
   return (
     <div className="min-h-screen bg-black text-white">
       <HeroSection />
@@ -27,20 +29,20 @@ export default function Home() {
           <SectionReveal>
             <div className="text-center mb-16">
               <span className="text-sm font-semibold font-display text-[#FB0047] uppercase tracking-wider">
-                Segurança
+                {t("security.sectionLabel")}
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold font-display mt-3 mb-5">
-                Seus dados <span className="gradient-text">protegidos</span>
+                {t("security.title")} <span className="gradient-text">{t("security.titleHighlight")}</span>
               </h2>
             </div>
           </SectionReveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: Lock, title: "Criptografia", desc: "Dados criptografados em trânsito e em repouso (AES-256)" },
-              { icon: Shield, title: "LGPD", desc: "Em conformidade com a Lei Geral de Proteção de Dados" },
-              { icon: Clock, title: "SLA 99.9%", desc: "Alta disponibilidade com backup automático diário" },
-              { icon: Fingerprint, title: "Autenticação", desc: "Autenticação multifator e controle granular de permissões" },
+              { icon: Lock, title: t("security.encryption"), desc: t("security.encryptionDesc") },
+              { icon: Shield, title: t("security.lgpd"), desc: t("security.lgpdDesc") },
+              { icon: Clock, title: t("security.sla"), desc: t("security.slaDesc") },
+              { icon: Fingerprint, title: t("security.auth"), desc: t("security.authDesc") },
             ].map((item, i) => (
               <SectionReveal key={i} delay={i * 0.1}>
                 <div className="glass-card p-6 text-center h-full">
@@ -61,7 +63,7 @@ export default function Home() {
       {/* ══════ CONTACT BAR ══════ */}
       <div className="bg-[#FB0047] py-3">
         <div className="container flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-          <span className="text-white font-bold font-display text-sm">Fale com um especialista:</span>
+          <span className="text-white font-bold font-display text-sm">{t("contactBar.cta")}</span>
           <div className="flex items-center gap-6">
             <a
               href="tel:+551150437900"
@@ -77,7 +79,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-sm font-bold font-display px-4 py-1.5 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
             >
               <MessageCircle size={14} aria-hidden="true" />
-              WhatsApp
+              {t("contactBar.whatsapp")}
             </a>
           </div>
         </div>

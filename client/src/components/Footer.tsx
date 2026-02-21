@@ -2,45 +2,45 @@
  * AUTODOC® Design System V2 — Footer
  * Dark, clean, #FB0047 accents, Titillium Web headings
  */
-import { Link } from "wouter";
 import { Linkedin, Instagram, Youtube, Phone } from "lucide-react";
-
-const footerLinks = {
-  solucoes: [
-    { label: "Autodoc Projetos", href: "/projetos" },
-    { label: "Autodoc Workforce", href: "/workforce" },
-    { label: "Agentes GD4", href: "/agentes-gd4" },
-  ],
-  empresa: [
-    { label: "Sobre a Autodoc", href: "https://autodoc.com.br/sobre", external: true },
-    { label: "Carreira", href: "https://autodoc.com.br/carreiras", external: true },
-    { label: "Blog", href: "https://autodoc.com.br/blog", external: true },
-    { label: "Cases de Sucesso", href: "https://autodoc.com.br/cases", external: true },
-  ],
-  suporte: [
-    { label: "Fale Conosco", href: "https://wa.me/551150437900", external: true },
-    { label: "Central de Ajuda", href: "https://autodoc.com.br/suporte", external: true },
-    { label: "Política de Privacidade", href: "/privacidade" },
-    { label: "Política de Cookies", href: "/privacidade" },
-  ],
-};
+import { useTranslation } from "react-i18next";
+import LocaleLink from "./LocaleLink";
 
 export default function Footer() {
+  const { t } = useTranslation("common");
+  const footerLinks = {
+    solucoes: [
+      { label: t("nav.projetos"), href: "/projetos" },
+      { label: t("nav.workforce"), href: "/workforce" },
+      { label: t("nav.agentes"), href: "/agentes-gd4" },
+    ],
+    empresa: [
+      { label: t("footer.about"), href: "https://autodoc.com.br/sobre", external: true },
+      { label: t("footer.careers"), href: "https://autodoc.com.br/carreiras", external: true },
+      { label: t("footer.blog"), href: "https://autodoc.com.br/blog", external: true },
+      { label: t("footer.successCases"), href: "https://autodoc.com.br/cases", external: true },
+    ],
+    suporte: [
+      { label: t("footer.contactUs"), href: "https://wa.me/551150437900", external: true },
+      { label: t("footer.helpCenter"), href: "https://autodoc.com.br/suporte", external: true },
+      { label: t("footer.privacyPolicy"), href: "/privacidade" },
+      { label: t("footer.cookiePolicy"), href: "/privacidade" },
+    ],
+  };
   return (
     <footer className="bg-black border-t border-white/5">
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/">
+            <LocaleLink href="/">
               <span className="text-xl font-bold font-display tracking-tight text-white">
                 AUTO<span className="text-[#FB0047]">DOC</span>
                 <span className="text-[#FB0047] text-[10px] align-super ml-0.5">®</span>
               </span>
-            </Link>
+            </LocaleLink>
             <p className="text-sm text-[#5D5D5D] leading-relaxed max-w-sm" style={{ lineHeight: '180%' }}>
-              A evolução digital da construção civil. Plataforma líder em gestão
-              de projetos, documentos e mão de obra para as maiores construtoras do Brasil.
+              {t("footer.description")}
             </p>
             <div className="flex gap-3 pt-2">
               <a
@@ -76,16 +76,16 @@ export default function Footer() {
           {/* Soluções */}
           <div>
             <h4 className="text-sm font-bold font-display text-white mb-5 uppercase tracking-wider">
-              Soluções
+              {t("footer.solutions")}
             </h4>
             <ul className="space-y-3">
               {footerLinks.solucoes.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
+                  <LocaleLink href={link.href} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
                     <span className="text-sm text-[#5D5D5D] hover:text-white transition-colors">
                       {link.label}
                     </span>
-                  </Link>
+                  </LocaleLink>
                 </li>
               ))}
             </ul>
@@ -94,7 +94,7 @@ export default function Footer() {
           {/* Empresa */}
           <div>
             <h4 className="text-sm font-bold font-display text-white mb-5 uppercase tracking-wider">
-              Empresa
+              {t("footer.company")}
             </h4>
             <ul className="space-y-3">
               {footerLinks.empresa.map((link) => (
@@ -105,16 +105,16 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-[#5D5D5D] hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block"
-                      aria-label={`${link.label} (abre em nova aba)`}
+                      aria-label={`${link.label} (${t("footer.opensNewTab")})`}
                     >
                       {link.label}
                     </a>
                   ) : (
-                    <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
+                    <LocaleLink href={link.href} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
                       <span className="text-sm text-[#5D5D5D] hover:text-white transition-colors">
                         {link.label}
                       </span>
-                    </Link>
+                    </LocaleLink>
                   )}
                 </li>
               ))}
@@ -124,7 +124,7 @@ export default function Footer() {
           {/* Suporte */}
           <div>
             <h4 className="text-sm font-bold font-display text-white mb-5 uppercase tracking-wider">
-              Suporte
+              {t("footer.support")}
             </h4>
             <ul className="space-y-3">
               {footerLinks.suporte.map((link) => (
@@ -135,26 +135,26 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-[#5D5D5D] hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block"
-                      aria-label={`${link.label} (abre em nova aba)`}
+                      aria-label={`${link.label} (${t("footer.opensNewTab")})`}
                     >
                       {link.label}
                     </a>
                   ) : (
-                    <Link href={link.href} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
+                    <LocaleLink href={link.href} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-sm px-1 -mx-1 inline-block">
                       <span className="text-sm text-[#5D5D5D] hover:text-white transition-colors">
                         {link.label}
                       </span>
-                    </Link>
+                    </LocaleLink>
                   )}
                 </li>
               ))}
             </ul>
             <div className="mt-6 pt-4 border-t border-white/5 space-y-2">
-              <p className="text-xs text-[#5D5D5D] uppercase tracking-wider font-display">Central de Vendas</p>
+              <p className="text-xs text-[#5D5D5D] uppercase tracking-wider font-display">{t("footer.salesCenter")}</p>
               <a
                 href="tel:+551150437900"
                 className="flex items-center gap-2 text-sm text-white font-semibold hover:text-[#FB0047] transition-colors"
-                aria-label="Ligar para (11) 5043-7900"
+                aria-label={t("footer.callPhone")}
               >
                 <Phone size={14} />
                 (11) 5043-7900
@@ -169,7 +169,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Autodoc Processamento de Dados Ltda. CNPJ: 04.714.448/0001-28
           </p>
           <div className="flex items-center gap-6 flex-wrap">
-            <span className="text-xs text-[#5D5D5D]">Ecossistema</span>
+            <span className="text-xs text-[#5D5D5D]">{t("footer.ecosystem")}</span>
             <span className="text-xs text-[#CCCCCC] font-semibold font-display">Ambar</span>
             <span className="text-xs text-[#5D5D5D]">|</span>
             <span className="text-xs text-[#CCCCCC] font-semibold font-display">Polar</span>

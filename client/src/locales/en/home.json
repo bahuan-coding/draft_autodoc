@@ -1,0 +1,294 @@
+{
+  "hero": {
+    "badge": "An Ambar company",
+    "heading": "Intelligent management of",
+    "phrases": ["projects and blueprints.", "construction documents.", "suppliers.", "jobsite compliance.", "AI-powered validation."],
+    "subtitle": "From CDE to supplier compliance, from access control to AI validation.",
+    "subtitleBold": "Everything your construction site needs. Wherever you are.",
+    "cta": "Schedule Demo",
+    "ctaSecondary": "Talk to a Specialist",
+    "heroAlt": "Aerial view of a construction site"
+  },
+  "trust": {
+    "stats": {
+      "years": "years in the market",
+      "clients": "clients in Brazil",
+      "users": "active users",
+      "top100": "of the top 100 builders"
+    },
+    "trusted": "Trusted by the largest builders and developers in Brazil"
+  },
+  "features": {
+    "projetos": {
+      "badge": "Autodoc Projects",
+      "title": "The CDE that organizes",
+      "titleHighlight": "projects, blueprints and documents",
+      "desc": "Common Data Environment (CDE) to centralize architectural, structural, hydraulic, and electrical projects. Version control, approval workflows, and automatic distribution for field and office teams.",
+      "feat1": "Project & Blueprint Management",
+      "feat2": "Revision Control",
+      "feat3": "Automatic Distribution",
+      "feat4": "Approval Workflow",
+      "feat5": "Integrated BIM Viewer",
+      "feat6": "DLR — Daily Log Report",
+      "cta": "Discover Autodoc Projects",
+      "imgAlt": "Autodoc Projects interface"
+    },
+    "workforce": {
+      "badge": "Autodoc Workforce",
+      "title": "Supplier qualification and",
+      "titleHighlight": "jobsite compliance",
+      "desc": "Supplier onboarding with mandatory document checklists — CNPJ, CND, CRF, CNDT, health certificates, safety certifications, FGTS, INSS. Biometric access control and AI-powered validation via GD4 Agents.",
+      "feat1": "Supplier Onboarding",
+      "feat2": "Biometric Access Control",
+      "feat3": "Health & Safety Validation",
+      "feat4": "FGTS, INSS, CNDT Compliance",
+      "feat5": "Expiration Alerts",
+      "feat6": "Compliance Dashboard",
+      "cta": "Discover Autodoc Workforce",
+      "imgAlt": "Autodoc Workforce interface"
+    },
+    "ai": {
+      "badge": "Artificial Intelligence",
+      "title1": "21 AI Agents",
+      "title2": "validating your construction documents",
+      "desc": "GD4 Agents automatically validate company registrations, tax clearance certificates, FGTS compliance, labor clearances, health certificates, safety certifications (NR-18, NR-35, NR-10), technical registrations, payroll reports, and invoices. Each agent specializes in one document type.",
+      "catCompany": "Company",
+      "catCompanyDocs": "Registration, Tax Clearance, FGTS, Labor Cert., Articles",
+      "catWorker": "Worker",
+      "catWorkerDocs": "Health Cert., NR-18, NR-35, NR-10, PPE Record",
+      "catTechnical": "Technical",
+      "catTechnicalDocs": "Tech. Registration, Permit, Environmental License",
+      "catFiscal": "Fiscal",
+      "catFiscalDocs": "Payroll Report, Social Security, Invoices, Tax Withholdings",
+      "cta": "Meet the 21 Agents",
+      "agentTitle": "GD4 Agent — FGTS/CRF Validator",
+      "agentProcessing": "Processing Compliance Certificate...",
+      "agentActive": "Active",
+      "step1": "Extracting CRF data — Federal Savings Bank",
+      "step2": "Validating supplier registration with Federal Revenue",
+      "step3": "Verifying FGTS compliance",
+      "step4": "Cross-referencing labor debt database",
+      "step5": "Checking certificate expiration date",
+      "step6": "Generating compliance report",
+      "time": "Time: 1 min 47s",
+      "precision": "Accuracy: 99.5%"
+    },
+    "personas": {
+      "sectionLabel": "For every construction role",
+      "title": "A solution for every",
+      "titleHighlight": "role on site",
+      "desc": "Developers, builders, designers, and contractors — everyone finds the right tools for their operation at Autodoc.",
+      "developer": "Developer",
+      "developerDesc": "Simplify enterprise management. Consolidated view of projects, documents, and compliance across your entire portfolio.",
+      "builder": "Builder",
+      "builderDesc": "Control the lifecycle, productivity, and quality of your construction. From planning to delivery, all in one platform.",
+      "designer": "Designer",
+      "designerDesc": "Coordinate construction projects and deliverables with BIM software. Revision control and automatic distribution.",
+      "contractor": "Contractor",
+      "contractorDesc": "Manage teams digitally. Worker documentation, health certificates, safety certifications, and PPE always up to date."
+    },
+    "compliance": {
+      "label": "Documents automatically validated by GD4 Agents"
+    },
+    "journey": {
+      "sectionLabel": "Our story",
+      "title": "The journey of",
+      "titleHighlight": "smart construction",
+      "desc": "Leaders in digital solutions for risk reduction and productivity improvement in civil construction.",
+      "era1Year": "Era 1.0",
+      "era1Title": "Paper",
+      "era1Desc": "Physical folders, blueprint copies, and shelf archives. Risk of loss and outdated versions.",
+      "era2Year": "Era 2.0",
+      "era2Title": "Digital",
+      "era2Desc": "Document digitization, PDFs, and Excel spreadsheets. Local files without version control.",
+      "era3Year": "Era 3.0",
+      "era3Title": "Cloud",
+      "era3Desc": "Cloud platforms with CDE, revision control, and automatic distribution. The era of Autodoc Projects.",
+      "era4Year": "Era 4.0",
+      "era4Title": "Artificial Intelligence",
+      "era4Desc": "21 GD4 Agents validating documents automatically. Document Management 4.0 — from minutes to seconds."
+    },
+    "whyAutodoc": {
+      "sectionLabel": "Why Autodoc",
+      "title": "The platform that the",
+      "titleHighlight": "largest builders",
+      "titleEnd": "chose",
+      "desc": "20+ years of experience in construction technology. An Ambar company, alongside Polar and Simple Wall.",
+      "compliance": "Automatic Compliance",
+      "complianceDesc": "Continuous validation of FGTS, INSS, CNDT, health certificates, safety certs, and clearances. Automatic alerts before expiration. Zero risk of fines for irregular documentation.",
+      "time": "80% Less Time",
+      "timeDesc": "Validations that took 30-60 minutes per document are now completed in 2-5 minutes by GD4 Agents. Your team focuses on construction, not paperwork.",
+      "platform": "CDE + Workforce + AI",
+      "platformDesc": "Projects, blueprints, technical documents, suppliers, workers, and AI validation in a single platform. From office to jobsite.",
+      "supplier": "Supplier Portal",
+      "supplierDesc": "Self-service environment where suppliers submit documents, track status, and receive real-time feedback. Fewer calls, more productivity.",
+      "agents": "21 AI Agents",
+      "agentsDesc": "Each agent specialized in one document type: company registration, tax clearance, FGTS, labor cert., health cert., safety certs., technical reg., payroll, invoices. 24/7 validation with over 97% accuracy.",
+      "scalable": "Scalable",
+      "scalableDesc": "From a single project to a portfolio of 200+ simultaneous developments. The platform grows with your operation, maintaining performance and control."
+    },
+    "products": {
+      "sectionLabel": "Our solutions",
+      "title": "Three products, one",
+      "titleHighlight": "platform",
+      "projetosAudience": "Designers, Coordinators",
+      "projetosH1": "CDE — Common Data Environment",
+      "projetosH2": "Revision control",
+      "projetosH3": "Approval workflow",
+      "projetosH4": "Integrated BIM viewer",
+      "projetosH5": "Automatic distribution",
+      "workforceAudience": "Procurement, HR, Compliance",
+      "workforceH1": "Supplier onboarding",
+      "workforceH2": "Labor compliance (FGTS, INSS)",
+      "workforceH3": "Biometric access control",
+      "workforceH4": "Supplier portal",
+      "workforceH5": "Expiration alerts",
+      "agentesAudience": "Entire operation",
+      "agentesH1": "21 AI agents",
+      "agentesH2": "Automatic document validation",
+      "agentesH3": "Accuracy >97%",
+      "agentesH4": "Available 24/7",
+      "agentesH5": "Intelligent orchestrator"
+    }
+  },
+  "testimonials": {
+    "sectionLabel": "What our clients say",
+    "title": "The platform of the largest",
+    "titleHighlight": "builders in Brazil",
+    "ariaLabel": "Client testimonials",
+    "prevLabel": "Previous testimonial",
+    "nextLabel": "Next testimonial",
+    "watchVideo": "Watch testimonial",
+    "inMemoriam": "in memoriam",
+    "goToSlide": "Go to testimonial {{num}}",
+    "slideLabel": "Testimonial {{current}} of {{total}}",
+    "currentSlide": "Current testimonial: {{name}}",
+    "quotes": [
+      {
+        "quote": "Autodoc Projects is a platform where we can find all files. It organized work not just for me, but for the entire team.",
+        "name": "Paula Dias Frassini",
+        "role": "CEO",
+        "company": "Qu4ttro Arquitetos Associados"
+      },
+      {
+        "quote": "GD4 meets all our needs. It's an easy-to-use, intuitive tool that serves all our support areas.",
+        "name": "Thiago Sanches",
+        "role": "Vice President",
+        "company": "P4 Engenharia"
+      },
+      {
+        "quote": "Kallas couldn't do without a state-of-the-art tool to control people's entry and their documentation at our construction sites. The GD4 system is essential for this.",
+        "name": "Davi Fratel",
+        "role": "Executive Director",
+        "company": "Kallas Construtora"
+      },
+      {
+        "quote": "I've worked at other companies and on sites with 950 professionals. Control was visual and the risk was high due to lack of oversight. GD4 was a major improvement for builders because it ensures worker safety and site control.",
+        "name": "Francisco Wanderley",
+        "role": "Administrator",
+        "company": "Tegra Incorporadora"
+      },
+      {
+        "quote": "A project is productivity. You can't waste time on operational tasks. Autodoc has some tricks behind the scenes, some technologies. Uploading a document is very fast. And there's also email tracking. It covers everything.",
+        "name": "Alexandre Barbas",
+        "role": "Managing Partner",
+        "company": "GP&D Consultoria e Projetos"
+      },
+      {
+        "quote": "I've been using Autodoc for over 15 years. It's a very complete tool that gives us great historical knowledge and allows us to replicate models. We use Autodoc extensively to share knowledge across Lavvi's internal departments.",
+        "name": "Marina Gabrieli",
+        "role": "Project Manager",
+        "company": "LAVVI"
+      },
+      {
+        "quote": "With the turnstile gate, we have greater accuracy in access control and the certainty that people entering the jobsite are truly authorized.",
+        "name": "Marcelo Moraes",
+        "role": "Chief Operating Officer",
+        "company": "Even Construtora"
+      },
+      {
+        "quote": "Autodoc's Daily Construction Log has optimized the way we make daily records. Before implementing the tool, we had to use pen and paper in the field, then update an Excel spreadsheet.",
+        "name": "Ana Carolina Bonifacio",
+        "role": "Coordinator",
+        "company": "P4 Engenharia"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked",
+    "titleHighlight": "Questions",
+    "items": [
+      {
+        "question": "What is Autodoc?",
+        "answer": "Autodoc is a digital management platform for civil construction that integrates projects, documents, suppliers, and workforce in a single environment. With two products — Autodoc Projects (CDE) and Autodoc Workforce (supplier and jobsite management) — and 21 AI agents for automatic document validation, the platform automates processes, reduces risks, and increases your site's productivity. Autodoc is an Ambar company with over 20 years in the market."
+      },
+      {
+        "question": "What's the difference between Autodoc Projects and Autodoc Workforce?",
+        "answer": "Autodoc Projects is a CDE (Common Data Environment) for managing architectural, structural, hydraulic, and electrical projects, with revision control, approval workflows, and automatic distribution. Autodoc Workforce focuses on supplier and jobsite management: onboarding, document validation (company registration, tax clearances, health certificates, safety certifications, PPE), biometric access control, and labor compliance. Together, they cover the entire construction cycle."
+      },
+      {
+        "question": "What are GD4 Agents and what documents do they validate?",
+        "answer": "GD4 Agents are 21 AI systems specialized in automatic document validation. They cover 4 categories: Company (registration, federal tax clearance, FGTS compliance, labor clearance, articles of incorporation), Worker (health certificate, NR-18, NR-35, NR-10, NR-33, PPE record), Technical (technical registration ART/RRT, construction permit, environmental license), and Fiscal (payroll report, social security, invoices, withholdings). Each agent extracts data, validates compliance, and generates an automatic report."
+      },
+      {
+        "question": "Which construction companies use Autodoc?",
+        "answer": "Autodoc is used by over 3,500 companies, including 60 of the top 100 construction companies in Brazil — MRV, Direcional, Tenda, Cury, Cyrela, Even, and Patrimar, among others. There are over 195,000 active users on the platform."
+      },
+      {
+        "question": "Is Autodoc compatible with BIM?",
+        "answer": "Yes. Autodoc Projects features an integrated BIM viewer, compatible with leading modeling software (Revit, ArchiCAD, Tekla). You can upload IFC models, view them on the platform, and link them to corresponding projects and documents."
+      },
+      {
+        "question": "How long does implementation take?",
+        "answer": "Implementation is quick and guided. Our Customer Success team handles onboarding, data migration, and training. Most clients are operational in under 2 weeks. For larger operations (100+ projects), the typical timeline is 4-6 weeks with dedicated support."
+      }
+    ]
+  },
+  "security": {
+    "sectionLabel": "Security",
+    "title": "Your data",
+    "titleHighlight": "protected",
+    "encryption": "Encryption",
+    "encryptionDesc": "Data encrypted in transit and at rest (AES-256)",
+    "lgpd": "LGPD",
+    "lgpdDesc": "In compliance with Brazil's General Data Protection Law",
+    "sla": "SLA 99.9%",
+    "slaDesc": "High availability with automatic daily backup",
+    "auth": "Authentication",
+    "authDesc": "Multi-factor authentication and granular permission control"
+  },
+  "demoForm": {
+    "title": "Your site under control",
+    "titleHighlight": "starts here.",
+    "subtitle": "Join over 3,500 companies. Schedule a personalized demo.",
+    "successTitle": "Request sent!",
+    "successDesc": "Our team will contact you within 24 hours.",
+    "nameLabel": "Name *",
+    "namePlaceholder": "Your full name",
+    "nameRequired": "Name is required",
+    "companyLabel": "Company *",
+    "companyPlaceholder": "Company name",
+    "companyRequired": "Company name is required",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "you@email.com",
+    "emailInvalid": "Invalid email",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "+1 (555) 000-0000",
+    "roleLabel": "Job Title",
+    "rolePlaceholder": "Engineering Director",
+    "projectsLabel": "No. of projects",
+    "projectsPlaceholder": "Select",
+    "projects1": "1 to 5",
+    "projects2": "6 to 20",
+    "projects3": "21 to 50",
+    "projects4": "51 to 100",
+    "projects5": "More than 100",
+    "submit": "Schedule Free Demo",
+    "consent": "By submitting, you agree to our",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "contactBar": {
+    "cta": "Talk to a specialist:",
+    "whatsapp": "WhatsApp"
+  }
+}

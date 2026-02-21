@@ -1,0 +1,37 @@
+{
+  "title": "Privacy Policy",
+  "s1Title": "1. General Information",
+  "s1Text": "Autodoc Processamento de Dados Ltda. (CNPJ: 04.714.448/0001-28) is committed to protecting the personal data of its users, in compliance with Brazil's General Data Protection Law (Law No. 13,709/2018 — LGPD).",
+  "s2Title": "2. Data Collected",
+  "s2Text": "We may collect the following personal data:",
+  "s2Items": [
+    "Name, email, phone, and company (contact forms)",
+    "Browsing data (cookies, IP, browser type)",
+    "Platform usage data (for active clients)"
+  ],
+  "s3Title": "3. Purpose",
+  "s3Text": "The collected data is used to:",
+  "s3Items": [
+    "Respond to contact and demo requests",
+    "Improve website browsing experience",
+    "Send communications related to our services",
+    "Ensure platform security and performance"
+  ],
+  "s4Title": "4. Sharing",
+  "s4Text": "Your data is not sold to third parties. It may be shared with Ambar group companies exclusively for service provision purposes, always in compliance with LGPD.",
+  "s5Title": "5. Cookies",
+  "s5Text": "We use essential cookies for website functionality and analytical cookies to improve your experience. You can manage your cookie preferences at any time through the consent banner.",
+  "s6Title": "6. Your Rights",
+  "s6Text": "Under LGPD, you may request:",
+  "s6Items": [
+    "Access to your personal data",
+    "Correction of incomplete or outdated data",
+    "Deletion of unnecessary data",
+    "Data portability",
+    "Consent revocation"
+  ],
+  "s7Title": "7. Contact",
+  "s7Text": "To exercise your rights or clarify questions about this policy, contact us at",
+  "s7TextEnd": "or by phone at",
+  "lastUpdate": "Last updated: February 2026"
+}

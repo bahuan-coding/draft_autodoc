@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "title": "Autodoc Workforce",
+    "subtitle": "Gestão de Fornecedores e Canteiro",
+    "description": "Homologação de fornecedores, compliance trabalhista e controle de acesso ao canteiro em uma única plataforma. Validação automática de CNPJ, CND, CRF, CNDT, ASO, NRs, EPIs, ART, GFIP e mais — com 21 Agentes de IA."
+  },
+  "beforeAfter": {
+    "title": "Antes vs.",
+    "titleHighlight": "Depois",
+    "subtitle": "A transformação que o Autodoc Workforce traz para sua operação",
+    "items": [
+      { "before": "30-60 min validando cada documento manualmente", "after": "2-5 min com validação automática por Agentes GD4" },
+      { "before": "Planilhas Excel desatualizadas e desconectadas", "after": "Dashboard em tempo real com score de conformidade" },
+      { "before": "Risco de multas por ASO vencido ou NR irregular", "after": "Alertas automáticos 30/15/7 dias antes do vencimento" },
+      { "before": "Fornecedores ligando para saber status", "after": "Portal self-service com status em tempo real" },
+      { "before": "Trabalhador sem NR-35 entrando em obra de altura", "after": "Bloqueio biométrico automático por documentação irregular" },
+      { "before": "Auditoria manual de FGTS, INSS e CNDT", "after": "Compliance contínuo com validação 24/7 por IA" }
+    ]
+  },
+  "compliance": {
+    "title": "Checklist de",
+    "titleHighlight": "Compliance",
+    "titleEnd": "Completo",
+    "subtitle": "Todos os documentos obrigatórios da construção civil, organizados por categoria, validados automaticamente pelos Agentes GD4.",
+    "categories": [
+      { "title": "Empresa", "docs": ["CNPJ ativo", "CND Federal", "CND Estadual", "CND Municipal", "CRF/FGTS", "CNDT", "Contrato Social", "Alvará"] },
+      { "title": "Trabalhador", "docs": ["ASO (NR-7)", "NR-18 Construção", "NR-35 Altura", "NR-10 Eletricidade", "NR-33 Confinados", "Ficha de EPI", "CTPS", "Integração"] },
+      { "title": "Técnico", "docs": ["ART (CREA)", "RRT (CAU)", "Alvará de Construção", "Licença Ambiental", "Matrícula CEI/CNO", "PCMSO", "PGR"] },
+      { "title": "Fiscal", "docs": ["GFIP/SEFIP", "GPS", "NFS-e", "Guias de ISS", "DARF", "Retenções INSS", "Retenções IR/CSLL"] }
+    ]
+  },
+  "catraca": {
+    "badge": "Autodoc Catraca",
+    "title": "Controle de acesso com",
+    "titleHighlight": "reconhecimento facial",
+    "desc": "A integração entre o GD4 e a Autodoc Catraca valida automaticamente a documentação do trabalhador no momento do acesso ao canteiro. Reconhecimento facial, QR Code ou catraca virtual — o acesso só é liberado se toda a documentação estiver em dia.",
+    "feat1": "Reconhecimento facial integrado à base de documentos",
+    "feat2": "QR Code dinâmico para acesso via smartphone",
+    "feat3": "Catraca virtual sem hardware dedicado",
+    "feat4": "Bloqueio automático por ASO vencido ou NR irregular",
+    "feat5": "Registro de ponto digital com geolocalização",
+    "flowTitle": "Fluxo de Acesso Inteligente",
+    "flow1": "Trabalhador se identifica (facial/QR)",
+    "flow2": "GD4 verifica ASO, NRs e EPIs em tempo real",
+    "flow3": "Documentação OK → acesso liberado",
+    "flow4": "Documentação irregular → acesso bloqueado + alerta"
+  },
+  "metrics": {
+    "m1Value": "50%",
+    "m1Label": "Redução de passivo trabalhista",
+    "m2Value": "R$ 50M",
+    "m2Label": "Economia potencial/ano",
+    "m3Value": "180/mês",
+    "m3Label": "Documentos analisados por agente",
+    "m4Value": "99.5%",
+    "m4Label": "Precisão na validação"
+  },
+  "featuresGrid": {
+    "title": "Funcionalidades",
+    "titleHighlight": "completas",
+    "subtitle": "Tudo para gerenciar fornecedores, trabalhadores e documentação com segurança e eficiência — do escritório ao canteiro."
+  },
+  "features": {
+    "f1Title": "Homologação de Fornecedores",
+    "f1Desc": "Processo completo de qualificação com checklist automático de documentos obrigatórios: CNPJ, CND Federal/Estadual/Municipal, CRF/FGTS, CNDT, Contrato Social, Alvará e registro CREA/CAU.",
+    "f2Title": "Gestão Documental Centralizada",
+    "f2Desc": "Controle centralizado de toda documentação de fornecedores e trabalhadores. Histórico completo, versionamento e rastreabilidade de cada documento recebido.",
+    "f3Title": "Controle de Acesso ao Canteiro",
+    "f3Desc": "Gestão de entrada e saída de trabalhadores com validação biométrica. Bloqueio automático de acesso quando documentação está irregular ou vencida.",
+    "f4Title": "Compliance Trabalhista",
+    "f4Desc": "Validação automática de FGTS (CRF), INSS (GPS), GFIP/SEFIP, folha de pagamento e demais obrigações trabalhistas. Monitoramento contínuo de regularidade.",
+    "f5Title": "Saúde e Segurança — NRs",
+    "f5Desc": "Validação de ASOs (NR-7), certificados NR-18 (Construção), NR-35 (Altura), NR-10 (Eletricidade), NR-33 (Espaços Confinados), PCMSO e PGR.",
+    "f6Title": "Controle de EPIs",
+    "f6Desc": "Gestão de fichas de EPI (NR-6) com validação de entrega, assinatura e CA (Certificado de Aprovação). Alertas de substituição por desgaste ou validade.",
+    "f7Title": "Alertas Inteligentes",
+    "f7Desc": "Notificações automáticas 30, 15 e 7 dias antes do vencimento de cada documento. Escalação para gestores quando o fornecedor não regulariza a tempo.",
+    "f8Title": "Portal do Fornecedor",
+    "f8Desc": "Ambiente self-service via web e app (GD4 Obra) para fornecedores enviarem documentos, acompanharem status de qualificação e receberem feedback em tempo real.",
+    "f9Title": "Dashboard de Conformidade",
+    "f9Desc": "Visão consolidada de compliance por obra, fornecedor e tipo de documento. Score de risco, indicadores de conformidade e relatórios gerenciais exportáveis.",
+    "f10Title": "Validação por IA — Agentes GD4",
+    "f10Desc": "21 agentes de IA especializados validam automaticamente cada documento: CNPJ, CND, CRF, CNDT, ASO, NRs, ART, RRT, GFIP, NFS-e. De horas para minutos."
+  },
+  "cta": {
+    "title": "Pronto para controlar sua mão de obra?",
+    "description": "Agende uma demonstração e veja como o Autodoc Workforce pode transformar a gestão de fornecedores e o compliance do canteiro."
+  }
+}

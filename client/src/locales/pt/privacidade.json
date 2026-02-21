@@ -1,0 +1,37 @@
+{
+  "title": "Política de Privacidade",
+  "s1Title": "1. Informações Gerais",
+  "s1Text": "A Autodoc Processamento de Dados Ltda. (CNPJ: 04.714.448/0001-28) está comprometida com a proteção dos dados pessoais de seus usuários, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
+  "s2Title": "2. Dados Coletados",
+  "s2Text": "Podemos coletar os seguintes dados pessoais:",
+  "s2Items": [
+    "Nome, e-mail, telefone e empresa (formulários de contato)",
+    "Dados de navegação (cookies, IP, tipo de navegador)",
+    "Dados de uso da plataforma (para clientes ativos)"
+  ],
+  "s3Title": "3. Finalidade",
+  "s3Text": "Os dados coletados são utilizados para:",
+  "s3Items": [
+    "Responder solicitações de contato e demonstração",
+    "Melhorar a experiência de navegação no site",
+    "Enviar comunicações relacionadas aos nossos serviços",
+    "Garantir a segurança e performance da plataforma"
+  ],
+  "s4Title": "4. Compartilhamento",
+  "s4Text": "Seus dados não são vendidos a terceiros. Podem ser compartilhados com empresas do grupo Ambar exclusivamente para fins de prestação de serviço, sempre em conformidade com a LGPD.",
+  "s5Title": "5. Cookies",
+  "s5Text": "Utilizamos cookies essenciais para funcionamento do site e cookies analíticos para melhorar sua experiência. Você pode gerenciar suas preferências de cookies a qualquer momento através do banner de consentimento.",
+  "s6Title": "6. Seus Direitos",
+  "s6Text": "Conforme a LGPD, você pode solicitar:",
+  "s6Items": [
+    "Acesso aos seus dados pessoais",
+    "Correção de dados incompletos ou desatualizados",
+    "Eliminação de dados desnecessários",
+    "Portabilidade dos dados",
+    "Revogação de consentimento"
+  ],
+  "s7Title": "7. Contato",
+  "s7Text": "Para exercer seus direitos ou esclarecer dúvidas sobre esta política, entre em contato pelo e-mail",
+  "s7TextEnd": "ou pelo telefone",
+  "lastUpdate": "Última atualização: Fevereiro de 2026"
+}

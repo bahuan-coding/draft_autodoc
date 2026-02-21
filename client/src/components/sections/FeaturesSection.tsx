@@ -1,4 +1,5 @@
-import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
+import LocaleLink from "@/components/LocaleLink";
 import { motion } from "framer-motion";
 import {
   FolderOpen, Users, Bot, Shield, CheckCircle2, Building2,
@@ -10,6 +11,8 @@ import SectionReveal from "@/components/SectionReveal";
 import { IMAGES } from "@/lib/images";
 
 export default function FeaturesSection() {
+  const { t } = useTranslation("home");
+
   return (
     <>
       {/* ══════ PRODUTO 1: PROJETOS ══════ */}
@@ -21,40 +24,40 @@ export default function FeaturesSection() {
               <div className="flex-1 max-w-xl">
                 <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-[#FB0047]/10 border border-[#FB0047]/20">
                   <FolderOpen size={16} className="text-[#FB0047]" />
-                  <span className="text-sm font-bold font-display text-[#FB0047]">Autodoc Projetos</span>
+                  <span className="text-sm font-bold font-display text-[#FB0047]">{t("features.projetos.badge")}</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-display leading-tight mb-5" style={{ lineHeight: '120%' }}>
-                  O CDE que organiza{" "}
-                  <span className="gradient-text">projetos, plantas e documentos</span>
+                  {t("features.projetos.title")}{" "}
+                  <span className="gradient-text">{t("features.projetos.titleHighlight")}</span>
                 </h2>
 
                 <p className="text-[#CCCCCC] text-lg leading-relaxed mb-8" style={{ lineHeight: '150%' }}>
-                  Ambiente Comum de Dados (CDE) para centralizar projetos arquitetônicos, estruturais, hidráulicos e elétricos. Controle de versões, workflow de aprovação e distribuição automática para equipes de campo e escritório.
+                  {t("features.projetos.desc")}
                 </p>
 
                 <div className="grid grid-cols-2 gap-x-6 gap-y-3 mb-8">
                   {[
-                    { icon: FolderOpen, label: "Gestão de Projetos e Plantas" },
-                    { icon: GitBranch, label: "Controle de Revisões" },
-                    { icon: Send, label: "Distribuição Automática" },
-                    { icon: ClipboardCheck, label: "Workflow de Aprovação" },
-                    { icon: Layers, label: "Visualizador BIM Integrado" },
-                    { icon: Eye, label: "RDO — Registro Diário de Obra" },
+                    { icon: FolderOpen, key: "feat1", labelKey: "features.projetos.feat1" },
+                    { icon: GitBranch, key: "feat2", labelKey: "features.projetos.feat2" },
+                    { icon: Send, key: "feat3", labelKey: "features.projetos.feat3" },
+                    { icon: ClipboardCheck, key: "feat4", labelKey: "features.projetos.feat4" },
+                    { icon: Layers, key: "feat5", labelKey: "features.projetos.feat5" },
+                    { icon: Eye, key: "feat6", labelKey: "features.projetos.feat6" },
                   ].map((feat) => (
-                    <div key={feat.label} className="flex items-center gap-2.5 text-sm text-[#CCCCCC]">
+                    <div key={feat.key} className="flex items-center gap-2.5 text-sm text-[#CCCCCC]">
                       <feat.icon size={15} className="text-[#FB0047] shrink-0" />
-                      {feat.label}
+                      {t(feat.labelKey)}
                     </div>
                   ))}
                 </div>
 
-                <Link href="/projetos" className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-md inline-block">
+                <LocaleLink href="/projetos" className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-md inline-block">
                   <span className="inline-flex items-center gap-2 text-[#FB0047] font-bold font-display text-base hover:gap-3 transition-all duration-300 group">
-                    Conheça o Autodoc Projetos
+                    {t("features.projetos.cta")}
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </span>
-                </Link>
+                </LocaleLink>
               </div>
 
               <div className="flex-1 max-w-lg">
@@ -63,7 +66,7 @@ export default function FeaturesSection() {
                   <div className="relative glass-card gradient-border p-3 rounded-2xl overflow-hidden">
                     <img
                       src={IMAGES.projetos}
-                      alt="Interface do Autodoc Projetos"
+                      alt={t("features.projetos.imgAlt")}
                       className="w-full rounded-xl"
                       loading="lazy"
                       decoding="async"
@@ -87,40 +90,40 @@ export default function FeaturesSection() {
               <div className="flex-1 max-w-xl">
                 <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-[#FB0047]/10 border border-[#FB0047]/20">
                   <Users size={16} className="text-[#FB0047]" />
-                  <span className="text-sm font-bold font-display text-[#FB0047]">Autodoc Workforce</span>
+                  <span className="text-sm font-bold font-display text-[#FB0047]">{t("features.workforce.badge")}</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-display leading-tight mb-5" style={{ lineHeight: '120%' }}>
-                  Qualificação de fornecedores e{" "}
-                  <span className="gradient-text">compliance do canteiro</span>
+                  {t("features.workforce.title")}{" "}
+                  <span className="gradient-text">{t("features.workforce.titleHighlight")}</span>
                 </h2>
 
                 <p className="text-[#CCCCCC] text-lg leading-relaxed mb-8" style={{ lineHeight: '150%' }}>
-                  Homologação de fornecedores com checklist de documentos obrigatórios — CNPJ, CND, CRF, CNDT, ASO, NRs, FGTS, INSS. Controle de acesso biométrico ao canteiro e validação automática por IA via Agentes GD4.
+                  {t("features.workforce.desc")}
                 </p>
 
                 <div className="grid grid-cols-2 gap-x-6 gap-y-3 mb-8">
                   {[
-                    { icon: UserCheck, label: "Homologação de Fornecedores" },
-                    { icon: Fingerprint, label: "Controle de Acesso Biométrico" },
-                    { icon: FileCheck, label: "Validação de ASO, NRs, EPIs" },
-                    { icon: Shield, label: "Compliance FGTS, INSS, CNDT" },
-                    { icon: AlertTriangle, label: "Alertas de Vencimento" },
-                    { icon: BarChart3, label: "Dashboard de Conformidade" },
+                    { icon: UserCheck, key: "feat1", labelKey: "features.workforce.feat1" },
+                    { icon: Fingerprint, key: "feat2", labelKey: "features.workforce.feat2" },
+                    { icon: FileCheck, key: "feat3", labelKey: "features.workforce.feat3" },
+                    { icon: Shield, key: "feat4", labelKey: "features.workforce.feat4" },
+                    { icon: AlertTriangle, key: "feat5", labelKey: "features.workforce.feat5" },
+                    { icon: BarChart3, key: "feat6", labelKey: "features.workforce.feat6" },
                   ].map((feat) => (
-                    <div key={feat.label} className="flex items-center gap-2.5 text-sm text-[#CCCCCC]">
+                    <div key={feat.key} className="flex items-center gap-2.5 text-sm text-[#CCCCCC]">
                       <feat.icon size={15} className="text-[#FB0047] shrink-0" />
-                      {feat.label}
+                      {t(feat.labelKey)}
                     </div>
                   ))}
                 </div>
 
-                <Link href="/workforce" className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-md inline-block">
+                <LocaleLink href="/workforce" className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-md inline-block">
                   <span className="inline-flex items-center gap-2 text-[#FB0047] font-bold font-display text-base hover:gap-3 transition-all duration-300 group">
-                    Conheça o Autodoc Workforce
+                    {t("features.workforce.cta")}
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </span>
-                </Link>
+                </LocaleLink>
               </div>
 
               <div className="flex-1 max-w-lg">
@@ -129,7 +132,7 @@ export default function FeaturesSection() {
                   <div className="relative glass-card gradient-border p-3 rounded-2xl overflow-hidden">
                     <img
                       src={IMAGES.workforce}
-                      alt="Interface do Autodoc Workforce"
+                      alt={t("features.workforce.imgAlt")}
                       className="w-full rounded-xl"
                       loading="lazy"
                       decoding="async"
@@ -168,38 +171,38 @@ export default function FeaturesSection() {
               <div className="flex-1 max-w-xl">
                 <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-[#FB0047]/10 border border-[#FB0047]/20">
                   <Bot size={16} className="text-[#FB0047]" />
-                  <span className="text-sm font-bold font-display text-[#FB0047]">Inteligência Artificial</span>
+                  <span className="text-sm font-bold font-display text-[#FB0047]">{t("features.ai.badge")}</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-display leading-tight mb-5" style={{ lineHeight: '120%' }}>
-                  <span className="gradient-text">21 Agentes de IA</span>{" "}
-                  validando documentos da sua obra
+                  <span className="gradient-text">{t("features.ai.title1")}</span>{" "}
+                  {t("features.ai.title2")}
                 </h2>
 
                 <p className="text-[#CCCCCC] text-lg leading-relaxed mb-6" style={{ lineHeight: '150%' }}>
-                  Os Agentes GD4 validam automaticamente CNPJ na Receita Federal, Certidões Negativas de Débitos, CRF do FGTS, CNDT trabalhista, ASOs, certificados NR-18, NR-35, NR-10, ARTs no CREA, RRTs no CAU, GFIP/SEFIP e Notas Fiscais. Cada agente é especialista em um tipo de documento.
+                  {t("features.ai.desc")}
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 mb-8">
                   {[
-                    { label: "Empresa", docs: "CNPJ, CND, CRF, CNDT, Contrato Social" },
-                    { label: "Trabalhador", docs: "ASO, NR-18, NR-35, NR-10, Ficha EPI" },
-                    { label: "Técnico", docs: "ART, RRT, Alvará, Licença Ambiental" },
-                    { label: "Fiscal", docs: "GFIP, GPS, NFS-e, Retenções INSS/IR" },
+                    { key: "company", labelKey: "features.ai.catCompany", docsKey: "features.ai.catCompanyDocs" },
+                    { key: "worker", labelKey: "features.ai.catWorker", docsKey: "features.ai.catWorkerDocs" },
+                    { key: "technical", labelKey: "features.ai.catTechnical", docsKey: "features.ai.catTechnicalDocs" },
+                    { key: "fiscal", labelKey: "features.ai.catFiscal", docsKey: "features.ai.catFiscalDocs" },
                   ].map((cat) => (
-                    <div key={cat.label} className="glass-card gradient-border p-3.5">
-                      <p className="text-xs font-bold font-display uppercase tracking-wider mb-1 text-[#FB0047]">{cat.label}</p>
-                      <p className="text-xs text-[#5D5D5D] leading-relaxed">{cat.docs}</p>
+                    <div key={cat.key} className="glass-card gradient-border p-3.5">
+                      <p className="text-xs font-bold font-display uppercase tracking-wider mb-1 text-[#FB0047]">{t(cat.labelKey)}</p>
+                      <p className="text-xs text-[#5D5D5D] leading-relaxed">{t(cat.docsKey)}</p>
                     </div>
                   ))}
                 </div>
 
-                <Link href="/agentes-gd4" className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-xl inline-block">
+                <LocaleLink href="/agentes-gd4" className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-xl inline-block">
                   <span className="inline-flex items-center gap-2 bg-[#FB0047] hover:bg-[#FF1A5E] text-white font-bold font-display px-7 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#FB0047]/25 hover:scale-[1.02] active:scale-[0.98]">
-                    Conheça os 21 Agentes
+                    {t("features.ai.cta")}
                     <ArrowRight size={18} />
                   </span>
-                </Link>
+                </LocaleLink>
               </div>
 
               <div className="flex-1 max-w-lg">
@@ -209,22 +212,22 @@ export default function FeaturesSection() {
                       <Bot size={16} className="text-[#FB0047]" />
                     </div>
                     <div>
-                      <p className="text-sm font-bold font-display text-white">Agente GD4 — Validador de CRF/FGTS</p>
-                      <p className="text-xs text-[#5D5D5D]">Processando Certidão de Regularidade...</p>
+                      <p className="text-sm font-bold font-display text-white">{t("features.ai.agentTitle")}</p>
+                      <p className="text-xs text-[#5D5D5D]">{t("features.ai.agentProcessing")}</p>
                     </div>
                     <span className="ml-auto text-xs text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full font-semibold">
-                      Ativo
+                      {t("features.ai.agentActive")}
                     </span>
                   </div>
 
                   <div className="space-y-3">
                     {[
-                      { step: "Extraindo dados da CRF — Caixa Econômica", status: "done" },
-                      { step: "Validando CNPJ do fornecedor na Receita", status: "done" },
-                      { step: "Verificando regularidade FGTS", status: "done" },
-                      { step: "Cruzando com base de débitos trabalhistas", status: "done" },
-                      { step: "Checando data de validade da certidão", status: "done" },
-                      { step: "Gerando parecer de conformidade", status: "active" },
+                      { stepKey: "features.ai.step1", status: "done" },
+                      { stepKey: "features.ai.step2", status: "done" },
+                      { stepKey: "features.ai.step3", status: "done" },
+                      { stepKey: "features.ai.step4", status: "done" },
+                      { stepKey: "features.ai.step5", status: "done" },
+                      { stepKey: "features.ai.step6", status: "active" },
                     ].map((item, i) => (
                       <motion.div
                         key={i}
@@ -244,15 +247,15 @@ export default function FeaturesSection() {
                           />
                         )}
                         <span className={`text-sm ${item.status === "done" ? "text-[#CCCCCC]" : "text-white font-semibold"}`}>
-                          {item.step}
+                          {t(item.stepKey)}
                         </span>
                       </motion.div>
                     ))}
                   </div>
 
                   <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
-                    <span className="text-xs text-[#5D5D5D]">Tempo: 1 min 47s</span>
-                    <span className="text-xs text-emerald-400 font-semibold">Precisão: 99.5%</span>
+                    <span className="text-xs text-[#5D5D5D]">{t("features.ai.time")}</span>
+                    <span className="text-xs text-emerald-400 font-semibold">{t("features.ai.precision")}</span>
                   </div>
                 </div>
               </div>
@@ -268,15 +271,14 @@ export default function FeaturesSection() {
           <SectionReveal>
             <div className="text-center mb-16">
               <span className="text-sm font-semibold font-display text-[#FB0047] uppercase tracking-wider">
-                Para cada ator da construção
+                {t("features.personas.sectionLabel")}
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold font-display mt-3 mb-5">
-                Uma solução para cada{" "}
-                <span className="gradient-text">papel na obra</span>
+                {t("features.personas.title")}{" "}
+                <span className="gradient-text">{t("features.personas.titleHighlight")}</span>
               </h2>
               <p className="text-[#5D5D5D] text-lg max-w-2xl mx-auto" style={{ lineHeight: '150%' }}>
-                Incorporadores, construtores, projetistas e empreiteiros — todos encontram
-                na Autodoc as ferramentas certas para sua operação.
+                {t("features.personas.desc")}
               </p>
             </div>
           </SectionReveal>
@@ -285,42 +287,42 @@ export default function FeaturesSection() {
             {[
               {
                 icon: Building2,
-                title: "Incorporador",
-                desc: "Simplifique a gestão de seus empreendimentos. Visão consolidada de projetos, documentos e compliance em todo o portfólio.",
+                titleKey: "features.personas.developer",
+                descKey: "features.personas.developerDesc",
                 link: "/projetos",
               },
               {
                 icon: HardHat,
-                title: "Construtor",
-                desc: "Controle o ciclo de vida, a produtividade e a qualidade da obra. Do planejamento à entrega, tudo em uma plataforma.",
+                titleKey: "features.personas.builder",
+                descKey: "features.personas.builderDesc",
                 link: "/workforce",
               },
               {
                 icon: Ruler,
-                title: "Projetista",
-                desc: "Coordene os projetos da obra e as entregas com softwares em BIM. Controle de revisões e distribuição automática.",
+                titleKey: "features.personas.designer",
+                descKey: "features.personas.designerDesc",
                 link: "/projetos",
               },
               {
                 icon: Briefcase,
-                title: "Empreiteiro",
-                desc: "Gerencie equipes de forma digital. Documentação de trabalhadores, ASOs, NRs e EPIs sempre em dia.",
+                titleKey: "features.personas.contractor",
+                descKey: "features.personas.contractorDesc",
                 link: "/workforce",
               },
             ].map((persona, i) => (
               <SectionReveal key={i} delay={i * 0.1}>
-                <Link href={persona.link} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-xl block h-full">
+                <LocaleLink href={persona.link} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-xl block h-full">
                   <div className="glass-card glass-card-hover gradient-border p-7 h-full cursor-pointer group">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-[#FB0047]/10">
                       <persona.icon size={24} className="text-[#FB0047]" />
                     </div>
-                    <h3 className="text-lg font-bold font-display text-white mb-3">{persona.title}</h3>
-                    <p className="text-sm text-[#5D5D5D] leading-relaxed mb-4" style={{ lineHeight: '150%' }}>{persona.desc}</p>
+                    <h3 className="text-lg font-bold font-display text-white mb-3">{t(persona.titleKey)}</h3>
+                    <p className="text-sm text-[#5D5D5D] leading-relaxed mb-4" style={{ lineHeight: '150%' }}>{t(persona.descKey)}</p>
                     <span className="inline-flex items-center gap-1 text-sm text-[#FB0047] font-bold font-display group-hover:gap-2 transition-all">
-                      Saiba mais <ArrowRight size={14} />
+                      {t("common:learnMore")} <ArrowRight size={14} />
                     </span>
                   </div>
-                </Link>
+                </LocaleLink>
               </SectionReveal>
             ))}
           </div>
@@ -333,7 +335,7 @@ export default function FeaturesSection() {
         <div className="container">
           <SectionReveal>
             <p className="text-center text-xs text-[#5D5D5D] uppercase tracking-widest font-semibold font-display mb-6">
-              Documentos validados automaticamente pelos Agentes GD4
+              {t("features.compliance.label")}
             </p>
             <div className="flex flex-wrap justify-center gap-2.5">
               {[
@@ -361,23 +363,23 @@ export default function FeaturesSection() {
           <SectionReveal>
             <div className="text-center mb-16">
               <span className="text-sm font-semibold font-display text-[#FB0047] uppercase tracking-wider">
-                Nossa história
+                {t("features.journey.sectionLabel")}
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold font-display mt-3 mb-5">
-                Jornada da <span className="gradient-text">construção inteligente</span>
+                {t("features.journey.title")}{" "}<span className="gradient-text">{t("features.journey.titleHighlight")}</span>
               </h2>
               <p className="text-[#5D5D5D] text-lg max-w-2xl mx-auto" style={{ lineHeight: '150%' }}>
-                Líderes em soluções digitais para redução de riscos e aumento de produtividade na construção civil.
+                {t("features.journey.desc")}
               </p>
             </div>
           </SectionReveal>
 
           <div className="max-w-3xl mx-auto">
             {[
-              { year: "Era 1.0", title: "Papel", desc: "Pastas físicas, cópias heliográficas e arquivos em estantes. Risco de extravio e versões desatualizadas.", color: "#5D5D5D" },
-              { year: "Era 2.0", title: "Digital", desc: "Digitalização de documentos, PDFs e planilhas Excel. Arquivos locais sem controle de versão.", color: "#CCCCCC" },
-              { year: "Era 3.0", title: "Nuvem", desc: "Plataformas cloud com CDE, controle de revisões e distribuição automática. A era do Autodoc Projetos.", color: "#FB0047" },
-              { year: "Era 4.0", title: "Inteligência Artificial", desc: "21 Agentes GD4 validando documentos automaticamente. Gestão de Documentos 4.0 — de minutos para segundos.", color: "#FB0047" },
+              { yearKey: "features.journey.era1Year", titleKey: "features.journey.era1Title", descKey: "features.journey.era1Desc", color: "#5D5D5D" },
+              { yearKey: "features.journey.era2Year", titleKey: "features.journey.era2Title", descKey: "features.journey.era2Desc", color: "#CCCCCC" },
+              { yearKey: "features.journey.era3Year", titleKey: "features.journey.era3Title", descKey: "features.journey.era3Desc", color: "#FB0047" },
+              { yearKey: "features.journey.era4Year", titleKey: "features.journey.era4Title", descKey: "features.journey.era4Desc", color: "#FB0047" },
             ].map((era, i) => (
               <SectionReveal key={i} delay={i * 0.12}>
                 <div className="flex gap-6 mb-8 last:mb-0">
@@ -386,9 +388,9 @@ export default function FeaturesSection() {
                     {i < 3 && <div className="w-0.5 flex-1 bg-white/5" />}
                   </div>
                   <div className="pb-8">
-                    <span className="text-xs font-bold font-display uppercase tracking-wider" style={{ color: era.color }}>{era.year}</span>
-                    <h3 className="text-lg font-bold font-display text-white mt-1 mb-1">{era.title}</h3>
-                    <p className="text-sm text-[#5D5D5D] leading-relaxed" style={{ lineHeight: '150%' }}>{era.desc}</p>
+                    <span className="text-xs font-bold font-display uppercase tracking-wider" style={{ color: era.color }}>{t(era.yearKey)}</span>
+                    <h3 className="text-lg font-bold font-display text-white mt-1 mb-1">{t(era.titleKey)}</h3>
+                    <p className="text-sm text-[#5D5D5D] leading-relaxed" style={{ lineHeight: '150%' }}>{t(era.descKey)}</p>
                   </div>
                 </div>
               </SectionReveal>
@@ -404,15 +406,15 @@ export default function FeaturesSection() {
           <SectionReveal>
             <div className="text-center mb-16">
               <span className="text-sm font-semibold font-display text-[#FB0047] uppercase tracking-wider">
-                Por que a Autodoc
+                {t("features.whyAutodoc.sectionLabel")}
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold font-display mt-3 mb-5">
-                A plataforma que as{" "}
-                <span className="gradient-text">maiores construtoras</span> escolheram
+                {t("features.whyAutodoc.title")}{" "}
+                <span className="gradient-text">{t("features.whyAutodoc.titleHighlight")}</span>
+                {" "}{t("features.whyAutodoc.titleEnd")}
               </h2>
               <p className="text-[#5D5D5D] text-lg max-w-2xl mx-auto" style={{ lineHeight: '150%' }}>
-                +20 anos de experiência em tecnologia para construção civil.
-                Uma empresa Ambar, ao lado de Polar e Simple Wall.
+                {t("features.whyAutodoc.desc")}
               </p>
             </div>
           </SectionReveal>
@@ -421,33 +423,33 @@ export default function FeaturesSection() {
             {[
               {
                 icon: Shield,
-                title: "Compliance Automático",
-                desc: "Validação contínua de FGTS, INSS, CNDT, ASOs, NRs e certidões. Alertas automáticos antes do vencimento. Zero risco de multa por documentação irregular.",
+                titleKey: "features.whyAutodoc.compliance",
+                descKey: "features.whyAutodoc.complianceDesc",
               },
               {
                 icon: Clock,
-                title: "80% Menos Tempo",
-                desc: "Validações que levavam 30-60 minutos por documento agora são concluídas em 2-5 minutos pelos Agentes GD4. Sua equipe foca na obra, não em papel.",
+                titleKey: "features.whyAutodoc.time",
+                descKey: "features.whyAutodoc.timeDesc",
               },
               {
                 icon: FolderOpen,
-                title: "CDE + Workforce + IA",
-                desc: "Projetos, plantas, documentos técnicos, fornecedores, trabalhadores e validação por IA em uma única plataforma. Do escritório ao canteiro.",
+                titleKey: "features.whyAutodoc.platform",
+                descKey: "features.whyAutodoc.platformDesc",
               },
               {
                 icon: Users,
-                title: "Portal do Fornecedor",
-                desc: "Ambiente self-service onde fornecedores enviam documentos, acompanham status e recebem feedback em tempo real. Menos ligações, mais produtividade.",
+                titleKey: "features.whyAutodoc.supplier",
+                descKey: "features.whyAutodoc.supplierDesc",
               },
               {
                 icon: Bot,
-                title: "21 Agentes de IA",
-                desc: "Cada agente especializado em um tipo de documento: CNPJ, CND, CRF, CNDT, ASO, NRs, ART, RRT, GFIP, NFS-e. Validação 24/7 com precisão superior a 97%.",
+                titleKey: "features.whyAutodoc.agents",
+                descKey: "features.whyAutodoc.agentsDesc",
               },
               {
                 icon: Building2,
-                title: "Escalável",
-                desc: "Da obra única ao portfólio de 200+ empreendimentos simultâneos. A plataforma cresce com sua operação, mantendo performance e controle.",
+                titleKey: "features.whyAutodoc.scalable",
+                descKey: "features.whyAutodoc.scalableDesc",
               },
             ].map((item, i) => (
               <SectionReveal key={i} delay={i * 0.08}>
@@ -455,8 +457,8 @@ export default function FeaturesSection() {
                   <div className="w-11 h-11 rounded-xl bg-[#FB0047]/10 flex items-center justify-center mb-5">
                     <item.icon size={22} className="text-[#FB0047]" />
                   </div>
-                  <h3 className="text-lg font-bold font-display text-white mb-3">{item.title}</h3>
-                  <p className="text-sm text-[#5D5D5D] leading-relaxed" style={{ lineHeight: '150%' }}>{item.desc}</p>
+                  <h3 className="text-lg font-bold font-display text-white mb-3">{t(item.titleKey)}</h3>
+                  <p className="text-sm text-[#5D5D5D] leading-relaxed" style={{ lineHeight: '150%' }}>{t(item.descKey)}</p>
                 </div>
               </SectionReveal>
             ))}
@@ -471,10 +473,10 @@ export default function FeaturesSection() {
           <SectionReveal>
             <div className="text-center mb-16">
               <span className="text-sm font-semibold font-display text-[#FB0047] uppercase tracking-wider">
-                Nossas soluções
+                {t("features.products.sectionLabel")}
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold font-display mt-3 mb-5">
-                Três produtos, uma <span className="gradient-text">plataforma</span>
+                {t("features.products.title")}{" "}<span className="gradient-text">{t("features.products.titleHighlight")}</span>
               </h2>
             </div>
           </SectionReveal>
@@ -484,46 +486,46 @@ export default function FeaturesSection() {
               {
                 name: "Autodoc Projetos",
                 icon: FolderOpen,
-                audience: "Projetistas, Coordenadores",
-                highlights: ["CDE — Ambiente Comum de Dados", "Controle de revisões", "Workflow de aprovação", "Visualizador BIM integrado", "Distribuição automática"],
+                audienceKey: "features.products.projetosAudience",
+                highlightKeys: ["features.products.projetosH1", "features.products.projetosH2", "features.products.projetosH3", "features.products.projetosH4", "features.products.projetosH5"],
                 link: "/projetos",
               },
               {
                 name: "Autodoc Workforce",
                 icon: Users,
-                audience: "Suprimentos, RH, Compliance",
-                highlights: ["Homologação de fornecedores", "Compliance trabalhista (FGTS, INSS)", "Controle de acesso biométrico", "Portal do fornecedor", "Alertas de vencimento"],
+                audienceKey: "features.products.workforceAudience",
+                highlightKeys: ["features.products.workforceH1", "features.products.workforceH2", "features.products.workforceH3", "features.products.workforceH4", "features.products.workforceH5"],
                 link: "/workforce",
               },
               {
                 name: "Agentes GD4",
                 icon: Bot,
-                audience: "Toda a operação",
-                highlights: ["21 agentes de IA", "Validação automática de documentos", "Precisão >97%", "Disponível 24/7", "Orquestrador inteligente"],
+                audienceKey: "features.products.agentesAudience",
+                highlightKeys: ["features.products.agentesH1", "features.products.agentesH2", "features.products.agentesH3", "features.products.agentesH4", "features.products.agentesH5"],
                 link: "/agentes-gd4",
               },
             ].map((product, i) => (
               <SectionReveal key={i} delay={i * 0.1}>
-                <Link href={product.link} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-xl block h-full">
+                <LocaleLink href={product.link} className="focus-visible:ring-2 focus-visible:ring-[#FB0047] focus-visible:outline-none rounded-xl block h-full">
                   <div className="glass-card gradient-border p-7 h-full flex flex-col cursor-pointer group hover:border-[#FB0047]/10 transition-colors">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 bg-[#FB0047]/10">
                       <product.icon size={24} className="text-[#FB0047]" />
                     </div>
                     <h3 className="text-lg font-bold font-display text-white mb-1">{product.name}</h3>
-                    <p className="text-xs text-[#5D5D5D] mb-5 font-display">{product.audience}</p>
+                    <p className="text-xs text-[#5D5D5D] mb-5 font-display">{t(product.audienceKey)}</p>
                     <ul className="space-y-2.5 flex-1">
-                      {product.highlights.map((h) => (
-                        <li key={h} className="flex items-center gap-2 text-sm text-[#CCCCCC]">
+                      {product.highlightKeys.map((hKey) => (
+                        <li key={hKey} className="flex items-center gap-2 text-sm text-[#CCCCCC]">
                           <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
-                          {h}
+                          {t(hKey)}
                         </li>
                       ))}
                     </ul>
                     <span className="inline-flex items-center gap-1 text-sm text-[#FB0047] font-bold font-display mt-6 group-hover:gap-2 transition-all">
-                      Ver detalhes <ArrowRight size={14} />
+                      {t("common:viewDetails")} <ArrowRight size={14} />
                     </span>
                   </div>
-                </Link>
+                </LocaleLink>
               </SectionReveal>
             ))}
           </div>

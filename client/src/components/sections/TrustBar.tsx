@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Star, Building2, Users, Shield } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { clients } from "@/data/home";
@@ -23,16 +24,17 @@ const logoSet = clients.map((client) =>
 );
 
 export default function TrustBar() {
+  const { t } = useTranslation("home");
   return (
     <>
       <section className="relative z-10 bg-[#0A0A0A] border-y border-white/5">
         <div className="container py-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
             {[
-              { value: 20, suffix: "+", label: "anos no mercado", icon: Star },
-              { value: 3500, suffix: "+", label: "clientes no Brasil", icon: Building2 },
-              { value: 195, suffix: " mil+", label: "usuários ativos", icon: Users },
-              { value: 60, suffix: "", label: "das 100 maiores construtoras", icon: Shield },
+              { value: 20, suffix: "+", label: t("trust.stats.years"), icon: Star },
+              { value: 3500, suffix: "+", label: t("trust.stats.clients"), icon: Building2 },
+              { value: 195, suffix: " mil+", label: t("trust.stats.users"), icon: Users },
+              { value: 60, suffix: "", label: t("trust.stats.top100"), icon: Shield },
             ].map((stat, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-[#FB0047]/10 flex items-center justify-center shrink-0">
@@ -55,7 +57,7 @@ export default function TrustBar() {
       <section className="py-10 bg-black overflow-hidden">
         <div className="container">
           <p className="text-center text-xs text-[#5D5D5D] uppercase tracking-widest font-semibold font-display mb-8">
-            Confiado pelas maiores construtoras e incorporadoras do Brasil
+            {t("trust.trusted")}
           </p>
         </div>
         <div className="relative" aria-hidden="true">

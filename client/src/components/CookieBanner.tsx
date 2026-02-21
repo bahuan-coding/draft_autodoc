@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
+import LocaleLink from "./LocaleLink";
 
 const COOKIE_CONSENT_KEY = "autodoc_cookie_consent";
 
 export default function CookieBanner() {
+  const { t } = useTranslation("common");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -32,16 +34,15 @@ export default function CookieBanner() {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed bottom-0 left-0 right-0 z-[60] p-4"
           role="dialog"
-          aria-label="Política de cookies"
+          aria-label={t("cookie.ariaLabel")}
         >
           <div className="container max-w-4xl mx-auto">
             <div className="glass-card border border-white/10 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
               <p className="text-sm text-navy-300 flex-1">
-                Utilizamos cookies para melhorar sua experiência de navegação.
-                Ao continuar, você concorda com nossa{" "}
-                <Link href="/privacidade">
-                  <span className="text-blue-400 hover:underline">Política de Privacidade</span>
-                </Link>.
+                {t("cookie.message")}{" "}
+                <LocaleLink href="/privacidade">
+                  <span className="text-blue-400 hover:underline">{t("cookie.privacyPolicy")}</span>
+                </LocaleLink>.
               </p>
               <div className="flex gap-3 shrink-0">
                 <button
@@ -49,14 +50,14 @@ export default function CookieBanner() {
                   onClick={handleReject}
                   className="text-sm font-medium text-navy-400 hover:text-white px-4 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-colors min-h-[44px] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
                 >
-                  Rejeitar
+                  {t("cookie.reject")}
                 </button>
                 <button
                   type="button"
                   onClick={handleAccept}
                   className="text-sm font-semibold bg-blue-500 hover:bg-blue-400 text-white px-5 py-2.5 rounded-lg transition-colors min-h-[44px] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
                 >
-                  Aceitar
+                  {t("cookie.accept")}
                 </button>
               </div>
             </div>

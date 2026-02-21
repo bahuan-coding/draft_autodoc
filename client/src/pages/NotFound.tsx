@@ -1,7 +1,11 @@
-import { Link } from "wouter";
+import LocaleLink from "@/components/LocaleLink";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { ArrowLeft, SearchX } from "lucide-react";
+
 export default function NotFound() {
+  const { t } = useTranslation("common");
+
   return (
     <div className="min-h-screen bg-background text-foreground">
 
@@ -22,21 +26,21 @@ export default function NotFound() {
             <h1 className="text-7xl sm:text-8xl font-semibold gradient-text mb-4">404</h1>
 
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
-              Página não encontrada
+              {t("notFound.title")}
             </h2>
 
             <p className="text-navy-300 text-base leading-relaxed mb-10">
-              A página que você procura não existe ou foi movida.
+              {t("notFound.line1")}
               <br />
-              Volte para o início e explore nossas soluções.
+              {t("notFound.line2")}
             </p>
 
-            <Link href="/" className="inline-block focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-xl">
+            <LocaleLink href="/" className="inline-block focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none rounded-xl">
               <span className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98]">
                 <ArrowLeft size={18} aria-hidden="true" />
-                Voltar para Home
+                {t("notFound.backHome")}
               </span>
-            </Link>
+            </LocaleLink>
           </motion.div>
         </div>
       </section>

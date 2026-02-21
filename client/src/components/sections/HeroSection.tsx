@@ -1,15 +1,8 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Zap, MessageCircle } from "lucide-react";
 import { IMAGES } from "@/lib/images";
-
-const typingPhrases = [
-  "projetos e plantas.",
-  "documentos de obra.",
-  "fornecedores.",
-  "compliance do canteiro.",
-  "validação por IA.",
-];
 
 function useTypingEffect(phrases: string[], typingSpeed = 80, deletingSpeed = 40, pauseMs = 2200) {
   const [text, setText] = useState("");
@@ -55,7 +48,9 @@ function Particles() {
 }
 
 export default function HeroSection() {
-  const typedText = useTypingEffect(typingPhrases);
+  const { t } = useTranslation("home");
+  const phrases = t("hero.phrases", { returnObjects: true }) as string[];
+  const typedText = useTypingEffect(phrases);
   const { scrollYProgress } = useScroll();
   const heroImageY = useTransform(scrollYProgress, [0, 0.3], [0, 80]);
 
@@ -67,7 +62,7 @@ export default function HeroSection() {
       <motion.div className="absolute inset-0" style={{ y: heroImageY }}>
         <img
           src={IMAGES.hero}
-          alt="Vista aérea de um canteiro de obras"
+          alt={t("hero.heroAlt")}
           role="presentation"
           aria-hidden="true"
           className="w-full h-full object-cover opacity-20"
@@ -89,7 +84,7 @@ export default function HeroSection() {
           >
             <span className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 mb-6 px-4 py-1.5 rounded-full border border-blue-400/20 bg-blue-400/5">
               <Zap size={14} aria-hidden="true" />
-              Uma empresa Ambar
+              {t("hero.badge")}
             </span>
           </motion.div>
 
@@ -99,7 +94,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.15] tracking-tight mb-6"
           >
-            Gestão inteligente de
+            {t("hero.heading")}
             <br />
             <span className="gradient-text">{typedText}</span>
             <motion.span
@@ -116,8 +111,8 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg sm:text-xl text-navy-300 leading-relaxed mb-10 max-w-2xl"
           >
-            Do CDE ao compliance de fornecedores, do controle de acesso à validação por IA.{" "}
-            <span className="text-white font-medium">Tudo o que a sua obra precisa. Onde você estiver.</span>
+            {t("hero.subtitle")}{" "}
+            <span className="text-white font-medium">{t("hero.subtitleBold")}</span>
           </motion.p>
 
           <motion.div
@@ -130,7 +125,7 @@ export default function HeroSection() {
               href="#demonstracao"
               className="group inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 text-base hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
             >
-              Agendar Demonstração
+              {t("hero.cta")}
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
             <a
@@ -140,7 +135,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white font-medium px-7 py-3.5 rounded-xl border border-white/10 transition-all duration-300 text-base hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none focus-visible:ring-offset-2 focus-visible:ring-offset-navy-950"
             >
               <MessageCircle size={16} aria-hidden="true" />
-              Fale com um Especialista
+              {t("hero.ctaSecondary")}
             </a>
           </motion.div>
         </div>
