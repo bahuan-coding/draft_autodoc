@@ -38,7 +38,7 @@ export default function AgentesGD4() {
               Inteligência Artificial para Construção Civil
             </span>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
               Agentes <span className="gradient-text-amber">GD4</span>
             </h1>
             <p className="text-lg sm:text-xl text-navy-300 leading-relaxed mb-6 max-w-2xl">

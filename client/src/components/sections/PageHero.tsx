@@ -59,7 +59,7 @@ export default function PageHero({
               <Icon size={28} className={iconColor} />
             </div>
             <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold">{title}</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">{title}</h1>
               <span className="text-sm text-navy-400 uppercase tracking-wider">{subtitle}</span>
             </div>
           </div>

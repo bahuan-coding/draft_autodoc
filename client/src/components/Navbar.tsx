@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="container flex items-center justify-between">
           <Link href="/" className="focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none rounded-md inline-block">
             <span className="text-xl font-bold tracking-tight text-white group relative inline-block">
-              AUTO<span className="text-blue-400 transition-all duration-300 hover:drop-shadow-[0_0_12px_oklch(0.70_0.18_260)]">DOC</span>
+              AUTO<span className="text-blue-400 transition-all duration-300 hover:drop-shadow-[0_0_12px_oklch(0.70_0.22_18.8)]">DOC</span>
             </span>
           </Link>
 

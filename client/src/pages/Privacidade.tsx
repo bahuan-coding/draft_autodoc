@@ -26,7 +26,7 @@ export default function Privacidade() {
               <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center">
                 <Shield size={28} className="text-blue-400" />
               </div>
-              <h1 className="text-3xl sm:text-4xl font-extrabold">Política de Privacidade</h1>
+              <h1 className="text-3xl sm:text-4xl font-semibold">Política de Privacidade</h1>
             </div>
           </motion.div>
         </div>

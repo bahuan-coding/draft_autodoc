@@ -19,7 +19,7 @@ export default function NotFound() {
               <SearchX size={36} className="text-blue-400" />
             </div>
 
-            <h1 className="text-7xl sm:text-8xl font-extrabold gradient-text mb-4">404</h1>
+            <h1 className="text-7xl sm:text-8xl font-semibold gradient-text mb-4">404</h1>
 
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
               Página não encontrada
