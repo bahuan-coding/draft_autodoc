@@ -248,6 +248,11 @@
   animation-direction: alternate-reverse;
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 @keyframes meshFloat {
   0% { transform: translate(0, 0) scale(1); }
   50% { transform: translate(60px, 30px) scale(1.1); }
